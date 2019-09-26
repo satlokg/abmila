@@ -33,22 +33,15 @@
         </li>
         
        
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-edit"></i> <span>Vendors</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
+       <li>
+          <a href="{{route('admin.category')}}">
+            <i class="fa fa-th"></i> <span>Zone Management</span>
           </a>
-          <ul class="treeview-menu">
-            <li><a href="{{route('admin.vendors')}}"><i class="fa fa-circle-o"></i> All Vendors</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Add Vendor</a></li>
-          </ul>
         </li>
 
         <li>
           <a href="{{route('admin.category')}}">
-            <i class="fa fa-th"></i> <span>Category</span>
+            <i class="fa fa-th"></i> <span>Category Management</span>
           </a>
         </li>
        
