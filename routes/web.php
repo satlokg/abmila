@@ -45,8 +45,13 @@ Route::prefix('admin')->group(function() {
     Route::get('/home', 'Admin\AdminController@index')->name('admin.home');
     Route::get('/dashboard', 'Admin\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/vendors', 'Admin\AdminController@vendors')->name('admin.vendors');
-    Route::get('/category', 'Admin\AdminController@category')->name('admin.category');
+    Route::get('/category', 'Admin\CategoryController@index')->name('admin.category');
     Route::get('/sub-category', 'Admin\AdminController@subCategory')->name('admin.subCategory');
+    //city-zone
+    Route::get('/zone', 'Admin\CityController@index')->name('admin.zone');
+    Route::get('/city', 'Admin\CityController@city')->name('admin.city');
+    Route::get('/pincode', 'Admin\CityController@pincode')->name('admin.pincode');
+    Route::get('/area', 'Admin\CityController@area')->name('admin.area');
 });
 
 Route::prefix('vendor')->group(function() {
