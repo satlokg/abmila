@@ -35,7 +35,7 @@ Pincode
                       @csrf
                       <div class="box-body">
                         <div class="form-group">
-                          <label>Minimal</label>
+                          <label>Select Zone</label>
                           <select class="form-control select2" style="width: 100%;" name="zone_id" required="required">
                             @foreach($zones as $zone)
                             <option value="{{$zone->id}}">{{$zone->zone_name}}</option>

@@ -36,7 +36,7 @@ Zone
                       @csrf
                       <div class="box-body">
                         <div class="form-group">
-                          <label>Minimal</label>
+                          <label>Select City</label>
                           <select class="form-control select2" style="width: 100%;" name="city_id" required="required">
                             @foreach($cities as $city)
                             <option value="{{$city->id}}">{{$city->city_name}}</option>

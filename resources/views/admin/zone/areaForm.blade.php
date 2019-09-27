@@ -35,7 +35,7 @@ Area
                       @csrf
                       <div class="box-body">
                         <div class="form-group">
-                          <label>Minimal</label>
+                          <label>Select Pincode</label>
                           <select class="form-control select2" style="width: 100%;" name="pincode_id" required="required">
                             @foreach($pincodes as $pincode)
                             <option value="{{$pincode->id}}">{{$pincode->pincode}}</option>

@@ -35,7 +35,7 @@ Sub Category
                       @csrf
                       <div class="box-body">
                         <div class="form-group">
-                          <label>Minimal</label>
+                          <label>Select Category</label>
                           <select class="form-control select2" style="width: 100%;" name="category_id" required="required">
                             @foreach($categories as $cat)
                             <option value="{{$cat->id}}">{{$cat->category_name}}</option>
