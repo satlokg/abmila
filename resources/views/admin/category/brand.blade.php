@@ -5,12 +5,12 @@
  @section('bread')
  <section class="content-header">
       <h1>
-        Category
+        Brands
       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Category</li>
+        <li class="active">Brands</li>
       </ol>
 @endsection
 
@@ -20,8 +20,8 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Category Detail</h3>
-              <a href="{{route('admin.category.add')}}" class="btn btn-sm btn-success">Add Category</a>
+              <h3 class="box-title">Brands Detail</h3>
+              <a href="{{route('admin.brand.add')}}" class="btn btn-sm btn-success">Add Brands</a>
               @include('admin.category.timeline')
             </div>
             <!-- /.box-header -->
@@ -31,15 +31,19 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
+                    <th>Brand Name</th>
+                    <th>Sub Category Name</th>
                     <th>Category Name</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($categories as $category)
+                  @foreach($brands as $brand)
                   <tr>
-                    <td>{{$category->category_name}}</td>
-                    <td><a href="{{route('admin.subCategory',['cat_id'=>$category->id])}}" class="btn btn-sm btn-success">Sub Category</a></td>
+                    <td>{{$brand->brand_name}}</td>
+                    <td>{{$brand->brand_name}}</td>
+                    <td>{{$brand->brand_name}}</td>
+                    <td>X</td>
                   </tr>
                    @endforeach
                  </tbody>

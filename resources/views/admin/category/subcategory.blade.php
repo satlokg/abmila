@@ -5,12 +5,12 @@
  @section('bread')
  <section class="content-header">
       <h1>
-        Category
+        Sub Category
       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Category</li>
+        <li class="active">Sub Category</li>
       </ol>
 @endsection
 
@@ -20,8 +20,8 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Category Detail</h3>
-              <a href="{{route('admin.category.add')}}" class="btn btn-sm btn-success">Add Category</a>
+              <h3 class="box-title">Sub Category Detail</h3>
+              <a href="{{route('admin.subCategory.add')}}" class="btn btn-sm btn-success">Add Sub Category</a>
               @include('admin.category.timeline')
             </div>
             <!-- /.box-header -->
@@ -36,10 +36,10 @@
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($categories as $category)
+                  @foreach($subcategories as $subcategory)
                   <tr>
-                    <td>{{$category->category_name}}</td>
-                    <td><a href="{{route('admin.subCategory',['cat_id'=>$category->id])}}" class="btn btn-sm btn-success">Sub Category</a></td>
+                    <td>{{$subcategory->subcategory_name}}</td>
+                    <td><a href="{{route('admin.brand',['subcat_id'=>$subcategory->id])}}" class="btn btn-sm btn-success">Brand</a></td>
                   </tr>
                    @endforeach
                  </tbody>
