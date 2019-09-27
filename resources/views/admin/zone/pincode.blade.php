@@ -21,7 +21,7 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Pincode Detail</h3>
-              <a href="#" class="btn btn-sm btn-success">Add Pincode</a>
+              <a href="{{route('admin.pincode.add')}}" class="btn btn-sm btn-success">Add Pincode</a>
                @include('admin.zone.timeline')
             </div>
             <!-- /.box-header -->
@@ -41,9 +41,9 @@
                 <tbody>
                 @foreach($pincodes as $pincode)
                 <tr>
-                  <td>{{$pincode->pincode_name}}</td>
-                  <td>{{$pincode->zone_id}}</td>
-                  <td>{{$pincode->city_id}}</td>
+                  <td>{{$pincode->pincode}}</td>
+                  <td>{{$pincode->zone->zone_name}}</td>
+                  <td>{{$pincode->zone->city->city_name}}</td>
                   <td>X</td>
                 </tr>
                  @endforeach

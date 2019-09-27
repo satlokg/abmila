@@ -20,7 +20,7 @@ City
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">City Detail</h3>
-              <a href="#" class="btn btn-sm btn-success">Add City</a>
+              <a href="{{route('admin.city.add')}}" class="btn btn-sm btn-success">Add City</a>
                @include('admin.zone.timeline')
             </div>
             <!-- /.box-header -->

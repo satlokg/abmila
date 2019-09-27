@@ -45,13 +45,25 @@ Route::prefix('admin')->group(function() {
     Route::get('/home', 'Admin\AdminController@index')->name('admin.home');
     Route::get('/dashboard', 'Admin\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/vendors', 'Admin\AdminController@vendors')->name('admin.vendors');
+    //category
     Route::get('/category', 'Admin\CategoryController@index')->name('admin.category');
     Route::get('/sub-category', 'Admin\AdminController@subCategory')->name('admin.subCategory');
     //city-zone
     Route::get('/zone', 'Admin\CityController@index')->name('admin.zone');
+    Route::get('/zone/add', 'Admin\CityController@zoneForm')->name('admin.zone.add');
+    Route::post('/zone/post', 'Admin\CityController@zonePost')->name('admin.zone.post');
+
     Route::get('/city', 'Admin\CityController@city')->name('admin.city');
+    Route::get('/city/add', 'Admin\CityController@cityForm')->name('admin.city.add');
+    Route::post('/city/post', 'Admin\CityController@cityPost')->name('admin.city.post');
+
     Route::get('/pincode', 'Admin\CityController@pincode')->name('admin.pincode');
+    Route::get('/pincode/add', 'Admin\CityController@pincodeForm')->name('admin.pincode.add');
+    Route::post('/pincode/post', 'Admin\CityController@pincodePost')->name('admin.pincode.post');
+
     Route::get('/area', 'Admin\CityController@area')->name('admin.area');
+    Route::get('/area/add', 'Admin\CityController@areaForm')->name('admin.area.add');
+    Route::post('/area/post', 'Admin\CityController@areaPost')->name('admin.area.post');
 });
 
 Route::prefix('vendor')->group(function() {

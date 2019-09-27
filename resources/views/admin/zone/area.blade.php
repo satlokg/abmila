@@ -21,7 +21,7 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Area Detail</h3>
-              <a href="#" class="btn btn-sm btn-success">Add Area</a>
+              <a href="{{route('admin.area.add')}}" class="btn btn-sm btn-success">Add Area</a>
                @include('admin.zone.timeline')
             </div>
             <!-- /.box-header -->
@@ -42,10 +42,10 @@
                 <tbody>
                 @foreach($areas as $area)
                 <tr>
-                  <td>{{$area->zone_name}}</td>
-                  <td>{{$area->city_id}}</td>
-                  <td>{{$area->zone_name}}</td>
-                  <td>{{$area->city_id}}</td>
+                  <td>{{$area->area_name}}</td>
+                  <td>{{$area->pincode->pincode}}</td>
+                  <td>{{$area->pincode->zone->zone_name}}</td>
+                  <td>{{$area->pincode->zone->city->city_name}}</td>
                   <td>X</td>
                 </tr>
                  @endforeach
