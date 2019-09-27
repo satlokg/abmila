@@ -23,10 +23,10 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
        
-        
+
        
        <li>
-          <a href="{{route('admin.category')}}">
+          <a href="{{route('admin.zone')}}">
             <i class="fa fa-th"></i> <span>Zone Management</span>
           </a>
         </li>

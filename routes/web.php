@@ -45,8 +45,39 @@ Route::prefix('admin')->group(function() {
     Route::get('/home', 'Admin\AdminController@index')->name('admin.home');
     Route::get('/dashboard', 'Admin\AdminController@dashboard')->name('admin.dashboard');
     Route::get('/vendors', 'Admin\AdminController@vendors')->name('admin.vendors');
-    Route::get('/category', 'Admin\AdminController@category')->name('admin.category');
-    Route::get('/sub-category', 'Admin\AdminController@subCategory')->name('admin.subCategory');
+    //category
+    Route::get('/category', 'Admin\CategoryController@index')->name('admin.category');
+    Route::get('/category/add', 'Admin\CategoryController@categoryForm')->name('admin.category.add');
+    Route::post('/category/post', 'Admin\CategoryController@categoryPost')->name('admin.category.post');
+
+    Route::get('/sub-category/{cat_id?}', 'Admin\CategoryController@subCategory')->name('admin.subCategory');
+    Route::get('/subcategory/add', 'Admin\CategoryController@subCategoryForm')->name('admin.subCategory.add');
+    Route::post('/sub-category/post', 'Admin\CategoryController@subCategoryPost')->name('admin.subCategory.post');
+    Route::get('/brands/{subcat_id?}', 'Admin\CategoryController@brand')->name('admin.brand');
+    Route::get('/brand/add', 'Admin\CategoryController@brandForm')->name('admin.brand.add');
+    Route::post('/brand/post', 'Admin\CategoryController@brandPost')->name('admin.brand.post');
+
+
+    Route::get('/service', 'Admin\CategoryController@service')->name('admin.service');
+    Route::get('/service/add', 'Admin\CategoryController@serviceForm')->name('admin.service.add');
+    Route::post('/service/post', 'Admin\CategoryController@servicePost')->name('admin.service.post');
+
+    //city-zone
+    Route::get('/zone', 'Admin\CityController@index')->name('admin.zone');
+    Route::get('/zone/add', 'Admin\CityController@zoneForm')->name('admin.zone.add');
+    Route::post('/zone/post', 'Admin\CityController@zonePost')->name('admin.zone.post');
+
+    Route::get('/city', 'Admin\CityController@city')->name('admin.city');
+    Route::get('/city/add', 'Admin\CityController@cityForm')->name('admin.city.add');
+    Route::post('/city/post', 'Admin\CityController@cityPost')->name('admin.city.post');
+
+    Route::get('/pincode', 'Admin\CityController@pincode')->name('admin.pincode');
+    Route::get('/pincode/add', 'Admin\CityController@pincodeForm')->name('admin.pincode.add');
+    Route::post('/pincode/post', 'Admin\CityController@pincodePost')->name('admin.pincode.post');
+
+    Route::get('/area', 'Admin\CityController@area')->name('admin.area');
+    Route::get('/area/add', 'Admin\CityController@areaForm')->name('admin.area.add');
+    Route::post('/area/post', 'Admin\CityController@areaPost')->name('admin.area.post');
 });
 
 Route::prefix('vendor')->group(function() {

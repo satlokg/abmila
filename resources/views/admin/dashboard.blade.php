@@ -15,11 +15,7 @@
 @section('content')
  <div class="row">
        
-      
 
-       
-
-        <!-- /.col -->
       </div>
       <!-- /.row -->
       @endsection

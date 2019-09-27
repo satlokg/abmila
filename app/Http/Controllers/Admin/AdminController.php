@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+
+
 class AdminController extends Controller
 {
    /**
@@ -36,8 +38,7 @@ class AdminController extends Controller
         return view('admin.vendor');
     }
 
-    public function category()
-    {
-        return view('admin.category');
-    }
+    
+
+    
 }
