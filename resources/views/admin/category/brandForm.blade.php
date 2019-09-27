@@ -14,7 +14,6 @@ Brand
       </ol>
 @endsection
 
-
 @section('content')
       <div class="row">
         <div class="col-md-12">
