@@ -32,10 +32,10 @@
                 <div class="col-lg-12">
                 <div class="addbusiness">
                 <li>
-                                                <a href="add-listing.html" class="btn btn-xs btn-gradient btn-gradient-two">
-                                                    <span class="la la-plus"></span> Add Your Business
-                                                </a>
-                                            </li></div></div>
+                <a href="add-listing.html" class="btn btn-xs btn-gradient btn-gradient-two">
+                    <span class="la la-plus"></span> Add Your Business
+                </a>
+            </li></div></div>
                 <div class="col-lg-12">
                 <div class="logo-wrapper order-lg-0 order-sm-1">
                                 <div class="logo logo-top">
