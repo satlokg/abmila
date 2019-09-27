@@ -41,8 +41,8 @@
                   @foreach($brands as $brand)
                   <tr>
                     <td>{{$brand->brand_name}}</td>
-                    <td>{{$brand->subcategory_name}}</td>
-                    <td>{{$brand->subcategory->category_name}}</td>
+                    <td>{{$brand->subcategory->subcategory_name}}</td>
+                    <td>{{$brand->subcategory->category->category_name}}</td>
                     <td>X</td>
                   </tr>
                    @endforeach
