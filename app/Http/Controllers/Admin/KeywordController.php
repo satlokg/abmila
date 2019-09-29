@@ -37,16 +37,16 @@ class KeywordController extends Controller
     	//dd($r->all());
     	 $keyword= New Keyword();
     	 $keyword->category_id=$r->category_id;
-    	 $keyword->keyward_name=$r->subcategory_name;
+    	 $keyword->keyword_name=$r->subcategory_name;
     	 $keyword->save();
     	 $keyword= New Keyword();
     	 $keyword->category_id=$r->category_id;
-    	 $keyword->keyward_name=$r->subcategory_name.','.$r->service_name;
+    	 $keyword->keyword_name=$r->subcategory_name.','.$r->service_name;
     	 $keyword->save();
     	 foreach ($r->brand_name as $key => $value) {
     	 	$keyword= New Keyword();
     	 	$keyword->category_id=$r->category_id;
-    	 	$keyword->keyward_name=$value.','.$r->subcategory_name.','.$r->service_name;
+    	 	$keyword->keyword_name=$value.','.$r->subcategory_name.','.$r->service_name;
     	 	$keyword->save();
     	 }
     	 //dd($keyword);
