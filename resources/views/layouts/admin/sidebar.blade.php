@@ -33,6 +33,12 @@
             <i class="fa fa-th"></i> <span>Kewword Management</span>
           </a>
         </li>
+
+        <li>
+          <a href="{{route('admin.keyword')}}">
+            <i class="fa fa-th"></i> <span>Business Listing</span>
+          </a>
+        </li>
        
        
         
