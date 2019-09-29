@@ -34,7 +34,7 @@ class KeywordController extends Controller
 
     public function keywordPost(Request $r)
     {
-    	dd($r->all());
+    	//dd($r->all());
     	 $keyword= New Keyword();
     	 $keyword->category_id=$r->category_id;
     	 $keyword->keyword_name=$r->subcategory_name;
