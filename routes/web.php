@@ -83,6 +83,11 @@ Route::prefix('admin')->group(function() {
     Route::get('/keyword', 'Admin\KeywordController@index')->name('admin.keyword');
     Route::get('/keyword/add', 'Admin\KeywordController@keywordForm')->name('admin.keyword.add');
     Route::post('/keyword/post', 'Admin\KeywordController@keywordPost')->name('admin.keyword.post');
+
+    //business
+    Route::get('/business-list', 'Admin\ListController@index')->name('admin.business');
+    Route::get('/business-list/add', 'Admin\ListController@keywordForm')->name('admin.business.add');
+    Route::post('/business-list/post', 'Admin\ListController@keywordPost')->name('admin.business.post');
 });
 
 Route::prefix('vendor')->group(function() {

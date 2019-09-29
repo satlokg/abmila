@@ -34,7 +34,7 @@ class KeywordController extends Controller
 
     public function keywordPost(Request $r)
     {
-    	//dd($r->all());
+    	dd($r->all());
     	 $keyword= New Keyword();
     	 $keyword->category_id=$r->category_id;
     	 $keyword->keyword_name=$r->subcategory_name;
@@ -43,12 +43,15 @@ class KeywordController extends Controller
     	 $keyword->category_id=$r->category_id;
     	 $keyword->keyword_name=$r->subcategory_name.','.$r->service_name;
     	 $keyword->save();
-    	 foreach ($r->brand_name as $key => $value) {
+    	 if(isset($r->brand_name)){
+    	 	foreach ($r->brand_name as $key => $value) {
     	 	$keyword= New Keyword();
     	 	$keyword->category_id=$r->category_id;
     	 	$keyword->keyword_name=$value.','.$r->subcategory_name.','.$r->service_name;
     	 	$keyword->save();
+    	    }
     	 }
+    	 
     	 //dd($keyword);
     	 if($keyword){
     		 $notification = array(
