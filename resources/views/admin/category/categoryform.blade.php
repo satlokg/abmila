@@ -5,11 +5,11 @@
  @section('bread')
  <section class="content-header">
       <h1>
-City      
+Category      
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">City</li>
+        <li class="active">Category</li>
         <li class="active">Add</li>
       </ol>
 @endsection
