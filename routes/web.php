@@ -18,7 +18,7 @@ use App\User;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('user.welcome2');
 });
 
 
@@ -78,6 +78,11 @@ Route::prefix('admin')->group(function() {
     Route::get('/area', 'Admin\CityController@area')->name('admin.area');
     Route::get('/area/add', 'Admin\CityController@areaForm')->name('admin.area.add');
     Route::post('/area/post', 'Admin\CityController@areaPost')->name('admin.area.post');
+
+    //keyword
+    Route::get('/keyword', 'Admin\KeywordController@index')->name('admin.keyword');
+    Route::get('/keyword/add', 'Admin\KeywordController@keywordForm')->name('admin.keyword.add');
+    Route::post('/keyword/post', 'Admin\KeywordController@keywordPost')->name('admin.keyword.post');
 });
 
 Route::prefix('vendor')->group(function() {
@@ -87,3 +92,8 @@ Route::prefix('vendor')->group(function() {
     Route::get('/dashboard', 'Vendor\VendorController@dashboard')->name('vendor.dashboard');
     Route::get('/profile', 'Vendor\VendorController@profile')->name('vendor.profile');
 });
+
+//user
+
+Route::get('/business-list', 'User\ListController@businessList')->name('businessList');
+Route::post('/business-list', 'User\ListController@businessPost')->name('businessPost');

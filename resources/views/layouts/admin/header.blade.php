@@ -6,7 +6,7 @@
       <span class="logo-mini"></span>
 
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b> Panel</span>
+      <img src="{{url('public/img/logo.png')}}" class="" height="40" alt="User Image">
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
