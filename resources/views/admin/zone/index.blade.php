@@ -42,7 +42,10 @@
                 <tr>
                   <td>{{$zone->zone_name}}</td>
                   <td>{{$zone->city->city_name}}</td>
-                  <td>X</td>
+                  <td>
+                    <a href="{{route('admin.zone.edit',['id'=>$zone->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a>
+                    <!-- <a href="" onclick=archiveFunction({{$zone->id}},'zone')><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a> -->
+                  </td>
                 </tr>
                  @endforeach
                </tbody>

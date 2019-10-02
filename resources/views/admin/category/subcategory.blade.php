@@ -39,7 +39,8 @@
                   @foreach($subcategories as $subcategory)
                   <tr>
                     <td>{{$subcategory->subcategory_name}}</td>
-                    <td><a href="{{route('admin.brand',['subcat_id'=>$subcategory->id])}}" class="btn btn-sm btn-success">Brand</a></td>
+                    <td><a href="{{route('admin.brand',['subcat_id'=>$subcategory->id])}}" class="btn btn-sm btn-success">Brand</a>
+                    <a href="{{route('admin.subCategory.edit',['id'=>$subcategory->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a></td></td>
                   </tr>
                    @endforeach
                  </tbody>

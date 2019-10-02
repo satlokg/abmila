@@ -15,4 +15,13 @@ class Pincode extends Model
     {
         return $this->hasMany(Area::class);
     }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($pincode) { // before delete() method call this
+             $pincode->areas()->delete();
+             // do the rest of the cleanup...
+        });
+    }
 }

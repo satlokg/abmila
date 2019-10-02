@@ -44,7 +44,7 @@
                   <td>{{$pincode->pincode}}</td>
                   <td>{{$pincode->zone->zone_name}}</td>
                   <td>{{$pincode->zone->city->city_name}}</td>
-                  <td>X</td>
+                  <td><a href="{{route('admin.pincode.edit',['id'=>$pincode->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a></td>
                 </tr>
                  @endforeach
                </tbody>

@@ -43,7 +43,7 @@
                     <td>{{$brand->brand_name}}</td>
                     <td>{{$brand->subcategory->subcategory_name}}</td>
                     <td>{{$brand->subcategory->category->category_name}}</td>
-                    <td>X</td>
+                    <td><a href="{{route('admin.brand.edit',['id'=>$brand->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a></td></td>
                   </tr>
                    @endforeach
                  </tbody>

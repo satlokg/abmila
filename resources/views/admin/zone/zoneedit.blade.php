@@ -1,27 +1,27 @@
  @extends('layouts.admin')
   @section('css')
- <link rel="stylesheet" href="{{asset('public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('public/bower_components/select2/dist/css/select2.min.css')}}">
+ <link rel="stylesheet" href="{{asset('public/bower_components/select2/dist/css/select2.min.css')}}">
  @endsection
  @section('bread')
  <section class="content-header">
       <h1>
-Service      
+Zone      
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Service</li>
+        <li class="active">Zone</li>
         <li class="active">Add</li>
       </ol>
 @endsection
+
 
 @section('content')
       <div class="row">
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Add New Service </h3>
-               @include('admin.category.timeline')
+              <h3 class="box-title">Add New Zone </h3>
+               @include('admin.zone.timeline')
             </div>
             <!-- /.box-header -->
             
@@ -32,28 +32,18 @@ Service
                   <div class="box box-primary">
                     
                     <!-- form start -->
-                    <form role="form" action="{{route('admin.service.post')}}" method="post">
+                    <form role="form" action="{{route('admin.zone.post')}}" method="post">
                       @csrf
                       <div class="box-body">
                         <div class="form-group">
-                          <label>Category Name</label>
-                          <select onchange="populateSubCat();" id="cat" class="form-control select2" style="width: 100%;" name="category_id" required="required">
-                            @foreach($categories as $cat)
-                            <option value="{{$cat->id}}">{{$cat->category_name}}</option>
-                            @endforeach
-                          </select>
+                          <label>City</label>
+                          {{$zone->city->city_name}}
+                          <input type="hidden" name="id" value="{{$zone->id}}">
+                          <input type="hidden" name="city_id" value="{{$zone->city->id}}">
                         </div>
                         <div class="form-group">
-                          <label>Sub Category </label>
-                          <select class="form-control" style="width: 100%;" name="subcategory_id" required="required">
-                            <optgroup id="scat">
-                          
-                            </optgroup>
-                          </select>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Enter Service Name</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Service Name" required="required" name="service_name">
+                          <label for="exampleInputEmail1">Enter Zone Name</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Zone Name" required="required" value="{{$zone->zone_name}}" name="zone_name">
                         </div>
                       </div>
                       <!-- /.box-body -->

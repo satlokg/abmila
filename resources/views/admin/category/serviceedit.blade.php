@@ -1,7 +1,6 @@
  @extends('layouts.admin')
   @section('css')
  <link rel="stylesheet" href="{{asset('public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{asset('public/bower_components/select2/dist/css/select2.min.css')}}">
  @endsection
  @section('bread')
  <section class="content-header">
@@ -34,26 +33,21 @@ Service
                     <!-- form start -->
                     <form role="form" action="{{route('admin.service.post')}}" method="post">
                       @csrf
+                      <input type="hidden" name="id" value="{{$service->id}}">
+                      <input type="hidden" name="category_id" value="{{$service->subcategory->category->id}}">
+                      <input type="hidden" name="subcategory_id" value="{{$service->subcategory->id}}">
                       <div class="box-body">
                         <div class="form-group">
                           <label>Category Name</label>
-                          <select onchange="populateSubCat();" id="cat" class="form-control select2" style="width: 100%;" name="category_id" required="required">
-                            @foreach($categories as $cat)
-                            <option value="{{$cat->id}}">{{$cat->category_name}}</option>
-                            @endforeach
-                          </select>
+                          {{$service->subcategory->category->category_name}}
                         </div>
                         <div class="form-group">
-                          <label>Sub Category </label>
-                          <select class="form-control" style="width: 100%;" name="subcategory_id" required="required">
-                            <optgroup id="scat">
-                          
-                            </optgroup>
-                          </select>
+                          <label>Sub category name</label>
+                          {{$service->subcategory->subcategory_name}}
                         </div>
                         <div class="form-group">
                           <label for="exampleInputEmail1">Enter Service Name</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Service Name" required="required" name="service_name">
+                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Service Name" required="required" name="service_name" value="{{$service->service_name}}">
                         </div>
                       </div>
                       <!-- /.box-body -->
@@ -87,14 +81,5 @@ Service
 
    
       <!-- /.row -->
-      @endsection
-      @section('js')
-      <script src="{{asset('public/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
-      <script>
-         $(function () {
-        //Initialize Select2 Elements
-          $('.select2').select2()
-         })
-      </script>
       @endsection
      

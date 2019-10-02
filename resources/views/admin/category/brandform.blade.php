@@ -35,19 +35,20 @@ Brand
                       @csrf
                       <div class="box-body">
                         <div class="form-group">
-                          <label>Minimal</label>
-                          <select class="form-control select2" style="width: 100%;" name="category_id" required="required">
+                          <label>Category Name</label>
+                          <select onchange="populateSubCat();" id="cat" class="form-control select2" style="width: 100%;" name="category_id" required="required">
+                            <option>Select Category</option>
                             @foreach($categories as $cat)
                             <option value="{{$cat->id}}">{{$cat->category_name}}</option>
                             @endforeach
                           </select>
                         </div>
                         <div class="form-group">
-                          <label>Minimal</label>
-                          <select class="form-control select2" style="width: 100%;" name="subcategory_id" required="required">
-                            @foreach($subcategories as $subcat)
-                            <option value="{{$subcat->id}}">{{$subcat->subcategory_name}}</option>
-                            @endforeach
+                          <label>Sub Category </label>
+                          <select class="form-control" style="width: 100%;" name="subcategory_id" required="required">
+                            <optgroup id="scat">
+                          
+                            </optgroup>
                           </select>
                         </div>
                         <div class="form-group">

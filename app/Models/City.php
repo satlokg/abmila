@@ -10,4 +10,18 @@ class City extends Model
     {
         return $this->hasMany(Zone::class);
     }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+
+    public static function boot() {
+        parent::boot();
+
+        static::deleting(function($city) { // before delete() method call this
+             $city->zones()->delete();
+             // do the rest of the cleanup...
+        });
+    }
 }

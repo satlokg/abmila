@@ -32,6 +32,7 @@ City
                 <thead>
                 <tr>
                   <th>City Name</th>
+                  <th>State Name</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -39,7 +40,11 @@ City
                 @foreach($cities as $city)
                 <tr>
                   <td>{{$city->city_name}}</td>
-                  <td>X</td>
+                  <td>{{$city->state->name}}</td>
+                  <td>
+                    <a href="{{route('admin.city.edit',['id'=>$city->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a>
+                    <!-- <a href="" onclick=archiveFunction({{$city->id}},'city')><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a> -->
+                  </td>
                 </tr>
                  @endforeach
                </tbody>
@@ -80,4 +85,5 @@ City
             })
           })
         </script>
+
       @endsection

@@ -49,7 +49,7 @@ Keywords
 
                       <div class="form-group">
                           <label>Category</label>
-                          <select name="category_id" class="form-control select2" data-placeholder="Select a Category"
+                          <select onchange="populateSubCat();" id="cat" name="category_id" class="form-control select2" data-placeholder="Select a Category"
                                   style="width: 100%;">
                             @foreach($categories as $cat)
                             <option value="{{$cat->id}}">{{$cat->category_name}}</option>
@@ -59,21 +59,21 @@ Keywords
 
                         <div class="form-group">
                           <label>Sub Category</label>
-                          <select name="subcategory_name" class="form-control select2" data-placeholder="Select a Category"
+                          <select onchange="populateService();" name="subcategory_name" id="subcat" class="form-control" data-placeholder="Select a Category"
                                   style="width: 100%;">
-                            @foreach($subcategories as $subcat)
-                            <option value="{{$subcat->subcategory_name}}">{{$subcat->subcategory_name}}</option>
-                            @endforeach
+                            <optgroup id="scat">
+                          
+                            </optgroup>
                           </select>
                         </div>
 
                         <div class="form-group">
                           <label>Service</label>
-                          <select name="service_name" class="form-control select2" data-placeholder="Select a Category"
+                          <select name="service_name" class="form-control" data-placeholder="Select a Category"
                                   style="width: 100%;">
-                            @foreach($services as $service)
-                            <option value="{{$service->service_name}}">{{$service->service_name}}</option>
-                            @endforeach
+                            <optgroup id="srv">
+                          
+                            </optgroup>
                             
                           </select>
                         </div>

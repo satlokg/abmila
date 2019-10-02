@@ -14,4 +14,8 @@ class Subcategory extends Model
     {
         return $this->hasMany(Brand::class);
     }
+    public function services()
+    {
+        return $this->hasMany(Service::class);
+    }
 }

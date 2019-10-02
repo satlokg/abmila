@@ -1,6 +1,7 @@
  @extends('layouts.admin')
   @section('css')
  <link rel="stylesheet" href="{{asset('public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
+ <link rel="stylesheet" href="{{asset('public/bower_components/select2/dist/css/select2.min.css')}}">
  @endsection
  @section('bread')
  <section class="content-header">
@@ -35,8 +36,21 @@ City
                       @csrf
                       <div class="box-body">
                         <div class="form-group">
+                          <label>Select Pincode</label>
+                          <select class="form-control select2" style="width: 100%;" name="state_id" required="required">
+                            @foreach($states as $state)
+                            <option value="{{$state->id}}">{{$state->name}}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="form-group">
                           <label for="exampleInputEmail1">Enter City Name</label>
                           <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter City Name" required="required" name="city_name">
+                          @error('city_name')
+                              <span class="invalid-feedback text-danger" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
                         </div>
                       </div>
                       <!-- /.box-body -->
@@ -70,5 +84,14 @@ City
 
    
       <!-- /.row -->
+      @endsection
+      @section('js')
+      <script src="{{asset('public/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+      <script>
+         $(function () {
+        //Initialize Select2 Elements
+          $('.select2').select2()
+         })
+      </script>
       @endsection
      

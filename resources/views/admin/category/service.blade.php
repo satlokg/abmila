@@ -32,6 +32,8 @@
                   <thead>
                   <tr>
                     <th>Service Name</th>
+                    <th>Sub Category Name</th>
+                    <th>Category Name</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -39,7 +41,9 @@
                   @foreach($services as $service)
                   <tr>
                     <td>{{$service->service_name}}</td>
-                    <td>X</td>
+                    <td>{{$service->subcategory->subcategory_name}}</td>
+                    <td>{{$service->subcategory->category->category_name}}</td>
+                    <td><a href="{{route('admin.service.edit',['id'=>$service->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a></td></td>
                   </tr>
                    @endforeach
                  </tbody>
