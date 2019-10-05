@@ -35,7 +35,7 @@
         </li>
 
         <li>
-          <a href="{{route('admin.keyword')}}">
+          <a href="{{route('admin.business')}}">
             <i class="fa fa-th"></i> <span>Business Listing</span>
           </a>
         </li>

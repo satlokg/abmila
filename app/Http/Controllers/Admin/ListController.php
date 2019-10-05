@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,11 +15,27 @@ use App\Models\Listingkeyword;
 
 class ListController extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+	Public function index($id=null,$action=null){
+		if($id!=null){
+			$business =  Listing::where('id',$id)->first(); //dd($business);
+			return view('admin.list.view',compact('business'));
+		}
+		if($action!=null){}
+    	$cities=City::all();
+    	$areas=Area::all();
+    	$pincodes=Pincode::all();
+    	$businesses =  Listing::all();
+    	return view('admin.list.index',compact('businesses','areas','pincodes'));
+    }
     Public function businessList(){
     	$cities=City::all();
     	$areas=Area::all();
     	$pincodes=Pincode::all(); 
-    	return view('user.list.business',compact('cities','areas','pincodes'));
+    	return view('admin.list.business',compact('cities','areas','pincodes'));
     }
 
     Public function businessPost(Request $r){
@@ -33,7 +49,7 @@ class ListController extends Controller
         }
         $listing_id=$r->listing_id;
         $keys = Keyword::all(); 
-        return view('user.list.keyword',compact('listing_id','keys'));
+        return view('admin.list.keyword',compact('listing_id','keys'));
         }
         else{
             //dd($r->all());
@@ -42,7 +58,7 @@ class ListController extends Controller
             $contact = Contact::where('email',$contactDetail['email'])->first(); //dd($contact);
             if($r->submit != 'new'){
                 if($contact!=null){ 
-                    return view('user.list.businessDisplay',compact('contact','contactDetail','list'));
+                    return view('admin.list.businessDisplay',compact('contact','contactDetail','list'));
                 }else{
                     $contact= Contact::Create($contactDetail);
                 }
@@ -55,7 +71,7 @@ class ListController extends Controller
                     $cities=City::all();
                     $areas=Area::all();
                     $pincodes=Pincode::all();
-                    return view('user.list.businessList',compact('cities','areas','pincodes','listing','contact'));
+                    return view('admin.list.businessList',compact('cities','areas','pincodes','listing','contact'));
                 }
         }
     }
@@ -65,6 +81,6 @@ class ListController extends Controller
             $value['listing_id']=$r->listing_id;
             $res=Listingkeyword::Create($value);
         }
-        return view('user.list.thankyou');
+        return view('admin.list.thankyou');
     }
 }

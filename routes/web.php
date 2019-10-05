@@ -97,12 +97,15 @@ Route::prefix('admin')->group(function() {
     //keyword
     Route::get('/keyword', 'Admin\KeywordController@index')->name('admin.keyword');
     Route::get('/keyword/add', 'Admin\KeywordController@keywordForm')->name('admin.keyword.add');
+    Route::get('/keyword/manual', 'Admin\KeywordController@keywordManual')->name('admin.keyword.manual');
     Route::post('/keyword/post', 'Admin\KeywordController@keywordPost')->name('admin.keyword.post');
+    Route::post('/keyword/manualpost', 'Admin\KeywordController@manualpost')->name('admin.keyword.manualpost');
 
     //business
-    Route::get('/business-list', 'Admin\ListController@index')->name('admin.business');
-    Route::get('/business-list/add', 'Admin\ListController@keywordForm')->name('admin.business.add');
-    Route::post('/business-list/post', 'Admin\ListController@keywordPost')->name('admin.business.post');
+    Route::get('/business/{id?}/{action?}', 'Admin\ListController@index')->name('admin.business');
+    Route::get('/business-list', 'Admin\ListController@businessList')->name('admin.businessList');
+    Route::post('/business-list', 'Admin\ListController@businessPost')->name('admin.businessPost');
+    Route::post('/final-list', 'Admin\ListController@finalPost')->name('admin.finalPost');
 
     //ajax
     Route::get('/ajax/delete/{id}/{type}', 'Admin\AjaxController@delete')->name('ajax.delete');
@@ -121,3 +124,4 @@ Route::prefix('vendor')->group(function() {
 
 Route::get('/business-list', 'User\ListController@businessList')->name('businessList');
 Route::post('/business-list', 'User\ListController@businessPost')->name('businessPost');
+Route::post('/final-list', 'User\ListController@finalPost')->name('finalPost');

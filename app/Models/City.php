@@ -15,6 +15,10 @@ class City extends Model
     {
         return $this->belongsTo(State::class);
     }
+    public function listings()
+    {
+        return $this->hasMany(Listings::class);
+    }
 
     public static function boot() {
         parent::boot();

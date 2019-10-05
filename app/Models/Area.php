@@ -10,4 +10,8 @@ class Area extends Model
     {
         return $this->belongsTo(Pincode::class);
     }
+    public function listings()
+    {
+        return $this->hasMany(Listings::class);
+    }
 }

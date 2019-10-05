@@ -5,13 +5,14 @@
  @section('bread')
  <section class="content-header">
       <h1>
-        Keyword
+        Business Listing
       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Keyword</li>
+        <li class="active">Business Listing</li>
       </ol>
+    </section>
 @endsection
 
 
@@ -20,9 +21,8 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Category Detail</h3>
-              <a href="{{route('admin.keyword.add')}}" class="btn btn-sm btn-success">Add Keyword</a>
-              @include('admin.keyword.timeline')
+              <h3 class="box-title">Business Listing Detail</h3>
+              @include('admin.list.timeline')
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -31,18 +31,20 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Category</th>
-                    <th>Keyword Name</th>
+                    <th>Business Title</th>
+                    <th>Posted By</th>
+                    <th>Post Date</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  @foreach($keywords as $keyword)
+                  @foreach($businesses as $business)
                   <tr>
-                    <td>{{$keyword->category->category_name}}</td>
-                    <td>{{$keyword->keyword_name}}</td>
-
-                    <td></td>
+                   <td>{{$business->business_name}}</td>
+                   <td>{{$business->contact->p_name}}</td>
+                   <td>{{$business->created_at}}</td>
+                   <td>
+                      <a href="{{route('admin.business',['id'=>$business->id])}}" class="btn btn-info btn-sm">View</a></td>
                   </tr>
                    @endforeach
                  </tbody>
@@ -52,7 +54,6 @@
                 <!-- /.col -->
             </div>
             <!-- ./box-body -->
-            
             <!-- /.box-footer -->
           </div>
           <!-- /.box -->

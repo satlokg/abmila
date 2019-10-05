@@ -1,19 +1,37 @@
-@extends('layouts.user')
+@extends('layouts.admin')
  @section('css')
  @endsection
- @section('bread')
- 
- @endsection
+@section('bread')
+ <section class="content-header">
+      <h1>
+        Business Listing
+      
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
+        <li class="active">Business Listing</li>
+      </ol>
+@endsection
 
 
 @section('content')
-
-<section class="add-listing-wrapper border-bottom section-bg section-padding-strict">
-        <div class="container">
-            <form action="{{route('businessPost')}}" method="post">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-header with-border">
+              <h3 class="box-title">Business Listing Detail</h3>
+              @include('admin.list.timeline')
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="col">
+                <div class="col-md-12">
+                  <!-- general form elements -->
+                  <div class="box box-primary">
+            <form action="{{route('admin.businessPost')}}" method="post">
                 @csrf
             <div class="row">
-                <div class="col-lg-10 offset-lg-1">
+                <div class="col-lg-12 offset-lg-1">
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
@@ -379,7 +397,16 @@
             </div>
         </form>
         </div>
-    </section><!-- ends: .add-listing-wrapper -->
+            <!-- ./box-body -->
+            </div>
+        </div>
+    </div>
+            <!-- /.box-footer -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
 @endsection
 @section('js')
 

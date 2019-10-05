@@ -15,7 +15,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="{{asset('public/bower_components/Ionicons/css/ionicons.min.css')}}">
   <!-- Theme style -->
-  @yield('css')
+  
   <link rel="stylesheet" href="{{asset('public/dist/css/AdminLTE.min.css')}}">
   <!-- iCheck -->
   <link rel="stylesheet" href="{{asset('public/plugins/iCheck/square/blue.css')}}">
@@ -35,7 +35,7 @@
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">   <script type="text/javascript">
        var SITE_URL = {!! json_encode(url('/')) !!}      
     </script>
-
+@yield('css')
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
 </head>
