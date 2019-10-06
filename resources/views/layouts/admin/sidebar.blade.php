@@ -39,6 +39,12 @@
             <i class="fa fa-th"></i> <span>Business Listing</span>
           </a>
         </li>
+
+        <li>
+          <a href="{{route('admin.lead')}}">
+            <i class="fa fa-th"></i> <span>Lead Management</span>
+          </a>
+        </li>
        
        
         

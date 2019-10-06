@@ -27,4 +27,9 @@ class Listing extends Model
     {
         return $this->hasOne(Listingkeyword::class);
     }
+
+    public function lead()
+    {
+        return $this->hasOne(lead::class);
+    }
 }

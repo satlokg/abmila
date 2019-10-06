@@ -12,6 +12,7 @@ use App\Models\Area;
 use App\Models\Pincode;
 use App\Models\Keyword;
 use App\Models\Listingkeyword;
+use App\Models\Lead;
 
 class ListController extends Controller
 {
@@ -92,4 +93,31 @@ class ListController extends Controller
         }
         return view('admin.list.thankyou');
     }
+
+    Public function lead(){
+       $businesses =  Listing::where('status',1)->get();
+        return view('admin.list.lead',compact('businesses'));
+    }
+
+    Public function leadadd($id=null,$action=null){
+        $business =  Listing::where('id',$id)->first(); //dd($business);
+        return view('admin.list.lead_add',compact('business'));
+    }
+    Public function leadPost(Request $r){ 
+        $lead=Lead::where('listing_id',$r->listing_id)->first(); 
+        if($lead==null){
+            $l=Lead::Create([
+                'listing_id'=>$r->listing_id,
+                'lead'=>$r->lead,
+                'amount'=>$r->amount
+            ]);
+        }else{
+            $l=Lead::where('listing_id',$r->listing_id)->update([
+                'lead'=>$r->lead,
+                'amount'=>$r->amount
+            ]);
+        }
+        return redirect()->route('admin.lead');
+    }
+    
 }
