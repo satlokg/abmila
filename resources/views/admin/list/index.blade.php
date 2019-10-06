@@ -34,6 +34,7 @@
                     <th>Business Title</th>
                     <th>Posted By</th>
                     <th>Post Date</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                   </thead>
@@ -43,6 +44,13 @@
                    <td>{{$business->business_name}}</td>
                    <td>{{$business->contact->p_name}}</td>
                    <td>{{$business->created_at}}</td>
+                   <td>
+                     @if($business->status==1)
+                        Approved
+                        @else
+                        Pending
+                      @endif
+                   </td>
                    <td>
                       <a href="{{route('admin.business',['id'=>$business->id])}}" class="btn btn-info btn-sm">View</a></td>
                   </tr>

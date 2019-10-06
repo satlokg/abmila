@@ -64,6 +64,17 @@
                         </ul>
                     </div>
                   </div>
+                  <div class="col-lg-10 offset-lg-1 text-center">
+                   
+
+                    <div class="btn_wrap list_submit m-top-25">
+                      @if($business->status==0)
+                        <a href="{{route('admin.business',['id'=>$business->id,'action'=>'Approve'])}}" class="btn btn-primary btn-lg listing_submit_btn">Approve</a>
+                        @else
+                         <a href="{{route('admin.business',['id'=>$business->id,'action'=>'Reject'])}}" class="btn btn-danger btn-lg listing_submit_btn">Reject</a>
+                      @endif
+                    </div>
+                </div><!-- ends: .col-lg-10 -->
                 </div>
                 <!-- /.col -->
               </div>

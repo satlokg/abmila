@@ -20,7 +20,8 @@ use App\User;
 Route::get('/', function () {
     return view('user.welcome2');
 });
-
+Route::get('search', 'User\ListController@index')->name('search');
+Route::get('autocomplete', 'User\ListController@autocomplete')->name('autocomplete');
 
 
 Route::get('markasread', function () {
@@ -125,3 +126,4 @@ Route::prefix('vendor')->group(function() {
 Route::get('/business-list', 'User\ListController@businessList')->name('businessList');
 Route::post('/business-list', 'User\ListController@businessPost')->name('businessPost');
 Route::post('/final-list', 'User\ListController@finalPost')->name('finalPost');
+Route::post('/list', 'User\ListController@list')->name('user.list');

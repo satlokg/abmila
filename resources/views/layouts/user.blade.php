@@ -12,6 +12,9 @@
     <!-- inject:css-->
     @yield('css')
     <!-- endinject -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  
+
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/img/fevicon.png')}}">
 </head>
@@ -27,6 +30,8 @@
 <!-- inject:js-->
 <script src="{{asset('public/js/plugins.min.js')}}"></script>
 <script src="{{asset('public/js/script.min.js')}}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <!-- endinject-->
 @yield('js')
 </body>

@@ -12,6 +12,6 @@ class Area extends Model
     }
     public function listings()
     {
-        return $this->hasMany(Listings::class);
+        return $this->hasMany(Listing::class);
     }
 }

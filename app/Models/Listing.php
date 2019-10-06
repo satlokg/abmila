@@ -23,4 +23,8 @@ class Listing extends Model
     {
         return $this->belongsTo(Area::class);
     }
+    public function listingkeyword()
+    {
+        return $this->hasOne(Listingkeyword::class);
+    }
 }

@@ -67,4 +67,23 @@ class ListController extends Controller
         }
         return view('user.list.thankyou');
     }
+
+    public function autocomplete(Request $request)
+    {
+        $search = $request->get('term');
+      
+          $result = Keyword::where('keyword_name', 'LIKE', '%'. $search. '%')->get();
+ 
+          return response()->json($result);
+    }
+
+    public function list(Request $request)
+    {
+        $search = $request->get('term');
+      
+          $result = Listingkeyword::where('keyword',$request->key)->with('listing')->get();
+    dd($result);
+          return response()->json($result);
+    }
+    
 }

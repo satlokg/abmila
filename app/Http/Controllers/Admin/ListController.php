@@ -20,6 +20,15 @@ class ListController extends Controller
         $this->middleware('auth:admin');
     }
 	Public function index($id=null,$action=null){
+		
+		if($action=='Approve'){ //dd($action);
+			$business =  Listing::where('id',$id)->update(['status'=>1]); //dd($business);
+			// return redirect()->back()->with('success', ['your message,here']);   
+		}
+		if($action=='Reject'){
+			$business =  Listing::where('id',$id)->update(['status'=>0]); //dd($business);
+			// return redirect()->back()->with('success', ['your message,here']);   
+		}
 		if($id!=null){
 			$business =  Listing::where('id',$id)->first(); //dd($business);
 			return view('admin.list.view',compact('business'));

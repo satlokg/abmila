@@ -9,4 +9,9 @@ class Listingkeyword extends Model
    	protected $fillable=[
    		'listing_id','keyword'
     ];
+
+    public function listing()
+    {
+        return $this->belongsTo(Listing::class);
+    }
 }
