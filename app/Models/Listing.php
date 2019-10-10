@@ -30,6 +30,6 @@ class Listing extends Model
 
     public function lead()
     {
-        return $this->hasOne(lead::class);
+        return $this->hasOne(Lead::class);
     }
 }
