@@ -3,6 +3,7 @@
 namespace App\Models;
 use App\Models\Keyword;
 use App\Models\Category;
+use App\Models\Opening;
 use Illuminate\Database\Eloquent\Model;
 
 class Listingkeyword extends Model
@@ -26,4 +27,12 @@ class Listingkeyword extends Model
     	return $k;
     	//dd($k->category_id);
     }
+    public function getday($id){
+    	$k=Opening::where('listing_id',$id)
+    	->where('day',date("l"))
+    	->first();
+    	return 'Open '.$k->start.'- Close '.$k->close;
+    	//dd($k->category_id);
+    }
+
 }

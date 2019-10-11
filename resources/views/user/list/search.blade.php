@@ -58,7 +58,22 @@
                   </div>
                 </div>
                 <div class="col-md-3">
-                  <img src="{{url('public/img/icon3.png')}}" class="card-img" alt="...">
+                  <div class="col-md-12 row">
+                  <div class="pull-right" style="color: red; margin: 10px 0 0 0;">
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                 </div>
+                 <div class="col-md-12 row">
+                     <p class="pull-right" style="color: green">{{$r->getday($r->listing->id)}}</p>
+                  </div>
+                  <div class="col-md-12 row">
+                      <button class="btn btn-primary pull-right">Get Quotes</button>
+                  </div>
+                  
                 </div>
               </div>
               <div class="input-group mb-3">
