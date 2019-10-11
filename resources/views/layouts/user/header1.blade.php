@@ -10,7 +10,17 @@
     </div>
 </div>
 <div class="col-sm-6">
-    
+    <form action="{{route('user.list')}}" method="post" class="search_form">
+      @csrf
+        <div class="atbd_seach_fields_wrapper">
+            <div class="input-group mb-3">
+          <input class="form-control" id="search" type="text" placeholder="What are you looking for?" name="key">
+          <div class="input-group-append">
+            <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search btmmnsearc">Search</button>
+          </div>
+        </div>
+        </div>
+    </form><!-- ends: .search_form -->
 </div>
 <div class="col-sm-3">
     <div class="author__access_area ">
@@ -75,5 +85,11 @@
     </div>
 </div>
 </div>
+</div>
+</div>
+<!-- banner -->
+<div class="container">
+<div class="col-sm-12" style="padding: 0">
+    <h1>Banner</h1>
 </div>
 </div>

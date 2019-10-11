@@ -12,6 +12,7 @@ use App\Models\Area;
 use App\Models\Pincode;
 use App\Models\Keyword;
 use App\Models\Listingkeyword;
+use App\Models\Category;
 
 class ListController extends Controller
 {
@@ -80,10 +81,20 @@ class ListController extends Controller
     public function list(Request $request)
     {
         $search = $request->get('term');
-      
-          $result = Listingkeyword::where('keyword',$request->key)->with('listing')->get();
-    dd($result);
-          return response()->json($result);
+        $cats = Category::all();
+          $results = Listingkeyword::where('keyword',$request->key)->get();
+          //dd($results);
+        return view('user.list.search',compact('results','cats'));
     }
+    public function leadUserPost(Request $request)
+    {
+        dd($request->all());
+        $search = $request->get('term');
+        $cats = Category::all();
+          $results = Listingkeyword::where('keyword',$request->key)->get();
+          //dd($results);
+        return view('user.list.search',compact('results','cats'));
+    }
+    
     
 }

@@ -16,7 +16,7 @@
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-user"></span>List of Your Listings</h4>
+                                <b>The Following Company already exist with us for the contact details entered by you. Click on the listing name you would like to edit or Click New Listing To register New Company with us.</b>
                             </div>
                         </div>
                         <div class="atbdb_content_module_contents">

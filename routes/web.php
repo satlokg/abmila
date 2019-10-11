@@ -114,6 +114,7 @@ Route::prefix('admin')->group(function() {
     Route::post('/lead/post', 'Admin\ListController@leadPost')->name('admin.lead.post');
     Route::get('/lead/edit/{id}', 'Admin\ListController@areaEdit')->name('admin.lead.edit');
 
+
     //ajax
     Route::get('/ajax/delete/{id}/{type}', 'Admin\AjaxController@delete')->name('ajax.delete');
     Route::get('/ajax/{id}/{type}', 'Admin\AdminController@ajax')->name('admin.ajax');
@@ -133,3 +134,4 @@ Route::get('/business-list', 'User\ListController@businessList')->name('business
 Route::post('/business-list', 'User\ListController@businessPost')->name('businessPost');
 Route::post('/final-list', 'User\ListController@finalPost')->name('finalPost');
 Route::post('/list', 'User\ListController@list')->name('user.list');
+Route::post('/lead/user/post', 'User\ListController@leadUserPost')->name('lead.user.post');
