@@ -50,7 +50,6 @@
                     <h5 class="card-title"><a href="#">{{$r->listing->business_name}}</a></h5>
                     <p class="card-text">{{$r->listing->area->area_name}},{{$r->listing->area->pincode->zone->city->city_name}}</p>
                     <p>{{$r->listing->contact->phone}}</p>
-                    <p>{{$r->listing->contact->email}}</p>
                     <p>
                     @foreach($r->getallkey($r->listing->id) as $k) 
                         {{$k->keyword}},

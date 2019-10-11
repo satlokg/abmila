@@ -82,13 +82,18 @@ class ListController extends Controller
     {
         $search = $request->get('term');
         $cats = Category::all();
-          $results = Listingkeyword::where('keyword',$request->key)->get();
+          $results = Listingkeyword::whereHas('listing', function ($query) {
+                        $query->where('status', '=', 1);
+                        $query->whereHas('lead', function ($query1) {
+                            $query1->orderBy('amount','desc');
+                        });
+                    })->where('keyword',$request->key)->get();
           //dd($results);
         return view('user.list.search',compact('results','cats'));
     }
     public function leadUserPost(Request $request)
     {
-        dd($request->all());
+       // dd($request->all());
         $search = $request->get('term');
         $cats = Category::all();
           $results = Listingkeyword::where('keyword',$request->key)->get();
