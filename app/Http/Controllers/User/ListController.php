@@ -20,7 +20,8 @@ class ListController extends Controller
     	$cities=City::all();
     	$areas=Area::all();
     	$pincodes=Pincode::all(); 
-    	return view('user.list.business',compact('cities','areas','pincodes'));
+        $states=State::all(); 
+    	return view('user.list.business',compact('cities','areas','pincodes','states'));
     }
 
     Public function businessPost(Request $r){
@@ -56,7 +57,8 @@ class ListController extends Controller
                     $cities=City::all();
                     $areas=Area::all();
                     $pincodes=Pincode::all();
-                    return view('user.list.businessList',compact('cities','areas','pincodes','listing','contact'));
+                    $states=State::all(); 
+                    return view('user.list.businessList',compact('cities','areas','pincodes','listing','contact','states'));
                 }
         }
     }
@@ -100,6 +102,31 @@ class ListController extends Controller
           //dd($results);
         return view('user.list.search',compact('results','cats'));
     }
+     public function businessListEdit($id)
+    {
+        $cats = Category::all();
+        $results = Listing::find($id);
+        $cities=City::all();
+        $areas=Area::all();
+        $pincodes=Pincode::all();
+        $states=State::all(); 
+        return view('user.list.businessListEdit',compact('cities','areas','pincodes','listing','contact','cats','states'));
+    }
     
-    
+
+
+
+    ///////ajax
+    public function ajax($action=null,$id=null){ //dd($action);
+        switch($action){
+            case "getPincode": 
+               $item=Area::find($id);
+                        $html= '<option value="'.$item->pincode->id.'">'.$item->pincode->pincode.'</option>';
+                    
+              echo $html;
+            break;
+              
+        }
+
+    }
 }

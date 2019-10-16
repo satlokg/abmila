@@ -74,13 +74,6 @@ function populateSubCatForKey(){
                     //alert("fail" + ' ' + this.data)
                 },
             });
-            //response: $.parseJSON(response)
-                          // $.each(response, function(index) { console.log(response);
-                          //         // $.each(response[index], function(key, value) {
-                          //            var newOption = new Option(response[index].subcategory_name, response[index].id, false, false);
-                          //            $('#scat').append(newOption).trigger('change');
-                          //         // });
-                          //     });
         }
 function populateService(){
  var subcat = $('#subcat').find(":selected").val();

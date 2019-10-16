@@ -1,41 +1,23 @@
-@extends('layouts.admin')
+@extends('layouts.user')
  @section('css')
  @endsection
-@section('bread')
- <section class="content-header">
-      <h1>
-        Business Listing
-      
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Business Listing</li>
-      </ol>
-@endsection
+ @section('bread')
+ 
+ @endsection
 
 
 @section('content')
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title">Business Listing Detail</h3>
-              @include('admin.list.timeline')
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-                <div class="col">
-                <div class="col-md-12">
-                  <!-- general form elements -->
-                  <div class="box box-primary">
-            <form action="{{route('admin.businessPost')}}" method="post">
+
+<section class="add-listing-wrapper border-bottom section-bg section-padding-strict">
+        <div class="container">
+            <form action="{{route('businessPost')}}" method="post">
                 @csrf
             <div class="row">
-                <div class="col-lg-12 offset-lg-1">
+                <div class="col-lg-10 offset-lg-1">
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-user"></span>General Information</h4>
+                                <h4>General Information</h4>
                             </div>
                         </div>
                          <input name="contact_id" type="hidden" value="{{$contact->id}}">
@@ -80,7 +62,7 @@
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select Area</label>
                                     <div class="select-basic">
-                                         <select onchange="populatePincode();" id="area"  name="general[area_id]" required="required" class="form-control " id="ad_area">
+                                        <select name="general[area_id]" required="required" class="form-control " id="ad_area">
                                             <option value="">Select Area</option>
                                             @foreach($areas as $area)
                                                 <option value="{{$area->id}}">{{$area->area_name}}</option>
@@ -93,9 +75,10 @@
                                     <label for="ad_categroy" class="form-label">Select Pincode</label>
                                     <div class="select-basic">
                                         <select name="general[pincode_id]" required="required" class="form-control " id="ad_pincode">
-                                            <optgroup id="pincode">
-                          
-                                             </optgroup>
+                                            <option value="">Select Pincode</option>
+                                            @foreach($pincodes as $pincode)
+                                                <option value="{{$pincode->id}}">{{$pincode->pincode}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
@@ -105,9 +88,7 @@
                                     <div class="select-basic">
                                         <select name="general[state_id]" required="required" class="form-control ad_search_category" id="ad_state">
                                             <option>Select State</option>
-                                            @foreach($states as $state)
-                                            <option>{{$state->name}}</option>
-                                            @endforeach
+                                            
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
@@ -117,14 +98,13 @@
                                     <div class="select-basic">
                                         <select name="general[country_id]" required="required" class="form-control ad_search_category" id="ad_country">
                                             <option>Select Country</option>
-                                            <option>India</option>
+                                            
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
-
                                 <div class="form-group">
                                     <label for="title" class="form-label">Offer</label>
-                                    <input type="text" name="general[offer]" class="form-control" id="title" placeholder="Enter Offer"
+                                    <input type="text" name="general[offer]"  class="form-control" id="title" placeholder="Enter Offer"
                                            required>
                                 </div>
                                 </div>
@@ -191,8 +171,6 @@
                                     <label for="website_address" class="form-label">Website</label>
                                     <input name="contact[website]" value="{{$contact->website}}" type="text" id="website_address" class="form-control" placeholder="Listing Website eg. http://example.com">
                                 </div>
-
-
                                 
                            
                         </div><!-- ends: .atbdb_content_module_contents -->
@@ -406,38 +384,8 @@
             </div>
         </form>
         </div>
-            <!-- ./box-body -->
-            </div>
-        </div>
-    </div>
-            <!-- /.box-footer -->
-          </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.col -->
-      </div>
+    </section><!-- ends: .add-listing-wrapper -->
 @endsection
 @section('js')
-<script type="text/javascript">
-    function populatePincode(){
- var area = $('#area').find(":selected").val();
- var action = "getPincode";
-          var url = SITE_URL+"user/ajax/"+action+"/"+area;
-          //alert(url);
-          $.ajax({
-                method: 'get',
-                url: url,
-                dataType:'html',
-                success: function(response){
-                 $('#pincode').html(response);
-                    console.log(response);
-                },
-                error: function(data){
-                    console.log(data);
-                    //alert("fail" + ' ' + this.data)
-                },
-            });
-           
-        }
-</script>
+
 @endsection

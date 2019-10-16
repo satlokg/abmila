@@ -105,6 +105,7 @@ Route::prefix('admin')->group(function() {
     //business
     Route::get('/business/{id?}/{action?}', 'Admin\ListController@index')->name('admin.business');
     Route::get('/business-list', 'Admin\ListController@businessList')->name('admin.businessList');
+    Route::get('/business-list/edit/{id}', 'Admin\ListController@businessListEdit')->name('admin.businessListEdit');
     Route::post('/business-list', 'Admin\ListController@businessPost')->name('admin.businessPost');
     Route::post('/final-list', 'Admin\ListController@finalPost')->name('admin.finalPost');
 
@@ -130,7 +131,8 @@ Route::prefix('vendor')->group(function() {
 
 //user
 
-Route::get('/business-list', 'User\ListController@businessList')->name('businessList');
+Route::get('/business-list/', 'User\ListController@businessList')->name('businessList');
+Route::get('/business-list/edit/{id}', 'User\ListController@businessListEdit')->name('businessListEdit');
 Route::post('/business-list', 'User\ListController@businessPost')->name('businessPost');
 Route::post('/final-list', 'User\ListController@finalPost')->name('finalPost');
 Route::post('/list', 'User\ListController@list')->name('user.list');

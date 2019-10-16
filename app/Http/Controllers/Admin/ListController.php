@@ -13,6 +13,7 @@ use App\Models\Pincode;
 use App\Models\Keyword;
 use App\Models\Listingkeyword;
 use App\Models\Lead;
+use App\Models\State;
 
 class ListController extends Controller
 {
@@ -45,7 +46,8 @@ class ListController extends Controller
     	$cities=City::all();
     	$areas=Area::all();
     	$pincodes=Pincode::all(); 
-    	return view('admin.list.business',compact('cities','areas','pincodes'));
+        $states=State::all(); 
+    	return view('admin.list.business',compact('cities','areas','pincodes','states'));
     }
 
     Public function businessPost(Request $r){
@@ -81,7 +83,8 @@ class ListController extends Controller
                     $cities=City::all();
                     $areas=Area::all();
                     $pincodes=Pincode::all();
-                    return view('admin.list.businessList',compact('cities','areas','pincodes','listing','contact'));
+                    $states=State::all(); 
+                    return view('admin.list.businessList',compact('cities','areas','pincodes','listing','contact','states'));
                 }
         }
     }
@@ -119,5 +122,14 @@ class ListController extends Controller
         }
         return redirect()->route('admin.lead');
     }
-    
+    public function businessListEdit($id)
+    {
+        $cats = Category::all();
+        $results = Listing::find($id);
+        $cities=City::all();
+        $areas=Area::all();
+        $pincodes=Pincode::all();
+        $states=State::all(); 
+        return view('admin.list.businessListEdit',compact('cities','areas','pincodes','listing','contact','cats','states'));
+    }
 }
