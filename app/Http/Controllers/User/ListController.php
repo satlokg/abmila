@@ -13,6 +13,7 @@ use App\Models\Pincode;
 use App\Models\Keyword;
 use App\Models\Listingkeyword;
 use App\Models\Category;
+use App\Models\State;
 
 class ListController extends Controller
 {
