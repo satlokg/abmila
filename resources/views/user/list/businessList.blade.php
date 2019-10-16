@@ -62,7 +62,7 @@
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select Area</label>
                                     <div class="select-basic">
-                                        <select onchange="populateSubCat();" id="area"  name="general[area_id]" required="required" class="form-control " id="ad_area">
+                                        <select onchange="populatePincode();" id="area"  name="general[area_id]" required="required" class="form-control " id="ad_area">
                                             <option value="">Select Area</option>
                                             @foreach($areas as $area)
                                                 <option value="{{$area->id}}">{{$area->area_name}}</option>
