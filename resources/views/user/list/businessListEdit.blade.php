@@ -142,34 +142,34 @@
                                 </div><!-- ends: .form-group -->
                                 <div class="form-group col-sm-5">
                                     <label for="address" class="form-label">Contact Person</label>
-                                    <input name="contact[p_name]" required="required" type="text" placeholder="Contact Person" id="address" class="form-control" value="{{$contact->p_name}}">
+                                    <input name="contact[p_name]" required="required" type="text" placeholder="Contact Person" id="address" class="form-control" value="{{$listing->contact->p_name}}">
                                 </div>
                                 <div class="form-group col-sm-5">
                                     <label for="address" class="form-label">Designation</label>
-                                    <input name="contact[designation]" required="required" type="text" placeholder="Designation" id="address" class="form-control" value="{{$contact->designation}}">
+                                    <input name="contact[designation]" required="required" type="text" placeholder="Designation" id="address" class="form-control" value="{{$listing->contact->designation}}">
                                 </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Email</label>
-                                    <input name="contact[email]" required="required" type="text" placeholder="Email" id="phone_number" class="form-control"  value="{{$contact->email}}">
+                                    <input name="contact[email]" required="required" type="text" placeholder="Email" id="phone_number" class="form-control"  value="{{$listing->contact->email}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Phone Number</label>
-                                    <input name="contact[phone]" required="required" type="text" placeholder="Phone Number" id="phone_number" class="form-control" value="{{$contact->phone}}">
+                                    <input name="contact[phone]" required="required" type="text" placeholder="Phone Number" id="phone_number" class="form-control" value="{{$listing->contact->phone}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Landline Number</label>
-                                    <input name="contact[landline]" required="required" type="text" placeholder="Landline Number" id="phone_number" class="form-control" value="{{$contact->landline}}">
+                                    <input name="contact[landline]" required="required" type="text" placeholder="Landline Number" id="phone_number" class="form-control" value="{{$listing->contact->landline}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Fax Number</label>
-                                    <input name="contact[fax]" type="text" placeholder="Fax Number" id="phone_number" class="form-control" value="{{$contact->fax}}">
+                                    <input name="contact[fax]" type="text" placeholder="Fax Number" id="phone_number" class="form-control" value="{{$listing->contact->fax}}">
                                 </div>
                                
                                 <div class="form-group">
                                     <label for="website_address" class="form-label">Website</label>
-                                    <input name="contact[website]" value="{{$contact->website}}" type="text" id="website_address" class="form-control" placeholder="Listing Website eg. http://example.com">
+                                    <input name="contact[website]" value="{{$listing->contact->website}}" type="text" id="website_address" class="form-control" placeholder="Listing Website eg. http://example.com">
                                 </div>
                                 
                            
