@@ -71,7 +71,7 @@
                      <p class="pull-right" style="color: green">{{$r->getday($r->listing->id)}}</p>
                   </div>
                   <div class="col-md-12 row">
-                      <button class="btn btn-primary pull-right">Get Quotes</button>
+                      <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Get Quotes</button>
                   </div>
                   
                 </div>
@@ -99,6 +99,7 @@
                 <p></p>
                 <form action="{{route('lead.user.post')}}" method="post">
                     @csrf
+                    <input type="hidden" name="key" value="{{$key}}">
                     <div class="form-group">
                         <input type="text" name="name" class="form-control" placeholder="Name">
                     </div>

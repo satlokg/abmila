@@ -13,6 +13,8 @@ use App\Models\Pincode;
 use App\Models\Keyword;
 use App\Models\Listingkeyword;
 use App\Models\Category;
+use App\Mail\LeadMail;
+use Illuminate\Support\Facades\Mail;
 
 class ListController extends Controller
 {
@@ -82,6 +84,7 @@ class ListController extends Controller
     {
         $search = $request->get('term');
         $cats = Category::all();
+        $key = $request->key;
           $results = Listingkeyword::whereHas('listing', function ($query) {
                         $query->where('status', '=', 1);
                         $query->whereHas('lead', function ($query1) {
@@ -89,15 +92,29 @@ class ListController extends Controller
                         });
                     })->where('keyword',$request->key)->get();
           //dd($results);
-        return view('user.list.search',compact('results','cats'));
+        return view('user.list.search',compact('results','cats','key'));
     }
     public function leadUserPost(Request $request)
     {
-       // dd($request->all());
-        $search = $request->get('term');
-        $cats = Category::all();
-          $results = Listingkeyword::where('keyword',$request->key)->get();
-          //dd($results);
+        //dd($request->all());
+       $results = Listingkeyword::whereHas('listing', function ($query) {
+                        $query->where('status', '=', 1);
+                        $query->limit(7);
+                        $query->whereHas('lead', function ($query1) {
+                            $query1->orderBy('amount','desc');
+                            $query1->whereNotNull('amount');
+                        });
+                    })->where('keyword',$request->key)->with('listing.lead','listing.contact')->get();
+       //dd($results);
+
+       foreach ($results as $key => $listing) {
+        $obj->name = $request->name;
+        $obj->email = $request->email;
+        $obj->phone = $request->phone;
+        $obj->list_title = $listing->business_name; dd($obj);
+           Mail::to($listing->contact->email)->send(new LeadMail($obj));
+       }
+       
         return view('user.list.search',compact('results','cats'));
     }
     
