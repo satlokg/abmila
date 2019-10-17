@@ -106,7 +106,7 @@ class ListController extends Controller
      public function businessListEdit($id)
     {
         $cats = Category::all();
-        $results = Listing::find($id);
+        $listing = Listing::find($id);
         $cities=City::all();
         $areas=Area::all();
         $pincodes=Pincode::all();
