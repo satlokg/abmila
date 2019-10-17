@@ -41,7 +41,7 @@
                                  @foreach($contact->listings as $listing)
                                   <li class="list-group-item d-flex justify-content-between align-items-center">
                                     {{$listing->business_name}}
-                                    <a class="badge badge-primary badge-pill  text-white">Edit</a>
+                                    <a href="{{route('admin.businessListEdit',['id'=>$listing->id])}}" class="badge badge-primary badge-pill  text-white">Edit</a>
                                   </li>
                                   @endforeach
                                 </ul>

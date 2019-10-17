@@ -17,7 +17,7 @@
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-user"></span>General Information</h4>
+                                <h4>General Information</h4>
                             </div>
                         </div>
                         <div class="atbdb_content_module_contents">

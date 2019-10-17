@@ -80,7 +80,7 @@
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select Area</label>
                                     <div class="select-basic">
-                                        <select name="general[area_id]" required="required" class="form-control " id="ad_area">
+                                         <select onchange="populatePincode();" id="area"  name="general[area_id]" required="required" class="form-control " id="ad_area">
                                             <option value="">Select Area</option>
                                             @foreach($areas as $area)
                                                 <option value="{{$area->id}}">{{$area->area_name}}</option>
@@ -93,10 +93,9 @@
                                     <label for="ad_categroy" class="form-label">Select Pincode</label>
                                     <div class="select-basic">
                                         <select name="general[pincode_id]" required="required" class="form-control " id="ad_pincode">
-                                            <option value="">Select Pincode</option>
-                                            @foreach($pincodes as $pincode)
-                                                <option value="{{$pincode->id}}">{{$pincode->pincode}}</option>
-                                            @endforeach
+                                            <optgroup id="pincode">
+                          
+                                             </optgroup>
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
@@ -106,7 +105,9 @@
                                     <div class="select-basic">
                                         <select name="general[state_id]" required="required" class="form-control ad_search_category" id="ad_state">
                                             <option>Select State</option>
-                                            
+                                            @foreach($states as $state)
+                                            <option>{{$state->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
@@ -116,12 +117,18 @@
                                     <div class="select-basic">
                                         <select name="general[country_id]" required="required" class="form-control ad_search_category" id="ad_country">
                                             <option>Select Country</option>
-                                            
+                                            <option>India</option>
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
-                                </div>
 
+                                
+                                </div>
+                                <div class="form-group  col-sm-12">
+                                    <label for="title" class="form-label">Offer</label>
+                                    <input type="text" name="general[offer]" class="form-control" id="title" placeholder="Enter Offer"
+                                           required>
+                                </div>
                             
                         </div><!-- ends: .atbdb_content_module_contents -->
                     </div><!-- ends: .atbd_content_module -->
@@ -177,13 +184,15 @@
 
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Fax Number</label>
-                                    <input name="contact[fax]" required="required" type="text" placeholder="Fax Number" id="phone_number" class="form-control" value="{{$contact->fax}}">
+                                    <input name="contact[fax]" type="text" placeholder="Fax Number" id="phone_number" class="form-control" value="{{$contact->fax}}">
                                 </div>
                                
                                 <div class="form-group">
                                     <label for="website_address" class="form-label">Website</label>
                                     <input name="contact[website]" value="{{$contact->website}}" type="text" id="website_address" class="form-control" placeholder="Listing Website eg. http://example.com">
                                 </div>
+
+
                                 
                            
                         </div><!-- ends: .atbdb_content_module_contents -->
@@ -409,5 +418,26 @@
       </div>
 @endsection
 @section('js')
-
+<script type="text/javascript">
+    function populatePincode(){
+ var area = $('#area').find(":selected").val();
+ var action = "getPincode";
+          var url = SITE_URL+"/user/ajax/"+action+"/"+area;
+          //alert(url);
+          $.ajax({
+                method: 'get',
+                url: url,
+                dataType:'html',
+                success: function(response){
+                 $('#pincode').html(response);
+                    console.log(response);
+                },
+                error: function(data){
+                    console.log(data);
+                    //alert("fail" + ' ' + this.data)
+                },
+            });
+           
+        }
+</script>
 @endsection

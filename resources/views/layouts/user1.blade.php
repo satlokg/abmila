@@ -13,7 +13,9 @@
     @yield('css')
     <!-- endinject -->
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
-  
+  <script type="text/javascript">
+       var SITE_URL = {!! json_encode(url('/')) !!}      
+    </script>
 
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/img/fevicon.png')}}">
