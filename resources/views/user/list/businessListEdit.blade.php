@@ -88,7 +88,9 @@
                                     <div class="select-basic">
                                         <select name="general[state_id]" required="required" class="form-control ad_search_category" id="ad_state">
                                             <option>Select State</option>
-                                            
+                                            @foreach($states as $state)
+                                            <option>{{$state->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
@@ -98,7 +100,7 @@
                                     <div class="select-basic">
                                         <select name="general[country_id]" required="required" class="form-control ad_search_category" id="ad_country">
                                             <option>Select Country</option>
-                                            
+                                            <option>India</option>
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->

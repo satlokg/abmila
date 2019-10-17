@@ -38,7 +38,7 @@
                                 <h4><span class="la la-user"></span>General Information</h4>
                             </div>
                         </div>
-                         <input name="contact_id" type="hidden" value="{{$contact->id}}">
+                         <input name="contact_id" type="hidden" value="{{$listing->contact->id}}">
                          <input name="listing_id" type="hidden" value="{{$listing->id}}">
                         <div class="atbdb_content_module_contents">
                             
@@ -50,19 +50,17 @@
 
                                 <div class="form-group">
                                     <label for="title" class="form-label">Address 1</label>
-                                    <input type="text" name="general[address1]" required="required" class="form-control" id="title" placeholder="Enter Address 1" value="">
+                                    <input type="text" name="general[address1]" required="required" class="form-control" id="title" placeholder="Enter Address 1"  value="{{$listing->id}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="title" class="form-label">Address 2</label>
-                                    <input type="text" name="general[address2]" required="required" class="form-control" id="title" placeholder="Enter Address 2"
-                                           required>
+                                    <input type="text" name="general[address2]" required="required" class="form-control" id="title" placeholder="Enter Address 2" value="{{$listing->id}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="title" class="form-label">Landmark</label>
-                                    <input type="text" name="general[landmark]" required="required" class="form-control" id="title" placeholder="Enter Landmark"
-                                           required>
+                                    <input type="text" name="general[landmark]" required="required" class="form-control" id="title" placeholder="Enter Landmark"  value="{{$listing->id}}">
                                 </div>
                                
                                <div class="row">
@@ -106,7 +104,9 @@
                                     <div class="select-basic">
                                         <select name="general[state_id]" required="required" class="form-control ad_search_category" id="ad_state">
                                             <option>Select State</option>
-                                            
+                                            @foreach($states as $state)
+                                            <option>{{$state->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
@@ -116,7 +116,7 @@
                                     <div class="select-basic">
                                         <select name="general[country_id]" required="required" class="form-control ad_search_category" id="ad_country">
                                             <option>Select Country</option>
-                                            
+                                            <option>India</option>
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->
@@ -160,20 +160,20 @@
                                 </div><!-- ends: .form-group -->
                                 <div class="form-group col-sm-5">
                                     <label for="address" class="form-label">Contact Person</label>
-                                    <input name="contact[p_name]" required="required" type="text" placeholder="Contact Person" id="address" class="form-control" value="{{$contact->p_name}}">
+                                    <input name="contact[p_name]" required="required" type="text" placeholder="Contact Person" id="address" class="form-control" value="{{$listing->contact->p_name}}">
                                 </div>
                                 <div class="form-group col-sm-5">
                                     <label for="address" class="form-label">Designation</label>
-                                    <input name="contact[designation]" required="required" type="text" placeholder="Designation" id="address" class="form-control" value="{{$contact->designation}}">
+                                    <input name="contact[designation]" required="required" type="text" placeholder="Designation" id="address" class="form-control" value="{{$listing->contact->designation}}">
                                 </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Email</label>
-                                    <input name="contact[email]" required="required" type="text" placeholder="Email" id="phone_number" class="form-control"  value="{{$contact->email}}">
+                                    <input name="contact[email]" required="required" type="text" placeholder="Email" id="phone_number" class="form-control"  value="{{$listing->contact->email}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Phone Number</label>
-                                    <input name="contact[phone]" required="required" type="text" placeholder="Phone Number" id="phone_number" class="form-control" value="{{$contact->phone}}">
+                                    <input name="contact[phone]" required="required" type="text" placeholder="Phone Number" id="phone_number" class="form-control" value="{{$listing->contact->phone}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Landline Number</label>
@@ -182,12 +182,12 @@
 
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Fax Number</label>
-                                    <input name="contact[fax]" type="text" placeholder="Fax Number" id="phone_number" class="form-control" value="{{$contact->fax}}">
+                                    <input name="contact[fax]" type="text" placeholder="Fax Number" id="phone_number" class="form-control" value="{{$listing->contact->fax}}">
                                 </div>
                                
                                 <div class="form-group">
                                     <label for="website_address" class="form-label">Website</label>
-                                    <input name="contact[website]" value="{{$contact->website}}" type="text" id="website_address" class="form-control" placeholder="Listing Website eg. http://example.com">
+                                    <input name="contact[website]" value="{{$listing->contact->website}}" type="text" id="website_address" class="form-control" placeholder="Listing Website eg. http://example.com">
                                 </div>
                                 
                            

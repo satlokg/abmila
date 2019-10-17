@@ -392,7 +392,7 @@
     function populatePincode(){
  var area = $('#area').find(":selected").val();
  var action = "getPincode";
-          var url = SITE_URL+"user/ajax/"+action+"/"+area;
+          var url = SITE_URL+"/user/ajax/"+action+"/"+area;
           //alert(url);
           $.ajax({
                 method: 'get',
