@@ -122,13 +122,13 @@
                                     </div>
                                 </div><!-- ends: .form-group -->
 
-                                <div class="form-group">
+                                
+                                </div>
+                                <div class="form-group  col-sm-12">
                                     <label for="title" class="form-label">Offer</label>
                                     <input type="text" name="general[offer]" class="form-control" id="title" placeholder="Enter Offer"
                                            required>
                                 </div>
-                                </div>
-
                             
                         </div><!-- ends: .atbdb_content_module_contents -->
                     </div><!-- ends: .atbd_content_module -->
