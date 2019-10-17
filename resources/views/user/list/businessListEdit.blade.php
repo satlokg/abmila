@@ -20,7 +20,7 @@
                                 <h4>General Information</h4>
                             </div>
                         </div>
-                         <input name="contact_id" type="hidden" value="{{$contact->id}}">
+                         <input name="contact_id" type="hidden" value="{{$listing->contact->id}}">
                          <input name="listing_id" type="hidden" value="{{$listing->id}}">
                         <div class="atbdb_content_module_contents">
                             
