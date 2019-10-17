@@ -137,3 +137,4 @@ Route::post('/business-list', 'User\ListController@businessPost')->name('busines
 Route::post('/final-list', 'User\ListController@finalPost')->name('finalPost');
 Route::post('/list', 'User\ListController@list')->name('user.list');
 Route::post('/lead/user/post', 'User\ListController@leadUserPost')->name('lead.user.post');
+Route::get('user/ajax/{id}/{type}', 'User\ListController@ajax')->name('user.ajax');
