@@ -60,7 +60,7 @@
                                     </div>
                                 </div><!-- ends: .form-group -->
                                 <div class="form-group col-sm-6">
-                                    <label for="ad_categroy" class="area form-label">Select Area</label>
+                                    <label for="ad_categroy" class="form-label">Select Area</label>
                                     <div class="select-basic">
                                         <select onchange="populatePincode();" id="area"  name="general[area_id]" required="required" class="area form-control " id="ad_area">
                                             <option value="">Select Area</option>
