@@ -16,7 +16,7 @@
   <script type="text/javascript">
        var SITE_URL = {!! json_encode(url('/')) !!}      
     </script>
-
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/css/select2.min.css" rel="stylesheet" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/img/fevicon.png')}}">
     <style type="text/css">
@@ -34,10 +34,7 @@
 </head>
 <body>
 @include('layouts.user.header1')
-
-
 	@yield('content')
-
 @include('layouts.user.footer')
  
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0C5etf1GVmL_ldVAichWwFFVcDfa1y_c"></script>
@@ -47,6 +44,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
 <!-- endinject-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/js/select2.min.js"></script>
+
 @yield('js')
 </body>
 

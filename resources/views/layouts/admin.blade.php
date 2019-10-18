@@ -35,6 +35,8 @@
    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">   <script type="text/javascript">
        var SITE_URL = {!! json_encode(url('/')) !!}      
     </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/css/select2.min.css" rel="stylesheet" />
+
 @yield('css')
   <!-- Google Font -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
@@ -126,6 +128,7 @@
   @endif
 </script>
 <script src="{{asset('public/img/abmila.js')}}" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/js/select2.min.js"></script>
 @yield('js')
 </body>
 </html>

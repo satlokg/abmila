@@ -2,6 +2,13 @@
  @section('css')
  @endsection
 @section('bread')
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('.city').select2();
+    $('.area').select2();
+    $('.state').select2();
+});
+</script>
  <section class="content-header">
       <h1>
         Business Listing
@@ -69,7 +76,7 @@
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select City</label>
                                     <div class="select-basic">
-                                        <select name="general[city_id]" required="required" class="form-control " id="ad_city">
+                                        <select name="general[city_id]" required="required" class="city form-control " id="ad_city">
                                             <option value="">Select City</option>
                                             @foreach($cities as $city)
                                                 <option value="{{$city->id}}">{{$city->city_name}}</option>
@@ -80,7 +87,7 @@
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select Area</label>
                                     <div class="select-basic">
-                                         <select onchange="populatePincode();" id="area"  name="general[area_id]" required="required" class="form-control " id="ad_area">
+                                         <select onchange="populatePincode();" id="area"  name="general[area_id]" required="required" class="area form-control " id="ad_area">
                                             <option value="">Select Area</option>
                                             @foreach($areas as $area)
                                                 <option value="{{$area->id}}">{{$area->area_name}}</option>
@@ -103,7 +110,7 @@
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select State</label>
                                     <div class="select-basic">
-                                        <select name="general[state_id]" required="required" class="form-control ad_search_category" id="ad_state">
+                                        <select name="general[state_id]" required="required" class="state form-control ad_search_category" id="ad_state">
                                             <option>Select State</option>
                                             @foreach($states as $state)
                                             <option>{{$state->name}}</option>

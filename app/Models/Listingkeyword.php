@@ -30,6 +30,7 @@ class Listingkeyword extends Model
     public function getday($id){
     	$k=Opening::where('listing_id',$id)
     	->where('day',date("l"))
+        ->orWhere('day',"24*7")
     	->first();
     	return 'Open '.$k->start.'- Close '.$k->close;
     	//dd($k->category_id);
