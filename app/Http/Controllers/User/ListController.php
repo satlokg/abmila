@@ -27,15 +27,22 @@ class ListController extends Controller
     	return view('user.list.business',compact('cities','areas','pincodes','states'));
     }
 
-    Public function businessPost(Request $r){ dd($r->all());
+    Public function businessPost(Request $r){ //dd($r->all());
     	if($r->listing_id){
         Contact::where('id',$r->contact_id)->update($r->contact);
         Listing::where('id',$r->listing_id)->update($r->general);
         Opening::where('listing_id',$r->listing_id)->delete();
+        if($r->enable247hour){
+            $value['listing_id']=$r->listing_id;
+            $value['day']=$r->enable247hour;
+            $res=Opening::Create($value);
+        }else{
             foreach ($r->opening as $key => $value) {
             $value['listing_id']=$r->listing_id; 
             $res=Opening::Create($value);
+            }
         }
+            
         $listing_id=$r->listing_id;
         $keys = Keyword::all(); 
         return view('user.list.keyword',compact('listing_id','keys'));
@@ -114,7 +121,7 @@ class ListController extends Controller
         $obj->name = $request->name;
         $obj->email = $request->email;
         $obj->phone = $request->phone;
-        $obj->list_title = $listing->business_name; dd($obj);
+        $obj->list_title = $listing->business_name; 
            Mail::to($listing->contact->email)->send(new LeadMail($obj));
        }
        

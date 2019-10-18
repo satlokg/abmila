@@ -32,7 +32,15 @@ class Listingkeyword extends Model
     	->where('day',date("l"))
         ->orWhere('day',"24*7")
     	->first();
-    	return 'Open '.$k->start.'- Close '.$k->close;
+        if($k->day == "24*7"){
+            return '24*7 Open';
+        }elseif($k->status == 0){
+            return 'Closed';
+        }else{
+            return 'Open '.$k->start.'- Close '.$k->close;
+        }
+        
+    	
     	//dd($k->category_id);
     }
 
