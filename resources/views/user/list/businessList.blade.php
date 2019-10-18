@@ -424,9 +424,9 @@
 function valueChanged()
 {
     if($('#enable247hour').is(":checked"))   
-        $(".answer").show();
-    else
         $(".answer").hide();
+    else
+        $(".answer").show();
 }
 </script>
 @endsection
