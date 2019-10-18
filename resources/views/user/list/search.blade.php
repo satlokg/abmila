@@ -127,6 +127,6 @@
     
     setTimeout(function() {
     $('#myModal').modal('show');
-}, 2000);
+}, 10000);
 </script>
 @endsection
