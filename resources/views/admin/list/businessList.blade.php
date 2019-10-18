@@ -69,12 +69,14 @@
                                <div class="row">
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select City</label>
+                                    <div class="select-basic">
                                         <select name="general[city_id]" required="required" class="city form-control " id="ad_city">
                                             <option value="">Select City</option>
                                             @foreach($cities as $city)
                                                 <option value="{{$city->id}}">{{$city->city_name}}</option>
                                             @endforeach
                                         </select>
+                                    </div>
                                 </div><!-- ends: .form-group -->
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select Area</label>
@@ -101,12 +103,14 @@
 
                                 <div class="form-group col-sm-6">
                                     <label for="ad_categroy" class="form-label">Select State</label>
+                                    <div class="select-basic">
                                         <select name="general[state_id]" required="required" class="state form-control ad_search_category" id="ad_state">
                                             <option>Select State</option>
                                             @foreach($states as $state)
                                             <option>{{$state->name}}</option>
                                             @endforeach
                                         </select>
+                                    </div>
                                 </div><!-- ends: .form-group -->
 
                                 <div class="form-group col-sm-6">
