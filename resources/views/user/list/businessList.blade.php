@@ -187,19 +187,19 @@
                                 <h4><span class="la la-calendar-check-o"></span> Opening/Business Hour Information</h4>
                             </div>
                         </div>
-                        <div class="atbdb_content_module_contents">
+                        <div class="atbdb_content_module_contents ">
                             <div class="business-hour">
                                 <div class="row">
                                     <div class="col-md-12 m-bottom-20">
                                         <div class="enable247hour custom-control custom-checkbox checkbox-outline checkbox-outline-primary">
-                                            <input type="checkbox" class="custom-control-input" name="enable247hour" value="1" id="enable247hour">
+                                            <input type="checkbox" class="custom-control-input" name="enable247hour" value="24*7" id="enable247hour" onchange="valueChanged()"/>
                                             <label for="enable247hour" class="not_empty custom-control-label"> Is this listing open 24 hours
                                                 7 days a week? </label>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row">
+                                <div class="row answer">
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="bdbh_saturday" class="atbd_day_label form-label">Saturday</label>
@@ -419,5 +419,14 @@
     $('.area').select2();
     $('.state').select2();
 });
+</script>
+<script type="text/javascript">
+function valueChanged()
+{
+    if($('#enable247hour').is(":checked"))   
+        $(".answer").show();
+    else
+        $(".answer").hide();
+}
 </script>
 @endsection
