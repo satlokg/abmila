@@ -27,7 +27,7 @@ class ListController extends Controller
     	return view('user.list.business',compact('cities','areas','pincodes','states'));
     }
 
-    Public function businessPost(Request $r){
+    Public function businessPost(Request $r){ dd($->all());
     	if($r->listing_id){
         Contact::where('id',$r->contact_id)->update($r->contact);
         Listing::where('id',$r->listing_id)->update($r->general);
