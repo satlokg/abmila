@@ -7,13 +7,7 @@
 
 
 @section('content')
-<script type="text/javascript">
-    $(document).ready(function() {
-    $('.city').select2();
-    $('.area').select2();
-    $('.state').select2();
-});
-</script>
+
 <section class="add-listing-wrapper border-bottom section-bg section-padding-strict">
         <div class="container">
             <form action="{{route('businessPost')}}" method="post">
@@ -418,5 +412,12 @@
             });
            
         }
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('.city').select2();
+    $('.area').select2();
+    $('.state').select2();
+});
 </script>
 @endsection

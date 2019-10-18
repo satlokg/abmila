@@ -2,13 +2,7 @@
  @section('css')
  @endsection
 @section('bread')
-<script type="text/javascript">
-    $(document).ready(function() {
-    $('.city').select2();
-    $('.area').select2();
-    $('.state').select2();
-});
-</script>
+
  <section class="content-header">
       <h1>
         Business Listing
@@ -446,5 +440,12 @@
             });
            
         }
+</script>
+<script type="text/javascript">
+    $(document).ready(function() {
+    $('.city').select2();
+    $('.area').select2();
+    $('.state').select2();
+});
 </script>
 @endsection
