@@ -46,7 +46,7 @@
                              <div class="form-group">
                                     <label for="ad_categroy" class="form-label">Select Area</label>
                                     <div class="select-basic">
-                                        <select id="area"  name="cateory_id" required="required" class="area form-control " id="ad_area">
+                                        <select id="area"  name="category_id" required="required" class="area form-control " id="ad_area">
                                             <option value="">Select Category</option>
                                             @foreach($categories as $category)
                                                 <option value="{{$category->id}}">{{$category->category_name}}</option>

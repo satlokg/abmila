@@ -17,6 +17,9 @@ use App\Mail\LeadMail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\State;
 use App\Models\Iquiry;
+use App\Models\Lead;
+use Carbon\Carbon;
+
 
 class ListController extends Controller
 {
@@ -45,7 +48,7 @@ class ListController extends Controller
         }
             
         $listing_id=$r->listing_id;
-        $keys = Keyword::where('category_id',$r->category_id)->get(); 
+        $keys = Keyword::where('category_id',$r->category_id)->get();  dd($keys);
         return view('user.list.keyword',compact('listing_id','keys'));
         }
         else{
@@ -117,15 +120,15 @@ class ListController extends Controller
                             $query1->whereNotNull('amount');
                         });
                     })->where('keyword',$request->key)->with('listing.lead','listing.contact')->get();
-       //dd($results);
-       //$obj={};
+      
        foreach ($results as $key => $listings) {
-        // $obj->name = $request->name;
-        // $obj->email = $request->email;
-        // $obj->phone = $request->phone;
+        
         $request->list_title = $listings->listing->business_name; 
-           
-           Iquiry::create([
+           $lead = Lead::where('listing_id',$listings->listing->id)->whereDate('created_at', Carbon::today())->first();
+           $lead1 = Iquiry::where('listing_id',$listings->listing->id)->whereDate('created_at', Carbon::today())->count();
+            //dd($lead1);
+            if($lead != null && $lead >= $lead1){
+                Iquiry::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
@@ -134,9 +137,12 @@ class ListController extends Controller
             'keyword_name'=>$request->key
            ]);
            Mail::to($listings->listing->contact->email)->send(new LeadMail($request));
+            }
+           
        }
-       
-        return view('user.list.search',compact('results','cats'));
+       $key = $request->key;
+       $cats = Category::all();
+        return view('user.list.search',compact('results','cats','key'));
     }
      public function businessListEdit($id)
     {
