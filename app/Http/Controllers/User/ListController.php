@@ -130,7 +130,8 @@ class ListController extends Controller
             'email'=>$request->email,
             'phone'=>$request->phone,
             'listing_id'=>$listings->listing->id,
-            'contact_id'=>$listings->listing->contact->id
+            'contact_id'=>$listings->listing->contact->id,
+            'keyword_name'=>$request->key
            ]);
            Mail::to($listings->listing->contact->email)->send(new LeadMail($request));
        }

@@ -39,23 +39,29 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
                   <tr>
-                    <th>Business Title</th>
-                    <th>Bussiness Contact</th>
-                    <th>Subscriber Name</th>
-                    <th>Subscriber email</th>
-                    <th>Subscriber phone</th>
-                    <th>Date</th>
+                    
+                    <th>Keyword</th>
+                    <th>User Email Id</th>
+                    <th>Phone No</th>
+                    <th>Name</th>
+                    <th>Enquiry Date and Time</th>
+                    <th>Business Name</th>
+                    <th>Business Email</th>
+                    <th>Business Number</th>
                   </tr>
                   </thead>
                   <tbody>
                   @foreach($inquiries as $inquiry)
                   <tr>
-                  <td>{{$inquiry->listing->business_name}}</td>
-                  <td>{{$inquiry->contact->phone}}</td>
-                  <td>{{$inquiry->name}}</td>
+                  <td>{{$inquiry->keyword_name}}</td>
                   <td>{{$inquiry->email}}</td>
                   <td>{{$inquiry->phone}}</td>
+                   <td>{{$inquiry->name}}</td>
                   <td>{{$inquiry->created_at}}</td>
+                  <td>{{$inquiry->listing->business_name}}</td>
+                  <td>{{$inquiry->contact->email}}</td>
+                  <td>{{$inquiry->contact->phone}}</td>
+                  
                   </tr>
                    @endforeach
                  </tbody>
