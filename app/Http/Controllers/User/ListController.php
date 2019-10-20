@@ -16,6 +16,7 @@ use App\Models\Category;
 use App\Mail\LeadMail;
 use Illuminate\Support\Facades\Mail;
 use App\Models\State;
+use App\Models\Iquiry;
 
 class ListController extends Controller
 {
@@ -44,7 +45,7 @@ class ListController extends Controller
         }
             
         $listing_id=$r->listing_id;
-        $keys = Keyword::all(); 
+        $keys = Keyword::where('category_id',$r->category_id)->get(); 
         return view('user.list.keyword',compact('listing_id','keys'));
         }
         else{
@@ -68,7 +69,8 @@ class ListController extends Controller
                     $areas=Area::all();
                     $pincodes=Pincode::all();
                     $states=State::all(); 
-                    return view('user.list.businessList',compact('cities','areas','pincodes','listing','contact','states'));
+                    $categories = Category::all();
+                    return view('user.list.businessList',compact('cities','areas','pincodes','listing','contact','states','categories'));
                 }
         }
     }
@@ -116,13 +118,21 @@ class ListController extends Controller
                         });
                     })->where('keyword',$request->key)->with('listing.lead','listing.contact')->get();
        //dd($results);
-
-       foreach ($results as $key => $listing) {
-        $obj->name = $request->name;
-        $obj->email = $request->email;
-        $obj->phone = $request->phone;
-        $obj->list_title = $listing->business_name; 
-           Mail::to($listing->contact->email)->send(new LeadMail($obj));
+       //$obj={};
+       foreach ($results as $key => $listings) {
+        // $obj->name = $request->name;
+        // $obj->email = $request->email;
+        // $obj->phone = $request->phone;
+        $request->list_title = $listings->listing->business_name; 
+           
+           Iquiry::create([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'listing_id'=>$listings->listing->id,
+            'contact_id'=>$listings->listing->contact->id
+           ]);
+           Mail::to($listings->listing->contact->email)->send(new LeadMail($request));
        }
        
         return view('user.list.search',compact('results','cats'));

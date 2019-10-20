@@ -32,4 +32,9 @@ class Listing extends Model
     {
         return $this->hasOne(Lead::class);
     }
+    public function iquiry()
+    {
+        return $this->hasOne(Iquiry::class);
+    }
+   
 }

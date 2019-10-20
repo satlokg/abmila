@@ -23,6 +23,17 @@
                          <input name="contact_id" type="hidden" value="{{$contact->id}}">
                          <input name="listing_id" type="hidden" value="{{$listing->id}}">
                         <div class="atbdb_content_module_contents">
+                            <div class="form-group">
+                                    <label for="ad_categroy" class="form-label">Select Area</label>
+                                    <div class="select-basic">
+                                        <select id="area"  name="cateory_id" required="required" class="area form-control " id="ad_area">
+                                            <option value="">Select Category</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div><!-- ends: .form-group -->
                             
                                 <div class="form-group">
                                     <label for="title" class="form-label">Business Name</label>

@@ -18,4 +18,8 @@ class Contact extends Model
     {
         return $this->hasMany(Listing::class);
     }
+    public function iquiry()
+    {
+        return $this->hasOne(Iquiry::class);
+    }
 }

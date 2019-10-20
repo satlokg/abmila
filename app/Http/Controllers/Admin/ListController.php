@@ -14,6 +14,7 @@ use App\Models\Keyword;
 use App\Models\Listingkeyword;
 use App\Models\Lead;
 use App\Models\State;
+use App\Models\Iquiry;
 
 class ListController extends Controller
 {
@@ -60,7 +61,7 @@ class ListController extends Controller
             $res=Opening::Create($value);
         }
         $listing_id=$r->listing_id;
-        $keys = Keyword::all(); 
+        $keys = Keyword::where('category_id',$r->category_id)->get();
         return view('admin.list.keyword',compact('listing_id','keys'));
         }
         else{
@@ -84,7 +85,8 @@ class ListController extends Controller
                     $areas=Area::all();
                     $pincodes=Pincode::all();
                     $states=State::all(); 
-                    return view('admin.list.businessList',compact('cities','areas','pincodes','listing','contact','states'));
+                    $categories = Category::all();
+                    return view('admin.list.businessList',compact('cities','areas','pincodes','listing','contact','states','categories'));
                 }
         }
     }
@@ -131,5 +133,11 @@ class ListController extends Controller
         $pincodes=Pincode::all();
         $states=State::all(); 
         return view('admin.list.businessListEdit',compact('cities','areas','pincodes','listing','contact','cats','states'));
+    }
+
+     public function inquiry()
+    {
+        $inquiries=Iquiry::orderBy('id','desc')->get();
+        return view('admin.list.inquiry',compact('inquiries'));
     }
 }
