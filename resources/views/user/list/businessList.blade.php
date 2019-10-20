@@ -95,7 +95,7 @@
                                 </div><!-- ends: .form-group -->
 
                                 <div class="form-group col-sm-6">
-                                    <label for="ad_categroy" class="form-label">Select Country</label>
+                                    <label for="title" class="form-label">Select Country</label>
                                     <div class="select-basic">
                                         <select name="general[country_id]" required="required" class="form-control ad_search_category" id="ad_country">
                                             <option>Select Country</option>
@@ -105,12 +105,14 @@
                                 </div><!-- ends: .form-group -->
                                 
                                 </div>
-                                <div class="form-group  col-sm-12">
+                                <br>
+                                <div class="row">
+                                <div class="form-group col-lg-12">
                                     <label for="title" class="form-label">Offer</label>
                                     <input type="text" name="general[offer]" class="form-control" id="title" placeholder="Enter Offer"
                                            required>
                                 </div>
-                            
+                               </div>
                         </div><!-- ends: .atbdb_content_module_contents -->
                     </div><!-- ends: .atbd_content_module -->
                 </div><!-- ends: .col-lg-10 -->
