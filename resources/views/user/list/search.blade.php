@@ -92,7 +92,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 
-                <h4 class="modal-title">Subscribe </h4>
+                <h4 class="modal-title">Fill this form and get best deal from "{{$key}}" </h4>
                 <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
             </div>
             <div class="modal-body">
@@ -111,6 +111,12 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Subscribe</button>
                 </form>
+                <ul class="list">
+                  <li class="list-item">Your requirement is sent to te selected relivant businesses</li>
+                  <li class="list-item">Business compete with each other to get you the best deal</li>
+                  <li class="list-item">You choose whichever suits you best</li>
+                  <li class="list-item">Contact info sent to you by SMS/EMAIL</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -118,8 +124,9 @@
 @endsection
 @section('js')
 <script type="text/javascript">
-    $(window).on('load',function(){
-        $('#myModal').modal('show');
-    });
+    
+    setTimeout(function() {
+    $('#myModal').modal('show');
+}, 10000);
 </script>
 @endsection

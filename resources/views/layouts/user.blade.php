@@ -19,6 +19,8 @@
     </script>
 
     <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/img/fevicon.png')}}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css" rel="stylesheet" />
+
 </head>
 <body>
 @include('layouts.user.header')
@@ -34,6 +36,7 @@
 <script src="{{asset('public/js/script.min.js')}}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
 <!-- endinject-->
 @yield('js')
 </body>
