@@ -205,13 +205,13 @@
                                             <label for="bdbh_saturday" class="atbd_day_label form-label">Saturday</label>
                                             <div class="row atbd_row_bg">
                                                 <div class="col-sm-6">
-                                                    <input name="opening[0][day]" required="required" value="Saturday" type="hidden">
+                                                    <input name="opening[0][day]" value="Saturday" type="hidden">
                                                     <label for="bdbh_saturday" class="not_empty">Start time</label>
-                                                    <input name="opening[0][start]" required="required" type="time" id="bdbh_saturday" value="" class="form-control directory_field">
+                                                    <input name="opening[0][start]" type="time" id="bdbh_saturday" value="" class="form-control directory_field">
                                                 </div>
                                                 <div class="col-sm-6 mt-3 mt-sm-0">
                                                     <label for="bdbh_saturday_cls" class="not_empty">Close time</label>
-                                                    <input name="opening[0][close]" required="required" type="time" id="bdbh_saturday_cls" value=""
+                                                    <input name="opening[0][close]" type="time" id="bdbh_saturday_cls" value=""
                                                            class="form-control directory_field">
                                                 </div>
                                             </div>
@@ -226,15 +226,15 @@
                                             <label for="bdbh_sunday" class="atbd_day_label form-label">Sunday</label>
                                             <div class="row atbd_row_bg">
                                                 <div class="col-sm-6">
-                                                    <input name="opening[1][day]" required="required" value="Sunday" type="hidden">
+                                                    <input name="opening[1][day]" value="Sunday" type="hidden">
                                                     <label for="bdbh_sunday" class="not_empty">Start time</label>
-                                                    <input name="opening[1][start]" required="required" type="time" id="bdbh_sunday" value=""
+                                                    <input name="opening[1][start]" type="time" id="bdbh_sunday" value=""
                                                            class="form-control directory_field">
                                                 </div>
 
                                                 <div class="col-sm-6 mt-3 mt-sm-0">
                                                     <label for="bdbh_sunday_cls" class="not_empty">Close time</label>
-                                                    <input name="opening[1][close]" required="required" type="time" id="bdbh_sunday_cls" value=""
+                                                    <input name="opening[1][close]" type="time" id="bdbh_sunday_cls" value=""
                                                            class="form-control directory_field">
                                                 </div>
                                             </div>
@@ -249,15 +249,15 @@
                                             <label for="bdbh_monday" class="atbd_day_label form-label">Monday</label>
                                             <div class="row atbd_row_bg">
                                                 <div class="col-sm-6">
-                                                    <input name="opening[2][day]" required="required" value="Monday" type="hidden">
+                                                    <input name="opening[2][day]" value="Monday" type="hidden">
                                                     <label for="bdbh_monday" class="not_empty">Start time</label>
-                                                    <input name="opening[2][start]" required="required" type="time" id="bdbh_monday" value=""
+                                                    <input name="opening[2][start]" type="time" id="bdbh_monday" value=""
                                                            class="form-control directory_field">
                                                 </div>
 
                                                 <div class="col-sm-6 mt-3 mt-sm-0">
                                                     <label for="bdbh_monday_cls" class="not_empty">Close time</label>
-                                                    <input name="opening[2][close]" required="required" type="time" id="bdbh_monday_cls" value=""
+                                                    <input name="opening[2][close]" type="time" id="bdbh_monday_cls" value=""
                                                            class="form-control directory_field">
                                                 </div>
                                             </div>
@@ -272,15 +272,15 @@
                                             <label for="bdbh_tuesday" class="atbd_day_label form-label">Tuesday</label>
                                             <div class="row atbd_row_bg">
                                                 <div class="col-sm-6">
-                                                    <input name="opening[3][day]" required="required" value="Tuesday" type="hidden">
+                                                    <input name="opening[3][day]" value="Tuesday" type="hidden">
                                                     <label  for="bdbh_tuesday" class="not_empty">Start time</label>
-                                                    <input name="opening[3][start]" required="required" type="time" id="bdbh_tuesday" value=""
+                                                    <input name="opening[3][start]" type="time" id="bdbh_tuesday" value=""
                                                            class="form-control directory_field">
                                                 </div>
 
                                                 <div class="col-sm-6 mt-3 mt-sm-0">
                                                     <label for="bdbh_tuesday_cls" class="not_empty">Close time</label>
-                                                    <input name="opening[3][close]" required="required" type="time" id="bdbh_tuesday_cls" value=""
+                                                    <input name="opening[3][close]" type="time" id="bdbh_tuesday_cls" value=""
                                                            class="form-control directory_field">
                                                 </div>
                                             </div>
@@ -296,15 +296,15 @@
                                                    class="atbd_day_label form-label">Wednesday</label>
                                             <div class="row atbd_row_bg">
                                                 <div class="col-sm-6">
-                                                    <input name="opening[4][day]" required="required" value="Wednesday" type="hidden">
+                                                    <input name="opening[4][day]" value="Wednesday" type="hidden">
                                                     <label for="bdbh_wednesday" class="not_empty">Start time</label>
-                                                    <input name="opening[4][start]" required="required" type="time" id="bdbh_wednesday" value=""
+                                                    <input name="opening[4][start]" type="time" id="bdbh_wednesday" value=""
                                                            class="form-control directory_field">
                                                 </div>
 
                                                 <div class="col-sm-6 mt-3 mt-sm-0">
                                                     <label for="bdbh_wednesday_cls" class="not_empty">Close time</label>
-                                                    <input name="opening[4][close]" required="required" type="time" id="bdbh_wednesday_cls" value=""
+                                                    <input name="opening[4][close]" type="time" id="bdbh_wednesday_cls" value=""
                                                            class="form-control directory_field">
                                                 </div>
                                             </div>
@@ -319,15 +319,15 @@
                                             <label for="bdbh_thursday" class="atbd_day_label form-label">Thursday</label>
                                             <div class="row atbd_row_bg">
                                                 <div class="col-sm-6">
-                                                    <input name="opening[5][day]" required="required" value="Thursday" type="hidden">
+                                                    <input name="opening[5][day]" value="Thursday" type="hidden">
                                                     <label for="bdbh_thursday" class="not_empty">Start time</label>
-                                                    <input name="opening[5][start]" required="required" type="time" id="bdbh_thursday" value=""
+                                                    <input name="opening[5][start]" type="time" id="bdbh_thursday" value=""
                                                            class="form-control directory_field">
                                                 </div>
 
                                                 <div class="col-sm-6 mt-3 mt-sm-0">
                                                     <label for="bdbh_thursday_cls" class="not_empty">Close time</label>
-                                                    <input name="opening[5][close]" required="required" type="time" id="bdbh_thursday_cls" value=""
+                                                    <input name="opening[5][close]" type="time" id="bdbh_thursday_cls" value=""
                                                            class="form-control directory_field">
                                                 </div>
                                             </div>
@@ -342,15 +342,15 @@
                                             <label for="bdbh_friday" class="atbd_day_label form-label">Friday</label>
                                             <div class="row atbd_row_bg">
                                                 <div class="col-sm-6">
-                                                    <input name="opening[6][day]" required="required" value="Friday" type="hidden">
+                                                    <input name="opening[6][day]" value="Friday" type="hidden">
                                                     <label for="bdbh_friday" class="not_empty">Start time</label>
-                                                    <input name="opening[6][start]" required="required" type="time" id="bdbh_friday" value=""
+                                                    <input name="opening[6][start]" type="time" id="bdbh_friday" value=""
                                                            class="form-control directory_field">
                                                 </div>
 
                                                 <div class="col-sm-6 mt-3 mt-sm-0">
                                                     <label for="bdbh_friday_cls" class="not_empty">Close time</label>
-                                                    <input name="opening[6][close]" required="required" type="time" id="bdbh_friday_cls" value=""
+                                                    <input name="opening[6][close]" type="time" id="bdbh_friday_cls" value=""
                                                            class="form-control directory_field">
                                                 </div>
                                             </div>

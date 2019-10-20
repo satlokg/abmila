@@ -138,7 +138,13 @@ class ListController extends Controller
         return view('user.list.businessListEdit',compact('cities','areas','pincodes','listing','contact','cats','states'));
     }
     
-
+public function businessdetail($key=null)
+    {
+       $id=decrypt($key, 'abmila');
+        $listing = Listing::find($id);
+        //dd($listing); 
+        return view('user.list.businessDetail',compact('listing'));
+    }
 
 
     ///////ajax
