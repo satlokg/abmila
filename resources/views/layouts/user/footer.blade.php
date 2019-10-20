@@ -47,7 +47,7 @@
     <li class="page-item"><a href="#">Advantages</a></li>
 
             
-    <li class="page-item"><a href="#">Direo App</a></li>
+    <li class="page-item"><a href="#">Abmila App</a></li>
 
             
     <li class="page-item"><a href="#">Packages</a></li>
@@ -75,7 +75,7 @@
                     <div class="col-lg-4 col-sm-6">
                         
     <div class="widget widget_text">
-        <h2 class="widget-title">Direo on Mobile</h2>
+        <h2 class="widget-title">Abmila on Mobile</h2>
         <div class="textwidget">
             <p>Download the Direo app today so you can find your events anytime, anywhere.</p>
             <ul class="list-unstyled store-btns">
