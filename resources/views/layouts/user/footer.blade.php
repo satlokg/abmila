@@ -35,7 +35,7 @@
         <h2 class="widget-title">Helpful Links</h2>
         <ul class="list-unstyled">
             
-    <li class="page-item"><a href="#">Join Direo</a></li>
+    <li class="page-item"><a href="#">Join Abmila</a></li>
 
             
     <li class="page-item"><a href="#">Sign In</a></li>
@@ -77,7 +77,7 @@
     <div class="widget widget_text">
         <h2 class="widget-title">Abmila on Mobile</h2>
         <div class="textwidget">
-            <p>Download the Direo app today so you can find your events anytime, anywhere.</p>
+            <p>Download the Abmila app today so you can find your events anytime, anywhere.</p>
             <ul class="list-unstyled store-btns">
                 <li><a href="#" class="btn-gradient btn-gradient-two btn btn-md btn-icon icon-left"><span class="fab fa-apple"></span> App Store</a></li>
                 <li><a href="#" class="btn btn-dark btn-md btn-icon btn-icon"><span class="fab fa-android"></span> Google Play</a></li>
