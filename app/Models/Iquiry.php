@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Iquiry extends Model
 {
     protected $fillable=[
-    	'email','phone','name','listing_id','contact_id'
+    	'email','phone','name','listing_id','contact_id','keyword_name'
     ];
     public function contact(){
     	return $this->belongsTo(Contact::class);
