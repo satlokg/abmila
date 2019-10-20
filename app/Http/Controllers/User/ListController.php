@@ -48,7 +48,7 @@ class ListController extends Controller
         }
             
         $listing_id=$r->listing_id;
-        $keys = Keyword::where('category_id',$r->category_id)->get();  dd($keys);
+        $keys = Keyword::where('category_id',$r->category_id)->get();  //dd($keys);
         return view('user.list.keyword',compact('listing_id','keys'));
         }
         else{
