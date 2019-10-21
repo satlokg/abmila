@@ -109,7 +109,7 @@
                     <div class="form-group">
                         <input type="email" name="email" class="form-control" placeholder="Email Address">
                     </div>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 <ul class="list">
                   <li class="list-item">Your requirement is sent to te selected relivant businesses</li>

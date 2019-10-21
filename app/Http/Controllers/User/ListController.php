@@ -122,13 +122,10 @@ class ListController extends Controller
                     })->where('keyword',$request->key)->with('listing.lead','listing.contact')->get();
       
        foreach ($results as $key => $listings) {
-        
         $request->list_title = $listings->listing->business_name; 
            $lead = Lead::where('listing_id',$listings->listing->id)->first();
            $lead1 = Iquiry::where('listing_id',$listings->listing->id)->whereDate('created_at', Carbon::today())->count();
-            //dd($listings->listing->contact->email);
-            if($lead != null && $lead->lead >= $lead1){
-                Iquiry::create([
+            Iquiry::create([
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
@@ -136,6 +133,9 @@ class ListController extends Controller
             'contact_id'=>$listings->listing->contact->id,
             'keyword_name'=>$request->key
            ]);
+            //dd($listings->listing->contact->email);
+            if($lead != null && $lead->lead >= $lead1){
+               
            Mail::to($listings->listing->contact->email)->send(new LeadMail($request));
             }
            
