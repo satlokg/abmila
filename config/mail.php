@@ -15,10 +15,6 @@ return [
     |            "sparkpost", "postmark", "log", "array"
     |
     */
-    // 'driver' => 'smtp',
-    // 'host' => '127.0.0.1',
-    // 'port' => 1025,
-    // 'encryption' => '',
 
     'driver' => env('MAIL_DRIVER', 'smtp'),
 
@@ -104,7 +100,6 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-
 
     /*
     |--------------------------------------------------------------------------

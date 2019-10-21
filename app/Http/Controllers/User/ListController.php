@@ -124,10 +124,10 @@ class ListController extends Controller
        foreach ($results as $key => $listings) {
         
         $request->list_title = $listings->listing->business_name; 
-           $lead = Lead::where('listing_id',$listings->listing->id)->whereDate('created_at', Carbon::today())->first();
+           $lead = Lead::where('listing_id',$listings->listing->id)->first();
            $lead1 = Iquiry::where('listing_id',$listings->listing->id)->whereDate('created_at', Carbon::today())->count();
-            //dd($lead1);
-            if($lead != null && $lead >= $lead1){
+            //dd($listings->listing->contact->email);
+            if($lead != null && $lead->lead >= $lead1){
                 Iquiry::create([
             'name'=>$request->name,
             'email'=>$request->email,
