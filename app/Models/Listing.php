@@ -31,6 +31,10 @@ class Listing extends Model
     {
         return $this->hasMany(Listingkeyword::class);
     }
+    public function rating()
+    {
+        return $this->hasOne(Rating::class);
+    }
     public function lead()
     {
         return $this->hasOne(Lead::class);

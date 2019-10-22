@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use App\User;
+use App\Models\Rating;
 
 
 class HomeController extends Controller
@@ -19,7 +20,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        //$this->middleware('auth');
     }
 
     /**
@@ -42,8 +43,17 @@ class HomeController extends Controller
             return view('home');
     }
 
-    public function rating(){
-         
+    public function rating(Request $r){
+          $this->validate($r, [
+            'phone' =>  'unique:ratings',
+            ]);
+            Rating::create([
+                'listing_id'=> $r->listing_id,
+                'rate'=> $r->rate,
+                'name'=> $r->name,
+                'phone'=> $r->phone,
+                'msg'=> $r->msg,
+            ]);
             return redirect()->back();
     }
 }

@@ -139,6 +139,15 @@ class ListController extends Controller
             'contact_id'=>$listings->listing->contact->id,
             'keyword_name'=>$request->key
            ]);
+            $data=collect([
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'phone'=>$request->phone,
+            'listing_id'=>$listings->listing->id,
+            'contact_id'=>$listings->listing->contact->id,
+            'keyword_name'=>$request->key
+           ]);
+           $user=$listings->listing->contact;
             //dd($listings->listing->contact->email);
             if($lead != null && $lead->lead > $lead1){
              Notification::send($user, new ItemNotification($data));

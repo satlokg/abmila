@@ -250,6 +250,12 @@
 
                               <form action="{{route('rating')}}" id="atbdp_review_form" method="post">
                                 @csrf
+                                <input type="hidden" name="listing_id" value="{{$listing->id}}">
+                                @error('phone')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror  
                                   <div class="atbd_review_rating_area"> <!--It should be displayed on the left side -->
                                       <div class="atbd_review_update_rating">
                                           <span>Rating: </span>
