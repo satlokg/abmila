@@ -288,7 +288,45 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        
+                        <div class="atbd_content_module atbd_review_form">
+                          <div class="atbd_content_module__tittle_area">
+                              <div class="atbd_area_title">
+                                  <h4><span class="la la-star"></span>Add a Review</h4>
+                              </div>
+                          </div>
+                          <div class="atbdb_content_module_contents atbd_give_review_area">
+                            
+
+                              <form action="http://aazztech.com/" id="atbdp_review_form" method="post">
+                                  <div class="atbd_review_rating_area"> <!--It should be displayed on the left side -->
+                                      <div class="atbd_review_update_rating">
+                                          <span>Rating: </span>
+                                          <div class="atbd_rating_stars">
+                                              <div class="br-wrapper br-theme-fontawesome-stars m-left-15">
+                                                  <select class="give_rating"> <!-- now hidden -->
+                                                      <option value="1">1</option>
+                                                      <option value="2">2</option>
+                                                      <option value="3">3</option>
+                                                      <option value="4">4</option>
+                                                      <option value="5">5</option>
+                                                  </select>
+                                              </div>
+                                          </div>
+                                      </div><!-- ends: .atbd_review_update_rating -->
+                                  </div><!-- ends: .atbd_review_rating_area -->
+
+                                  <div class="form-group">
+                                      <textarea name="content" id="review_content" class="form-control" placeholder="Message" required></textarea>
+                                  </div>
+
+                                  
+
+                                  <!--If current user has a review then show him update and delete button-->
+                                  <button class="btn btn-gradient btn-gradient-one" type="submit" id="atbdp_review_form_submit">Submit Review</button> <!-- submit button -->
+                              </form>
+
+                          </div><!-- ends: .atbd_give_review_area -->
+                      </div><!-- ends: .atbd_content_module -->
                     </div>
                 </div>
             </div>
