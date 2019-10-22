@@ -147,7 +147,7 @@ class ListController extends Controller
            ]);
            $user=$listings->listing->contact;
             //dd($listings->listing->contact->email);
-            if($lead != null && $listings->listing->lead > $lead1){
+            if($listings->listing->lead > $lead1){
              Notification::send($user, new ItemNotification($data));
             }
            
