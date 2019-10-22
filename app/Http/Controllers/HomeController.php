@@ -41,4 +41,9 @@ class HomeController extends Controller
             Notification::send($user, new ItemNotification($data));
             return view('home');
     }
+
+    public function rating(){
+         
+            return redirect()->back();
+    }
 }

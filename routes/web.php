@@ -39,6 +39,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/notify', 'HomeController@notify')->name('notify');
+Route::post('/rating', 'HomeController@rating')->name('rating');
+
 
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');

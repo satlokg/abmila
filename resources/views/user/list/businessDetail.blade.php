@@ -248,13 +248,14 @@
                           <div class="atbdb_content_module_contents atbd_give_review_area">
                             
 
-                              <form action="http://aazztech.com/" id="atbdp_review_form" method="post">
+                              <form action="{{route('rating')}}" id="atbdp_review_form" method="post">
+                                @csrf
                                   <div class="atbd_review_rating_area"> <!--It should be displayed on the left side -->
                                       <div class="atbd_review_update_rating">
                                           <span>Rating: </span>
                                           <div class="atbd_rating_stars">
                                               <div class="br-wrapper br-theme-fontawesome-stars m-left-15">
-                                                  <select class="give_rating"> <!-- now hidden -->
+                                                  <select class="give_rating" name="rate"> <!-- now hidden -->
                                                       <option value="1">1</option>
                                                       <option value="2">2</option>
                                                       <option value="3">3</option>
@@ -265,9 +266,14 @@
                                           </div>
                                       </div><!-- ends: .atbd_review_update_rating -->
                                   </div><!-- ends: .atbd_review_rating_area -->
-
                                   <div class="form-group">
-                                      <textarea name="content" id="review_content" class="form-control" placeholder="Message" required></textarea>
+                                       <input type="text" class="form-control" placeholder="name" name="name" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <input type="text" class="form-control" placeholder="Phone No." name="phone" required>
+                                  </div>
+                                  <div class="form-group">
+                                      <textarea name="msg" id="review_content" class="form-control" placeholder="Message" required></textarea>
                                   </div>
 
                                   

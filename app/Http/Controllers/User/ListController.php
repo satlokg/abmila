@@ -15,6 +15,12 @@ use App\Models\Listingkeyword;
 use App\Models\Category;
 use App\Mail\LeadMail;
 use Illuminate\Support\Facades\Mail;
+
+use App\Notifications\ItemNotification;
+use Illuminate\Support\Facades\Notification;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
+
 use App\Models\State;
 use App\Models\Iquiry;
 use App\Models\Lead;
@@ -134,9 +140,8 @@ class ListController extends Controller
             'keyword_name'=>$request->key
            ]);
             //dd($listings->listing->contact->email);
-            if($lead != null && $lead->lead >= $lead1){
-               
-           Mail::to($listings->listing->contact->email)->send(new LeadMail($request));
+            if($lead != null && $lead->lead > $lead1){
+             Notification::send($user, new ItemNotification($data));
             }
            
        }
