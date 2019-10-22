@@ -151,235 +151,144 @@
              <div class="row">
                  <div class="col-sm-4">
                      <div class="widget atbd_widget widget-card">
-        <div class="atbd_widget_title">
-            <h4><span class="la la-clock-o"></span> Business Hours</h4>
-            <span class="badge badge-success">Open Now</span>
-        </div><!-- ends: .atbd_widget_title -->
-        <div class="directory_open_hours">
-            <ul>
-                <li class="atbd_open atbd_today">
-                    <span class="day">Monday</span>
-                    <div class="atbd_open_close_time">
-                        <span class="time">10:00 am</span> - <span class="time">06:00 pm</span>
-                    </div>
-                </li>
-                <li class="atbd_open ">
-                    <span class="day">Tuesday</span>
-                    <div class="atbd_open_close_time">
-                        <span class="time">10:00 am</span> - <span class="time">06:30 pm</span>
-                    </div>
-                </li>
-                <li class="atbd_open">
-                    <span class="day">Wednesday</span>
-                    <div class="atbd_open_close_time">
-                        <span class="time">09:00 am</span> - <span class="time">05:00 pm</span>
-                    </div>
-                </li>
-                <li class="atbd_open">
-                    <span class="day">Thursday</span>
-                    <div class="atbd_open_close_time">
-                        <span class="time">10:00 am</span> - <span class="time">07:00 pm</span>
-                    </div>
-                </li>
-                <li class="atbd_open">
-                    <span class="day">Friday</span>
-                    <div class="atbd_open_close_time">
-                        <span class="time">11:00 am</span> - <span class="time">06:00 pm</span>
-                    </div>
-                </li>
-                <li class="atbd_closed">
-                    <span class="day">Saturday</span>
-                    <span>Closed</span>
-                </li>
-                <li class="atbd_closed">
-                    <span class="day">Sunday</span>
-                    <span>Closed</span>
-                </li>
-            </ul>
-        </div>
-    </div><!-- ends: .widget -->
+                        <div class="atbd_widget_title">
+                            <h4><span class="la la-clock-o"></span> Business Hours</h4>
+                            <span class="badge badge-success">Open Now</span>
+                        </div><!-- ends: .atbd_widget_title -->
+                        <div class="directory_open_hours">
+                            <ul>
+                                <li class="atbd_open atbd_today">
+                                    <span class="day">Monday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">10:00 am</span> - <span class="time">06:00 pm</span>
+                                    </div>
+                                </li>
+                                <li class="atbd_open ">
+                                    <span class="day">Tuesday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">10:00 am</span> - <span class="time">06:30 pm</span>
+                                    </div>
+                                </li>
+                                <li class="atbd_open">
+                                    <span class="day">Wednesday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">09:00 am</span> - <span class="time">05:00 pm</span>
+                                    </div>
+                                </li>
+                                <li class="atbd_open">
+                                    <span class="day">Thursday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">10:00 am</span> - <span class="time">07:00 pm</span>
+                                    </div>
+                                </li>
+                                <li class="atbd_open">
+                                    <span class="day">Friday</span>
+                                    <div class="atbd_open_close_time">
+                                        <span class="time">11:00 am</span> - <span class="time">06:00 pm</span>
+                                    </div>
+                                </li>
+                                <li class="atbd_closed">
+                                    <span class="day">Saturday</span>
+                                    <span>Closed</span>
+                                </li>
+                                <li class="atbd_closed">
+                                    <span class="day">Sunday</span>
+                                    <span>Closed</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!-- ends: .widget -->
+
+                     <div class="widget atbd_widget widget-card">
+                          <div class="atbd_widget_title">
+                              <h4><span class="la la-user"></span>Seller Info</h4>
+                          </div><!-- ends: .atbd_widget_title -->
+                          <div class="widget-body atbd_author_info_widget">
+                              <div class="atbd_avatar_wrapper">
+                                  <div class="atbd_review_avatar">
+                                      <img src="img/avatar-60x60.jpg" alt="Avatar Image">
+                                  </div>
+                                  <div class="atbd_name_time">
+                                      <h4>Zephy Real Estate <span class="verified" data-toggle="tooltip" data-placement="top" title="Verified"></span></h4>
+                                      <span class="review_time">Posted 6 days ago</span>
+                                  </div>
+                              </div><!-- ends: .atbd_avatar_wrapper -->
+
+                              
+                      <div class="atbd_widget_contact_info">
+                          <ul>
+                              <li>
+                                  <span class="la la-map-marker"></span>
+                                  <span class="atbd_info">25 East Valley Road, Michigan</span>
+                              </li>
+                              <li>
+                                  <span class="la la-phone"></span>
+                                  <span class="atbd_info">(213) 995-7799</span>
+                              </li>
+                              <li>
+                                  <span class="la la-envelope"></span>
+                                  <span class="atbd_info">support@aazztech.com</span>
+                              </li>
+                              <li>
+                                  <span class="la la-globe"></span>
+                                  <a href="#" class="atbd_info">www.aazztech.com</a>
+                              </li>
+                          </ul>
+                      </div><!-- ends: .atbd_widget_contact_info -->
+
+
+                              <div class="atbd_social_wrap">
+                                  <p><a href="#"><span class="fab fa-facebook-f"></span></a></p>
+                                  <p><a href="#"><span class="fab fa-twitter"></span></a></p>
+                                  <p><a href="#"><span class="fab fa-google-plus-g"></span></a></p>
+                                  <p><a href="#"><span class="fab fa-linkedin-in"></span></a></p>
+                                  <p><a href="#"><span class="fab fa-dribbble"></span></a></p>
+                              </div><!-- ends: .atbd_social_wrap -->
+
+                              <a href="#" class="btn btn-outline-primary btn-block">View Profile</a>
+                          </div><!-- ends: .widget-body -->
+                      </div><!-- ends: .widget -->
+                      <div class="widget atbd_widget widget-card">
+                          <div class="atbd_widget_title">
+                              <h4><span class="la la-bookmark"></span> Category with Icon</h4>
+                          </div><!-- ends: /.atbd_widget_title -->
+                          <div class="widget-body atbdp-widget-categories">
+                              <ul class="atbdp_parent_category">
+                                  <li>
+                                      <a href="#"><span class="la la-money"></span>Business</a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><span class="la la-heartbeat"></span>Health Care</a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><span class="la la-laptop"></span>Technology</a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><span class="la la-eject"></span>Conference</a>
+                                      <span class="cat-trigger"></span>
+                                      <ul class="atbdp_child_category">
+                                          <li><a href="#">Event</a></li>
+                                          <li><a href="#">Meeting</a></li>
+                                          <li><a href="#">Sports</a></li>
+                                          <li><a href="#">Business</a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#"><span class="la la-leaf"></span>Agriculture</a>
+                                  </li>
+                                  <li>
+                                      <a href="#"><span class="la la-calculator"></span>Food and Fitness</a>
+                                  </li>
+                              </ul>
+                          </div><!-- ends: .atbdp -->
+                      </div><!-- ends: .widget -->
                  </div>
                  <div class="col-sm-8">
                    <section id="tabs" class="project-tab">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <nav>
-                            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">WRITE A REVIEW</a>
-                                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">REVIEWS & RATINGS</a>
-                               
-                            </div>
-                        </nav>
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="atbd_content_module atbd_review_form">
-        <div class="atbd_content_module__tittle_area">
-            <div class="atbd_area_title">
-                <h4><span class="la la-star"></span>Add a Review</h4>
-            </div>
-        </div>
-        <div class="atbdb_content_module_contents atbd_give_review_area">
-            <div class="atbd_notice alert alert-info" role="alert">
-                <span class="la la-info" aria-hidden="true"></span>
-                You need to <a href="#">Login</a> or <a href="#">Register</a> to submit a review
-            </div><!-- ends: .atbd_notice -->
-
-            <form action="http://aazztech.com/" id="atbdp_review_form" method="post">
-                <div class="atbd_review_rating_area"> <!--It should be displayed on the left side -->
-                    <div class="atbd_review_update_rating">
-                        <span>Rating: </span>
-                        <div class="atbd_rating_stars">
-                            <div class="br-wrapper br-theme-fontawesome-stars m-left-15">
-                                <select class="give_rating"> <!-- now hidden -->
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div><!-- ends: .atbd_review_update_rating -->
-                </div><!-- ends: .atbd_review_rating_area -->
-
-                <div class="form-group">
-                    <textarea name="content" id="review_content" class="form-control" placeholder="Message" required></textarea>
-                </div>
-
-                <div class="form-group">
-                     <div id="atbd_up_preview"></div>
-                     <div class="atbd_upload_btn_wrap">
-                         <label for="atbd_review_attachment">
-                             <input type="file" id="atbd_review_attachment" hidden multiple>
-                             <span class="btn btn-md atbd_upload_btn"><span class="la la-cloud-upload"></span>Upload Photo</span>
-                         </label>
-                         <span id="file_name"></span>
-                     </div>
-                 </div>
-
-                <!--If current user has a review then show him update and delete button-->
-                <button class="btn btn-gradient btn-gradient-one" type="submit" id="atbdp_review_form_submit">Submit Review</button> <!-- submit button -->
-            </form>
-
-        </div><!-- ends: .atbd_give_review_area -->
-    </div><!-- ends: .atbd_content_module -->
-                            </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                              <div class="atbd_content_module atbd_review_module">
-        <div class="atbd_content_module__tittle_area">
-            <div class="atbd_area_title">
-                <h4><span class="la la-star-o"></span>4 Reviews</h4>
-                <label for="review_content" class="btn btn-secondary btn-icon-left btn-sm not_empty"><span class="la la-star-o"></span> Add a review</label>
-            </div>
-        </div>
-        <div class="atbdb_content_module_contents">
-            <div id="client_review_list">
-                <div class="atbd_single_review atbdp_static">
-                    <div class="atbd_review_top">
-                        <div class="atbd_avatar_wrapper">
-                            <div class="atbd_review_avatar"><img alt="" src="img/review-author-thumb.jpg" class="avatar avatar-32 photo"></div>
-                            <div class="atbd_name_time">
-                                <p>Mark Rose</p>
-                                <span class="review_time">6 hours ago</span>
-                            </div>
-                        </div>
-                        <div class="atbd_rated_stars">
-                            <ul>
-                                <li><span class="rate_active"></span></li>
-                                <li><span class="rate_active"></span></li>
-                                <li><span class="rate_active"></span></li>
-                                <li><span class="rate_active"></span></li>
-                                <li><span class="rate_disable"></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="review_content">
-                        <p>Lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus</p>
-                        <a href="#" class="reply"><span class="la la-mail-reply-all"></span>Reply</a>
-                    </div>
-                    <div class="review_reply_form">
-                        <div class="atbd_review_avatar"><img alt="" src="img/review-author-thumb2.jpg" class="avatar avatar-32 photo"></div>
-                        <form action="http://aazztech.com/">
-                            <textarea placeholder="Message" class="form-control"></textarea>
-                            <button class="btn btn-sm btn-secondary">Reply</button>
-                        </form>
-                    </div>
-
-                    <!-- comment depth 2 -->
-                    <div class="media-depth2">
-                        <div class="atbd_single_review">
-                            <div class="atbd_review_top">
-                                <div class="atbd_avatar_wrapper">
-                                    <div class="atbd_review_avatar"><img alt="" src="img/review-author-thumb2.jpg" class="avatar avatar-32 photo"></div>
-                                    <div class="atbd_name_time">
-                                        <p>Conrad Jane</p>
-                                        <span class="review_time">6 hours ago</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="review_content">
-                                <p>Lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus vestibulum ac diam sit amet</p>
-                                <a href="#" class="reply"><span class="la la-mail-reply-all"></span>Reply</a>
-                            </div>
-                            <div class="review_reply_form">
-                                <div class="atbd_review_avatar"><img alt="" src="img/review-author-thumb.jpg" class="avatar avatar-32 photo"></div>
-                                <form action="http://aazztech.com/">
-                                    <textarea placeholder="Message" class="form-control"></textarea>
-                                    <button class="btn btn-sm btn-secondary">Reply</button>
-                                </form>
-                            </div>
-                        </div><!-- ends: .atbd_single_review -->
-                    </div><!-- ends: .media-depth2 -->
-
-                </div><!-- ends:.atbd_single_review -->
-
-                <div class="atbd_single_review atbdp_static">
-                    <div class="atbd_review_top">
-                        <div class="atbd_avatar_wrapper">
-                            <div class="atbd_review_avatar"><img alt="" src="img/review-author-thumb3.jpg" class="avatar avatar-32 photo"></div>
-                            <div class="atbd_name_time">
-                                <p>Conrad Jane</p>
-                                <span class="review_time">6 hours ago</span>
-                            </div>
-                        </div>
-                        <div class="atbd_rated_stars">
-                            <ul>
-                                <li><span class="rate_active"></span></li>
-                                <li><span class="rate_active"></span></li>
-                                <li><span class="rate_active"></span></li>
-                                <li><span class="rate_active"></span></li>
-                                <li><span class="rate_active"></span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="review_content">
-                        <p>Lacinia eget consectetur sed, convallis at tellus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur non nulla sit amet nisl tempus</p>
-                        <a href="#" class="reply"><span class="la la-mail-reply-all"></span>Reply</a>
-                    </div>
-                    <div class="review_reply_form">
-                        <div class="atbd_review_avatar"><img alt="" src="img/review-author-thumb2.jpg" class="avatar avatar-32 photo"></div>
-                        <form action="http://aazztech.com/">
-                            <textarea placeholder="Message" class="form-control"></textarea>
-                            <button class="btn btn-sm btn-secondary">Reply</button>
-                        </form>
-                    </div>
-                </div><!-- ends: .atbd_single_review -->
-            </div><!-- ends: .client_review_list -->
-            <div class="review_pagination">
-                <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="#"><span class="la la-angle-left"></span></a></li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item"><a class="page-link" href="#"><span class="la la-angle-right"></span></a></li>
-                </ul>
-            </div>
-        </div>
-    </div><!-- ends: .atbd_content_module -->
-                            </div>
-                           
-                        </div>
+                        
                     </div>
                 </div>
             </div>
