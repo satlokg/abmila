@@ -40,6 +40,13 @@
 
     <div class="col-md-9">
         @foreach($results as $r) 
+         @php
+         $a=$r->checkInquiry($r->listing->id);
+         @endphp
+          @if($a=='continue')
+            @continue
+          @endif
+         
             <div class="card mb-3">
               <div class="row no-gutters border">
                 <div class="col-md-3">

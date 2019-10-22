@@ -5,6 +5,7 @@ use App\Models\Keyword;
 use App\Models\Category;
 use App\Models\Opening;
 use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 
 class Listingkeyword extends Model
 {
@@ -44,4 +45,20 @@ class Listingkeyword extends Model
     	//dd($k->category_id);
     }
 
+    public function checkInquiry($id){
+        $lead=Lead::where('listing_id',$id)
+        ->whereDate('created_at', Carbon::today())
+        ->first();
+        $lead1=Iquiry::where('listing_id',$id)
+        ->whereDate('created_at', Carbon::today())
+        ->count();
+        if($lead && $lead->lead >= $lead1){
+            return 'continue';
+        }else{
+            return '';
+        }
+        
+        
+        //dd($k->category_id);
+    }
 }
