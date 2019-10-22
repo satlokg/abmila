@@ -61,11 +61,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Enter lead per day</label>
-                                    <input name="lead" required="required" type="text" class="form-control" required value="{{@$business->lead->lead}}">
+                                    <input name="lead" required="required" type="text" class="form-control" required value="{{@$business->lead}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Enter amount per lead</label>
-                                    <input name="amount" required="required" type="text" class="form-control" value="{{@$business->lead->amount}}">
+                                    <input name="amount" required="required" type="text" class="form-control" value="{{@$business->amount}}">
                                 </div>
                                 <div class="col-lg-10 offset-lg-1 text-center">
                    

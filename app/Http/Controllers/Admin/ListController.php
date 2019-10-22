@@ -122,6 +122,11 @@ class ListController extends Controller
                 'amount'=>$r->amount
             ]);
         }
+
+        Listing::where('id',$r->listing_id)->update([
+                'lead'=>$r->lead,
+                'amount'=>$r->amount
+            ]);
         return redirect()->route('admin.lead');
     }
     public function businessListEdit($id)

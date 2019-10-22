@@ -106,12 +106,13 @@ class ListController extends Controller
         $search = $request->get('term');
         $cats = Category::all();
         $key = $request->key;
-          $results = Listingkeyword::whereHas('listing', function ($query) {
-                        $query->where('status', '=', 1);
-                        $query->whereHas('lead', function ($query1) {
-                            $query1->orderBy('amount','desc');
-                        });
-                    })->where('keyword',$request->key)->get();
+          // $results = Listingkeyword::whereHas('listing', function ($query) {
+          //               $query->where('status', '=', 1);
+          //               $query->orderBy('amount','desc');
+          //           })->where('keyword',$request->key)->get();
+          $results=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
+          ->where('listingkeywords.keyword',$request->key)
+          ->where('listings.status', '=', 1)->orderBy('listings.amount','desc')->get();
           //dd($results);
         return view('user.list.search',compact('results','cats','key'));
     }
@@ -120,16 +121,13 @@ class ListController extends Controller
         //dd($request->all());
        $results = Listingkeyword::whereHas('listing', function ($query) {
                         $query->where('status', '=', 1);
-                        $query->limit(7);
-                        $query->whereHas('lead', function ($query1) {
-                            $query1->orderBy('amount','desc');
-                            $query1->whereNotNull('amount');
-                        });
-                    })->where('keyword',$request->key)->with('listing.lead','listing.contact')->get();
+                        $query->orderBy('amount','desc');
+                        $query->whereNotNull('amount');
+                    
+                    })->limit(7)->where('keyword',$request->key)->with('listing.contact')->get();
       
        foreach ($results as $key => $listings) {
         $request->list_title = $listings->listing->business_name; 
-           $lead = Lead::where('listing_id',$listings->listing->id)->first();
            $lead1 = Iquiry::where('listing_id',$listings->listing->id)->whereDate('created_at', Carbon::today())->count();
             Iquiry::create([
             'name'=>$request->name,
@@ -149,7 +147,7 @@ class ListController extends Controller
            ]);
            $user=$listings->listing->contact;
             //dd($listings->listing->contact->email);
-            if($lead != null && $lead->lead > $lead1){
+            if($lead != null && $listings->listing->lead > $lead1){
              Notification::send($user, new ItemNotification($data));
             }
            

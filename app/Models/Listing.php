@@ -8,7 +8,7 @@ class Listing extends Model
 {
    
     protected $fillable = [
-    	'business_name','description','address1','address2','landmark','city_id','area_id','pincode_id','state_id',	'country_id','contact_id','offer'
+    	'business_name','description','address1','address2','landmark','city_id','area_id','pincode_id','state_id',	'country_id','contact_id','offer','lead','amount'
     ];
     public function contacts()
     {

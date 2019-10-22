@@ -46,7 +46,7 @@ class Listingkeyword extends Model
     }
 
     public function checkInquiry($id){
-        $lead=Lead::where('listing_id',$id)
+        $lead=Listing::where('id',$id)
         ->whereDate('created_at', Carbon::today())
         ->first();
         $lead1=Iquiry::where('listing_id',$id)
