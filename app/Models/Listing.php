@@ -27,7 +27,10 @@ class Listing extends Model
     {
         return $this->hasOne(Listingkeyword::class);
     }
-
+    public function listingkeywords()
+    {
+        return $this->hasMany(Listingkeyword::class);
+    }
     public function lead()
     {
         return $this->hasOne(Lead::class);
@@ -35,6 +38,11 @@ class Listing extends Model
     public function iquiry()
     {
         return $this->hasOne(Iquiry::class);
+    }
+
+    public function opennings()
+    {
+        return $this->hasMany(Opening::class);
     }
    
 }

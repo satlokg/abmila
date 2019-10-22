@@ -156,45 +156,16 @@
                             <span class="badge badge-success">Open Now</span>
                         </div><!-- ends: .atbd_widget_title -->
                         <div class="directory_open_hours">
+                         
                             <ul>
+                              @foreach($listing->opennings as $op)
                                 <li class="atbd_open atbd_today">
-                                    <span class="day">Monday</span>
+                                    <span class="day">{{$op->day}}</span>
                                     <div class="atbd_open_close_time">
-                                        <span class="time">10:00 am</span> - <span class="time">06:00 pm</span>
+                                        <span class="time">{{$op->start}} am</span> - <span class="time">{{$op->close}} pm</span>
                                     </div>
                                 </li>
-                                <li class="atbd_open ">
-                                    <span class="day">Tuesday</span>
-                                    <div class="atbd_open_close_time">
-                                        <span class="time">10:00 am</span> - <span class="time">06:30 pm</span>
-                                    </div>
-                                </li>
-                                <li class="atbd_open">
-                                    <span class="day">Wednesday</span>
-                                    <div class="atbd_open_close_time">
-                                        <span class="time">09:00 am</span> - <span class="time">05:00 pm</span>
-                                    </div>
-                                </li>
-                                <li class="atbd_open">
-                                    <span class="day">Thursday</span>
-                                    <div class="atbd_open_close_time">
-                                        <span class="time">10:00 am</span> - <span class="time">07:00 pm</span>
-                                    </div>
-                                </li>
-                                <li class="atbd_open">
-                                    <span class="day">Friday</span>
-                                    <div class="atbd_open_close_time">
-                                        <span class="time">11:00 am</span> - <span class="time">06:00 pm</span>
-                                    </div>
-                                </li>
-                                <li class="atbd_closed">
-                                    <span class="day">Saturday</span>
-                                    <span>Closed</span>
-                                </li>
-                                <li class="atbd_closed">
-                                    <span class="day">Sunday</span>
-                                    <span>Closed</span>
-                                </li>
+                              @endforeach  
                             </ul>
                         </div>
                     </div><!-- ends: .widget -->
@@ -205,11 +176,11 @@
                           </div><!-- ends: .atbd_widget_title -->
                           <div class="widget-body atbd_author_info_widget">
                               <div class="atbd_avatar_wrapper">
-                                  <div class="atbd_review_avatar">
+                                  <!-- <div class="atbd_review_avatar">
                                       <img src="img/avatar-60x60.jpg" alt="Avatar Image">
-                                  </div>
+                                  </div> -->
                                   <div class="atbd_name_time">
-                                      <h4>Zephy Real Estate <span class="verified" data-toggle="tooltip" data-placement="top" title="Verified"></span></h4>
+                                      <h4>{{ $listing->contact->title}} {{ $listing->contact->p_name}} <span class="verified" data-toggle="tooltip" data-placement="top" title="Verified"></span></h4>
                                       <span class="review_time">Posted 6 days ago</span>
                                   </div>
                               </div><!-- ends: .atbd_avatar_wrapper -->
@@ -219,66 +190,46 @@
                           <ul>
                               <li>
                                   <span class="la la-map-marker"></span>
-                                  <span class="atbd_info">25 East Valley Road, Michigan</span>
+                                  <span class="atbd_info">{{ $listing->address1}}, {{ $listing->address2}}</span>
                               </li>
                               <li>
                                   <span class="la la-phone"></span>
-                                  <span class="atbd_info">(213) 995-7799</span>
+                                  <span class="atbd_info">{{ $listing->contact->phone}}</span>
                               </li>
                               <li>
                                   <span class="la la-envelope"></span>
-                                  <span class="atbd_info">support@aazztech.com</span>
+                                  <span class="atbd_info">{{ $listing->contact->email}}</span>
                               </li>
                               <li>
                                   <span class="la la-globe"></span>
-                                  <a href="#" class="atbd_info">www.aazztech.com</a>
+                                  <a href="#" class="atbd_info">{{ $listing->contact->website}}</a>
                               </li>
                           </ul>
                       </div><!-- ends: .atbd_widget_contact_info -->
 
 
-                              <div class="atbd_social_wrap">
+                              <!-- <div class="atbd_social_wrap">
                                   <p><a href="#"><span class="fab fa-facebook-f"></span></a></p>
                                   <p><a href="#"><span class="fab fa-twitter"></span></a></p>
                                   <p><a href="#"><span class="fab fa-google-plus-g"></span></a></p>
                                   <p><a href="#"><span class="fab fa-linkedin-in"></span></a></p>
                                   <p><a href="#"><span class="fab fa-dribbble"></span></a></p>
-                              </div><!-- ends: .atbd_social_wrap -->
+                              </div> ends: .atbd_social_wrap -->
 
-                              <a href="#" class="btn btn-outline-primary btn-block">View Profile</a>
+                              <!--<a href="#" class="btn btn-outline-primary btn-block">View Profile</a> -->
                           </div><!-- ends: .widget-body -->
                       </div><!-- ends: .widget -->
                       <div class="widget atbd_widget widget-card">
                           <div class="atbd_widget_title">
-                              <h4><span class="la la-bookmark"></span> Category with Icon</h4>
+                              <h4><span class="la la-bookmark"></span> Keywords</h4>
                           </div><!-- ends: /.atbd_widget_title -->
                           <div class="widget-body atbdp-widget-categories">
                               <ul class="atbdp_parent_category">
+                                @foreach($listing->listingkeywords as $kwrd)
                                   <li>
-                                      <a href="#"><span class="la la-money"></span>Business</a>
+                                      <a href="#"><span class="la la-money"></span>{{$kwrd->keyword}}</a>
                                   </li>
-                                  <li>
-                                      <a href="#"><span class="la la-heartbeat"></span>Health Care</a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><span class="la la-laptop"></span>Technology</a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><span class="la la-eject"></span>Conference</a>
-                                      <span class="cat-trigger"></span>
-                                      <ul class="atbdp_child_category">
-                                          <li><a href="#">Event</a></li>
-                                          <li><a href="#">Meeting</a></li>
-                                          <li><a href="#">Sports</a></li>
-                                          <li><a href="#">Business</a></li>
-                                      </ul>
-                                  </li>
-                                  <li>
-                                      <a href="#"><span class="la la-leaf"></span>Agriculture</a>
-                                  </li>
-                                  <li>
-                                      <a href="#"><span class="la la-calculator"></span>Food and Fitness</a>
-                                  </li>
+                                @endforeach  
                               </ul>
                           </div><!-- ends: .atbdp -->
                       </div><!-- ends: .widget -->
