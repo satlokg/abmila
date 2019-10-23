@@ -35,15 +35,15 @@
                         <h3 class="box-title">Listing Details </h3>
                       </div>
                       <ul class="list-group">
-                          <li class="list-group-item">{{$business->business_name}}</li>
-                          <li class="list-group-item">{{$business->address1}}</li>
-                          <li class="list-group-item">{{$business->address2}}</li>
-                          <li class="list-group-item">{{$business->landmark}}</li>
-                          <li class="list-group-item">{{$business->area->pincode->zone->city->city_name}}</li>
-                          <li class="list-group-item">{{$business->area->area_name}}</li>
-                          <li class="list-group-item">{{$business->area->pincode->pincode}}</li>
-                          <li class="list-group-item">{{$business->state_id}}</li>
-                          <li class="list-group-item">{{$business->country_id}}</li>
+                          <li class="list-group-item">{{@$business->business_name}}</li>
+                          <li class="list-group-item">{{@$business->address1}}</li>
+                          <li class="list-group-item">{{@$business->address2}}</li>
+                          <li class="list-group-item">{{@$business->landmark}}</li>
+                          <li class="list-group-item">{{@$business->area->pincode->zone->city->city_name}}</li>
+                          <li class="list-group-item">{{@$business->area->area_name}}</li>
+                          <li class="list-group-item">{{@$business->area->pincode->pincode}}</li>
+                          <li class="list-group-item">{{@$business->state_id}}</li>
+                          <li class="list-group-item">{{@$business->country_id}}</li>
                         </ul>
                     </div>
                   </div>
