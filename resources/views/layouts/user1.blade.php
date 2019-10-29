@@ -31,6 +31,31 @@
         }
     </style>
     <script src="https://use.fontawesome.com/3288af97e8.js"></script>
+    <style type="text/css">
+    .menu-area{
+        background-color: #f5f5f5;
+    }
+    .menu-area.menu--light .mainmenu__menu .navbar-nav>li>a {
+    color: #000;
+}
+.menu-area.menu--light .search-wrapper .search_module.active .search_area form .input-group .form-control {
+    /* border-color: rgba(39,43,65,.1); */
+    background: #fff;
+    color: #272b41;
+}
+.menu-area.menu--light .search-wrapper .search_module .search_area form .input-group .form-control {
+    color: #000;
+}
+.menu-area.menu--light .author__access_area ul li .access-link {
+    color:red;
+}
+.menu-area.menu--light .author__access_area ul li>span {
+    color: #000;
+}
+.menu-area.menu--light .search-wrapper .search_module .icon-left {
+    color: #000;
+}
+</style>
 </head>
 <body>
 @include('layouts.user.header1')

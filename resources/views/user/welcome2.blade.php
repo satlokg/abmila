@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="search_title_area">
-                             <a href="#" class="logss"><img src="{{asset('public/img/logoss.png')}}" alt=""></a>
+                             <a href="#" class="logss"><img src="{{asset('public/img/logo.png')}}" alt=""></a>
                             
                         </div><!-- ends: .search_title_area -->
 

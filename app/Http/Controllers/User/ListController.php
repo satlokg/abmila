@@ -61,7 +61,7 @@ class ListController extends Controller
             //dd($r->all());
             $list=$r->general;
             $contactDetail=$r->contactDetail; //dd($contactDetail);
-            $contact = Contact::where('email',$contactDetail['email'])->first(); //dd($contact);
+            $contact = Contact::where('phone',$contactDetail['phone'])->first(); //dd($contact);
             if($r->submit != 'new'){
                 if($contact!=null){ 
                     return view('user.list.businessDisplay',compact('contact','contactDetail','list'));
@@ -70,7 +70,7 @@ class ListController extends Controller
                 }
             }
                 
-            $list['contact_id']=$contact->id;
+            $list['contact_id']=$contact->id; //dd($list);
             $listing= Listing::Create($list);
             $contact->listings()->sync($listing->id);
                 if($list){

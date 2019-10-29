@@ -19,7 +19,10 @@ class City extends Model
     {
         return $this->hasMany(Listings::class);
     }
-
+ public function listing()
+    {
+        return $this->belongsTo(Listing::class);
+    }
     public static function boot() {
         parent::boot();
 

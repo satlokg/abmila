@@ -42,15 +42,10 @@
                                
 
                                 <div class="form-group">
-                                    <label for="title" class="form-label">Address 1</label>
+                                    <label for="title" class="form-label">Address</label>
                                     <input type="text" name="general[address1]" required="required" class="form-control" id="title" placeholder="Enter Address 1" value="">
                                 </div>
 
-                                <div class="form-group">
-                                    <label for="title" class="form-label">Address 2</label>
-                                    <input type="text" name="general[address2]" required="required" class="form-control" id="title" placeholder="Enter Address 2"
-                                           required>
-                                </div>
 
                                 <div class="form-group">
                                     <label for="title" class="form-label">Landmark</label>
@@ -64,9 +59,9 @@
                                     <div class="select-basic">
                                         <select name="general[city_id]" required="required" class="city form-control " id="ad_city">
                                             <option value="">Select City</option>
-                                            @foreach($cities as $city)
-                                                <option value="{{$city->id}}">{{$city->city_name}}</option>
-                                            @endforeach
+                                            
+                                                <option value="{{$listing->city->id}}">{{$listing->city->city_name}}</option>
+                                          
                                         </select>
                                     </div>
                                 </div><!-- ends: .form-group -->

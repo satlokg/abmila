@@ -39,6 +39,10 @@ class Listing extends Model
     {
         return $this->hasOne(Lead::class);
     }
+    public function city()
+    {
+        return $this->hasOne(City::class);
+    }
     public function iquiry()
     {
         return $this->hasOne(Iquiry::class);

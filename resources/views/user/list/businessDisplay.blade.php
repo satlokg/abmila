@@ -36,19 +36,6 @@
                     </div><!-- ends: .atbd_content_module -->
                 </div><!-- ends: .col-lg-10 -->
 
-
-
-
-
-     
-               
-
-              
-
-               
-
-              
-
                 <div class="col-lg-10 offset-lg-1 text-center">
                    
 
@@ -56,7 +43,6 @@
                         <form action="{{route('businessPost')}}" method="post">
                         @csrf
                         <input name="general[business_name]" value="{{$list['business_name']}}"  type="hidden">
-                        <input name="contactDetail[email]" type="hidden" value="{{$contactDetail['email']}}">
                         <input name="contactDetail[id]" type="hidden" value="{{$contact->id}}">
                         <input name="contactDetail[phone]" type="hidden" value="{{$contactDetail['phone']}}">
 

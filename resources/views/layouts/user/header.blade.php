@@ -1,31 +1,18 @@
-<div class="row" style="margin: 0">
-    <div class="col-sm-12" style="padding: 0">
-        <a href="{{route('businessList')}}" class="btn btn-xs btn-gradient btn-gradient-two pull-right">
-            <span class="la la-plus"></span> Add Your Business
-        </a>
-    </div>
-<div class="col-sm-3">
-    <div class="logo logo-top">
-       <h2> Delhi/NCR</h2>
-    </div>
-</div>
-<div class="col-sm-6">
-    
-</div>
-<div class="col-sm-3">
-    <div class="author__access_area ">
-     <li class="pull-right" style="list-style: none;">
-        <a href="#" class="access-link" data-toggle="modal" data-target="#login_modal">Login</a>
-        <span>or</span>
-        <a href="#" class="access-link" data-toggle="modal" data-target="#signup_modal">Register</a>
-     </li>
-    </div>
-</div>
-</div>
-<div class="col" style="padding: 0">
-<div class="menu-area menu1 menu--light">
- <div class="top-menu-area">
-    <div class="menu-fullwidth">
+ <div class="mainmenu-wrapper">
+            
+    <div class="menu-area menu1 menu--light">
+        <div class="top-menu-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="menu-fullwidth">
+                            <div class="logo-wrapper order-lg-0 order-sm-1">
+                                <div class="logo logo-top">
+                                    <a href="/"><img src="{{asset('public/img/logo.png')}}" height="50" alt="logo image"></a>
+                                </div>
+                            </div><!-- ends: .logo-wrapper -->
+
+                            
     <div class="menu-container order-lg-1 order-sm-0">
         <div class="d_menu">
             <nav class="navbar navbar-expand-lg mainmenu__menu">
@@ -36,44 +23,68 @@
                     <span class="navbar-toggler-icon icon-menu"><i class="la la-reorder"></i></span>
                 </button>
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="direo-navbar-collapse">
-                    <ul class="navbar-nav">
-                        <li>
-                            <a href="index.html">Delhi</a>
-                        </li>
-                        <li class="dropdown has_dropdown">
-                            <a href="#" class="dropdown-toggle" id="drop3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Mumbai</a>
-                           
-                        </li>
-                        <li class="dropdown has_dropdown">
-                            <a href="#" class="dropdown-toggle" id="drop4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chennai</a>
-                            
-                        </li>
-                        <li class="dropdown has_dropdown">
-                            <a class="dropdown-toggle" href="#" id="drop2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Hydrabad
-                            </a>
-                            
-                        </li>
-                        <li>
-                            <a href="#">Jaipur</a>
-                        </li>
-                        <li>
-                            <a href="#">Rajsthan</a>
-                        </li>
-                        <li>
-                            <a href="#">Kolkata</a>
-                        </li>
-                        <li>
-                            <a href="#">Surat</a>
-                        </li>
-                    </ul>
-                </div>
+               
                 <!-- /.navbar-collapse -->
             </nav>
         </div>
     </div>
-</div>
-</div>
-</div>
-</div>
+
+
+                            <div class="menu-right order-lg-2 order-sm-2">
+                               
+                                <!-- start .author-area -->
+                                <div class="author-area">
+                                    <div class="author__access_area">
+                                        <ul class="d-flex list-unstyled align-items-center">
+                                            <li>
+                                                <a href="{{route('businessList')}}" class="btn btn-xs btn-gradient btn-gradient-two">
+                                                    <span class="la la-plus"></span> Add Listing
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="access-link" data-toggle="modal" data-target="#login_modal">Login</a>
+                                <span>or</span>
+                                <a href="#" class="access-link" data-toggle="modal" data-target="#signup_modal">Register</a>
+                                                
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- end .author-area -->
+
+                                <div class="offcanvas-menu d-none">
+                                    <a href="#" class="offcanvas-menu__user"><i class="la la-user"></i></a>
+                                    <div class="offcanvas-menu__contents">
+                                        <a href="#" class="offcanvas-menu__close"><i class="la la-times-circle"></i></a>
+                                        <div class="author-avatar">
+                                            <img src="img/author-avatar.png" alt="" class="rounded-circle">
+                                        </div>
+                                        <ul class="list-unstyled">
+                                            <li><a href="dashboard-listings.html">My Profile</a></li>
+                                            <li><a href="dashboard-listings.html">My Listing</a></li>
+                                            <li><a href="dashboard-listings.html">Favorite Listing</a></li>
+                                            <li><a href="add-listing.html">Add Listing</a></li>
+                                            <li><a href="#">Logout</a></li>
+                                        </ul>
+                                        <div class="search_area">
+                                            <form action="http://aazztech.com/">
+                                                <div class="input-group input-group-light">
+                                                    <input type="text" class="form-control search_field" placeholder="Search here..." autocomplete="off">
+                                                </div>
+                                                <button type="submit" class="btn btn-sm btn-secondary">Search</button>
+                                            </form>
+                                        </div><!-- ends: .search_area -->
+                                    </div><!-- ends: .author-info -->
+                                </div><!-- ends: .offcanvas-menu -->
+                            </div><!-- ends: .menu-right -->
+                        </div>
+                    </div>
+                </div>
+                <!-- end /.row -->
+            </div>
+            <!-- end /.container -->
+        </div>
+        <!-- end  -->
+    </div>
+
+        </div><!-- ends: .mainmenu-wrapper -->

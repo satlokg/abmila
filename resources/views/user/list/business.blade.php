@@ -27,10 +27,18 @@
                                     <input type="text" required="required" name="general[business_name]" class="form-control" id="title" placeholder="Enter Business Name"
                                            required>
                                 </div>
+                                 
                                 <div class="form-group">
-                                    <label for="phone_number" class="form-label">Email</label>
-                                    <input name="contactDetail[email]" required="required" type="text" placeholder="Email" id="phone_number" class="form-control" required>
-                                </div>
+                                    <label for="ad_categroy" class="form-label">Select Category</label>
+                                    <div class="select-basic">
+                                        <select name="general[city_id]" required="required" class="form-control ad_search_category" id="ad_categroy">
+                                            <option>Select City</option>
+                                            @foreach($cities as $city)
+                                                <option value="{{$city->id}}">{{$city->city_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div><!-- ends: .form-group -->
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Phone Number</label>
                                     <input name="contactDetail[phone]" required="required" type="text" placeholder="Phone Number" id="phone_number" class="form-control" required>
