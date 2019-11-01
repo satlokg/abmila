@@ -43,6 +43,7 @@
                         <form action="{{route('businessPost')}}" method="post">
                         @csrf
                         <input name="general[business_name]" value="{{$list['business_name']}}"  type="hidden">
+                        <input name="general[city_id]" value="{{$list['city_id']}}"  type="hidden">
                         <input name="contactDetail[id]" type="hidden" value="{{$contact->id}}">
                         <input name="contactDetail[phone]" type="hidden" value="{{$contactDetail['phone']}}">
 
