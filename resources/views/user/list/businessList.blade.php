@@ -1,5 +1,10 @@
 @extends('layouts.user')
  @section('css')
+ <style type="text/css">
+     .form-control{
+        border: 1px solid red;
+     }
+ </style>
  @endsection
  @section('bread')
  
@@ -23,7 +28,7 @@
                          <input name="contact_id" type="hidden" value="{{$contact->id}}">
                          <input name="listing_id" type="hidden" value="{{$listing->id}}">
                         <div class="atbdb_content_module_contents">
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                     <label for="ad_categroy" class="form-label">Select Area</label>
                                     <div class="select-basic">
                                         <select id="area"  name="category_id" required="required" class="categ form-control " id="ad_area">
@@ -33,7 +38,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                </div><!-- ends: .form-group -->
+                                </div> -->
                             
                                 <div class="form-group">
                                     <label for="title" class="form-label">Business Name</label>
@@ -55,9 +60,9 @@
                                
                                <div class="row">
                                 <div class="form-group col-sm-6">
-                                    <label for="ad_categroy" class="form-label">Select City</label>
+                                    <label for="ad_city" class="form-label">Select City</label>
                                     <div class="select-basic">
-                                        <select name="general[city_id]" required="required" class="city form-control " id="ad_city">
+                                        <select name="general[city_id]" required="required" class="city form-control ad_search_category" id="ad_city">
                                             <option value="">Select City</option>
                                             
                                                 <option value="{{$listing->city->id}}" selected="selected">{{$listing->city->city_name}}</option>
@@ -66,7 +71,7 @@
                                     </div>
                                 </div><!-- ends: .form-group -->
                                 <div class="form-group col-sm-6">
-                                    <label for="ad_categroy" class="form-label">Select State</label>
+                                    <label for="ad_state" class="form-label">Select State</label>
                                     <div class="select-basic">
                                         <select name="general[state_id]" required="required" class="state form-control ad_search_category" id="ad_state">
                                             <option>Select State</option>
@@ -77,9 +82,9 @@
                                     </div>
                                 </div><!-- ends: .form-group -->
                                 <div class="form-group col-sm-6">
-                                    <label for="ad_categroy" class="form-label">Select Area</label>
+                                    <label for="ad_area" class="form-label">Select Area</label>
                                     <div class="select-basic">
-                                        <select onchange="populatePincode();" id="area"  name="general[area_id]" required="required" class="area form-control " id="ad_area">
+                                        <select onchange="populatePincode();" id="area"  name="general[area_id]" required="required" class="area form-control ad_search_category" id="ad_area">
                                             <option value="">Select Area</option>
                                             @foreach($areas as $area)
                                                 <option value="{{$area->id}}">{{$area->area_name}}</option>
@@ -89,7 +94,7 @@
                                 </div><!-- ends: .form-group -->
 
                                 <div class="form-group col-sm-6">
-                                    <label for="ad_categroy" class="form-label">Select Pincode</label>
+                                    <label for="ad_pincode" class="form-label">Select Pincode</label>
                                     <div class="select-basic">
                                         <select name="general[pincode_id]" required="required" class="form-control " id="ad_pincode">
                                              <optgroup id="pincode">
@@ -225,16 +230,22 @@
                                     <div class="col-sm-12">
                                         <div class="row">
                                         <div class="col-md-2">Sunday</div>
-                                        <div class="col-md-2">Open</div>
+                                        <div class="col-md-1">Open</div>
                                         <div class="col-md-2">
-                                            <select >
-                                                <option></option>
+                                            <select name="">
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
-                                        <div class="col-md-2">Close</div>
+                                        <div class="col-md-1">Close</div>
                                         <div class="col-md-2">
                                             <select>
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-2">
@@ -242,18 +253,25 @@
                                             Close
                                         </div>
                                         </div>
+                                        <br>
                                          <div class="row">
                                         <div class="col-md-2">Sunday</div>
-                                        <div class="col-md-2">Open</div>
+                                        <div class="col-md-1">Open</div>
                                         <div class="col-md-2">
                                             <select >
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                               @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
-                                        <div class="col-md-2">Close</div>
+                                        <div class="col-md-1">Close</div>
                                         <div class="col-md-2">
                                             <select>
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-2">
@@ -261,18 +279,25 @@
                                             Close
                                         </div>
                                         </div>
+                                        <br>
                                          <div class="row">
                                         <div class="col-md-2">Sunday</div>
-                                        <div class="col-md-2">Open</div>
+                                        <div class="col-md-1">Open</div>
                                         <div class="col-md-2">
                                             <select >
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
-                                        <div class="col-md-2">Close</div>
+                                        <div class="col-md-1">Close</div>
                                         <div class="col-md-2">
                                             <select>
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-2">
@@ -280,18 +305,25 @@
                                             Close
                                         </div>
                                         </div>
+                                        <br>
                                          <div class="row">
                                         <div class="col-md-2">Sunday</div>
-                                        <div class="col-md-2">Open</div>
+                                        <div class="col-md-1">Open</div>
                                         <div class="col-md-2">
                                             <select >
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
-                                        <div class="col-md-2">Close</div>
+                                        <div class="col-md-1">Close</div>
                                         <div class="col-md-2">
                                             <select>
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                               @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-2">
@@ -299,18 +331,25 @@
                                             Close
                                         </div>
                                         </div>
+                                        <br>
                                          <div class="row">
                                         <div class="col-md-2">Sunday</div>
-                                        <div class="col-md-2">Open</div>
+                                        <div class="col-md-1">Open</div>
                                         <div class="col-md-2">
                                             <select >
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                               @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
-                                        <div class="col-md-2">Close</div>
+                                        <div class="col-md-1">Close</div>
                                         <div class="col-md-2">
                                             <select>
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-2">
@@ -318,18 +357,25 @@
                                             Close
                                         </div>
                                         </div>
+                                        <br>
                                          <div class="row">
                                         <div class="col-md-2">Sunday</div>
-                                        <div class="col-md-2">Open</div>
+                                        <div class="col-md-1">Open</div>
                                         <div class="col-md-2">
                                             <select >
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
-                                        <div class="col-md-2">Close</div>
+                                        <div class="col-md-1">Close</div>
                                         <div class="col-md-2">
                                             <select>
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                               @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-2">
@@ -337,18 +383,25 @@
                                             Close
                                         </div>
                                         </div>
+                                        <br>
                                          <div class="row">
                                         <div class="col-md-2">Sunday</div>
-                                        <div class="col-md-2">Open</div>
+                                        <div class="col-md-1">Open</div>
                                         <div class="col-md-2">
                                             <select >
-                                                <option></option>
+                                                <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
-                                        <div class="col-md-2">Close</div>
+                                        <div class="col-md-1">Close</div>
                                         <div class="col-md-2">
                                             <select>
-                                                <option></option>
+                                               <option value="24 hours">24 hours open</option>
+                                                @for($i=0;$i<=24;$i++)
+                                                <option value="{{$i}}:00">{{$i}}:00</option>
+                                                @endfor
                                             </select>
                                         </div>
                                         <div class="col-md-2">

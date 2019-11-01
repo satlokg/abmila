@@ -37,6 +37,17 @@
                         </div>
                         <div class="atbdb_content_module_contents">
                             <input type="hidden" name="listing_id" value="{{$listing_id}}">
+                            <div class="form-group">
+                                    <label for="ad_categroy" class="form-label">Select Area</label>
+                                    <div class="select-basic">
+                                        <select id="area"  name="category_id" required="required" class="categ form-control " id="ad_area">
+                                            <option value="">Select Category</option>
+                                            @foreach($categories as $category)
+                                                <option value="{{$category->id}}">{{$category->category_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div>
                            <div class="form-group">
                                    <select name="keys[]" class="form-control select2" multiple="multiple" data-placeholder="Select Key" style="width: 100%;">
                                     @foreach($keys as $key)
