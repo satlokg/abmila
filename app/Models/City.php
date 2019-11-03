@@ -21,7 +21,7 @@ class City extends Model
     }
  public function listing()
     {
-        return $this->belongsTo(Listing::class);
+        return $this->hasOne(Listing::class);
     }
     public static function boot() {
         parent::boot();

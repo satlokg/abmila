@@ -29,7 +29,7 @@
                                 </div>
                                  
                                 <div class="form-group">
-                                    <label for="ad_categroy" class="form-label">Select Category</label>
+                                    <label for="ad_categroy" class="form-label">Select City</label>
                                     <div class="select-basic">
                                         <select name="general[city_id]" required="required" class="form-control ad_search_category" id="ad_categroy">
                                             <option>Select City</option>
