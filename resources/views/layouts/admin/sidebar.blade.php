@@ -14,7 +14,11 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
        
-
+        <li>
+          <a href="{{route('admin.state')}}">
+            <i class="fa fa-th"></i> <span>State Management</span>
+          </a>
+        </li>
        
        <li>
           <a href="{{route('admin.zone')}}">
