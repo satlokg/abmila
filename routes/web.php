@@ -84,6 +84,12 @@ Route::prefix('admin')->group(function() {
     Route::post('/city/post', 'Admin\CityController@cityPost')->name('admin.city.post');
     Route::get('/city/edit/{id}', 'Admin\CityController@cityEdit')->name('admin.city.edit');
 
+    //state
+    Route::get('/state', 'Admin\CityController@state')->name('admin.state');
+    Route::get('/state/add', 'Admin\CityController@stateForm')->name('admin.state.add');
+    Route::post('/state/post', 'Admin\CityController@statePost')->name('admin.state.post');
+    Route::get('/state/edit/{id}', 'Admin\CityController@stateEdit')->name('admin.state.edit');
+
 
     //pincode
     Route::get('/pincode', 'Admin\CityController@pincode')->name('admin.pincode');
@@ -138,6 +144,7 @@ Route::prefix('vendor')->group(function() {
 Route::get('/business-list/', 'User\ListController@businessList')->name('businessList');
 Route::get('/business-list/edit/{id}', 'User\ListController@businessListEdit')->name('businessListEdit');
 Route::post('/business-list', 'User\ListController@businessPost')->name('businessPost');
+Route::get('/business-keyword/{listing_id?}/{cat_id?}', 'User\ListController@businessKeyword')->name('businessKey');
 Route::post('/final-list', 'User\ListController@finalPost')->name('finalPost');
 Route::post('/list', 'User\ListController@list')->name('user.list');
 Route::post('/lead/user/post', 'User\ListController@leadUserPost')->name('lead.user.post');

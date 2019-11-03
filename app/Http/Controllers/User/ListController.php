@@ -52,10 +52,8 @@ class ListController extends Controller
             $res=Opening::Create($value);
             }
         }
-            
-        $listing_id=$r->listing_id;
-        $keys = Keyword::where('category_id',$r->category_id)->get();  //dd($keys);
-        return view('user.list.keyword',compact('listing_id','keys'));
+            return redirect()->route('businessKey',['listing_id'=>$r->listing_id]);
+        
         }
         else{
             //dd($r->all());
@@ -82,6 +80,17 @@ class ListController extends Controller
                     return view('user.list.businessList',compact('cities','areas','pincodes','listing','contact','states','categories'));
                 }
         }
+    }
+    public function businessKeyword(Request $r,$listing_id=null,$cat_id=null){
+        $listing_id=$listing_id;
+        $categories = Category::all();
+        if($cat_id){
+            $keys = Keyword::where('category_id',$cat_id)->get();
+        }else{
+            $key=[];
+        }
+          //dd($keys);
+        return view('user.list.keyword',compact('listing_id','keys','categories','cat_id'));
     }
     public function finalPost(Request $r){
         foreach ($r->keys as $k => $v){ 
@@ -183,6 +192,16 @@ public function businessdetail($key=null)
                $item=Area::find($id);
                         $html= '<option value="'.$item->pincode->id.'">'.$item->pincode->pincode.'</option>';
                     
+              echo $html;
+
+              case "getCategory": 
+               $keys = Keyword::where('category_id',$id)->get();
+               $html='<option>select</option>';
+                                    foreach($keys as $key){
+                                        $html.='<option>'.$key->keyword_name.'</option>';
+                                    }
+                                    
+               
               echo $html;
             break;
               

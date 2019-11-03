@@ -73,7 +73,7 @@
 
                     <div class="btn_wrap list_submit m-top-25">
                        
-                        <button type="submit" name="submit" value="new" class="btn btn-primary btn-lg listing_submit_btn">New listing</button>
+                        <button type="submit" name="submit" class="btn btn-primary btn-lg listing_submit_btn">Submit</button>
                         
                     </div>
                 </div><!-- ends: .col-lg-10 -->

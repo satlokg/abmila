@@ -199,4 +199,47 @@ class CityController extends Controller
          return redirect()->back()->with($notification);
     	}
     }
+
+
+    public function state()
+    {
+        $states = State::all();
+        return view('admin.zone.state',compact('states'));
+    }
+
+    public function stateForm()
+    {
+        
+        return view('admin.zone.stateform');
+    }
+    public function stateEdit($id)
+    {
+        $state = State::where('id', $id)->first();
+        return view('admin.zone.stateedit',compact('state'));
+    }
+    public function statePost(Request $r)
+    {
+        $resstate = State::where('name',$r->name)->first();
+        if($resstate){
+            $notification = array(
+                        'message' => 'State name already taken', 
+                        'alert-type' => 'error'
+                    );
+         return redirect()->back()->with($notification);
+        }
+        if($r->id){
+            $state= State::find($r->id);
+        }else{
+            $state= New State();
+        }
+        $state->name=$r->name;
+        $rslt=$state->save();
+        if($rslt){
+             $notification = array(
+                        'message' => 'State name added successfully', 
+                        'alert-type' => 'success'
+                    );
+         return redirect()->back()->with($notification);
+        }
+    }
 }
