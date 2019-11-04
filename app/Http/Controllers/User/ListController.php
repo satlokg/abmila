@@ -157,7 +157,13 @@ class ListController extends Controller
            $user=$listings->listing->contact;
             //dd($listings->listing->contact->email);
             if($listings->listing->lead > $lead1){
-             Notification::send($user, new ItemNotification($data));
+                $pl=Lead::where('listing_id',$listings->listing->id)->first(); 
+                if($pl->totalamount > $pl->remainingamount){
+                     Notification::send($user, new ItemNotification($data));
+                }
+                 $l=Lead::where('listing_id',$listings->listing->id)->update([
+                'remainingamount'=>($pl->totalamount-$pl->amount),
+                ]);
             }
            
        }

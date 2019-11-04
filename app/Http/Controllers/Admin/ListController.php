@@ -114,12 +114,16 @@ class ListController extends Controller
             $l=Lead::Create([
                 'listing_id'=>$r->listing_id,
                 'lead'=>$r->lead,
-                'amount'=>$r->amount
+                'amount'=>$r->amount,
+                'totalamount'=>$r->totalamount,
+                'remainingamount'=>$r->totalamount,
             ]);
         }else{
             $l=Lead::where('listing_id',$r->listing_id)->update([
                 'lead'=>$r->lead,
-                'amount'=>$r->amount
+                'amount'=>$r->amount,
+                'totalamount'=>$r->totalamount,
+                'remainingamount'=>$r->totalamount,
             ]);
         }
 

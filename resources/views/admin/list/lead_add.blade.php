@@ -35,15 +35,15 @@
                         <h3 class="box-title">Listing Details </h3>
                       </div>
                       <ul class="list-group">
-                          <li class="list-group-item">{{@$business->business_name}}</li>
-                          <li class="list-group-item">{{@$business->address1}}</li>
-                          <li class="list-group-item">{{@$business->address2}}</li>
-                          <li class="list-group-item">{{@$business->landmark}}</li>
-                          <li class="list-group-item">{{@$business->area->pincode->zone->city->city_name}}</li>
-                          <li class="list-group-item">{{@$business->area->area_name}}</li>
-                          <li class="list-group-item">{{@$business->area->pincode->pincode}}</li>
-                          <li class="list-group-item">{{@$business->state_id}}</li>
-                          <li class="list-group-item">{{@$business->country_id}}</li>
+                          <li class="list-group-item"><b>Business Name : </b>{{@$business->business_name}}</li>
+                          <li class="list-group-item"><b>Address : </b>{{@$business->address1}}</li>
+                         
+                          <li class="list-group-item"><b>Landmark : </b>{{@$business->landmark}}</li>
+                          <li class="list-group-item"><b>City name : </b>{{@$business->area->pincode->zone->city->city_name}}</li>
+                          <li class="list-group-item"><b>Area name : </b>{{@$business->area->area_name}} </li>
+                          <li class="list-group-item"><b>Pincode : </b>{{@$business->area->pincode->pincode}}</li>
+                          <li class="list-group-item"><b>State : </b>{{@$business->state_id}}</li>
+                          <li class="list-group-item"><b>Country : </b>{{@$business->country_id}}</li>
                         </ul>
                     </div>
                   </div>
@@ -61,12 +61,22 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Enter lead per day</label>
-                                    <input name="lead" required="required" type="text" class="form-control" required value="{{@$business->lead}}">
+                                    <input name="lead" required="required" type="text" class="form-control" required value="{{@$business->lead->lead}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Enter amount per lead</label>
-                                    <input name="amount" required="required" type="text" class="form-control" value="{{@$business->amount}}">
+                                    <input name="amount" required="required" type="text" class="form-control" value="{{@$business->lead->amount}}">
                                 </div>
+                                <div class="form-group">
+                                    <label for="phone_number" class="form-label">Enter Deposit amount</label>
+                                    <input name="totalamount" required="required" type="text" class="form-control" value="{{@$business->lead->totalamount}}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone_number" class="form-label">Remaining amount</label>
+                                    <input name="remainingamount" readonly="readonly" type="text" class="form-control" value="{{@$business->lead->remainingamount}}">
+                                </div>
+                               
                                 <div class="col-lg-10 offset-lg-1 text-center">
                    
 
