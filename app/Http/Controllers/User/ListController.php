@@ -87,7 +87,7 @@ class ListController extends Controller
         if($cat_id){
             $keys = Keyword::where('category_id',$cat_id)->get();
         }else{
-            $key=[];
+            $keys=[];
         }
           //dd($keys);
         return view('user.list.keyword',compact('listing_id','keys','categories','cat_id'));
