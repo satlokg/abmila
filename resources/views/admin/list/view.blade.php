@@ -28,42 +28,196 @@
                 <!-- /.col -->
                 <div class="col">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                   <!-- general form elements -->
                     <div class="box box-primary">
                       <div class="box-header with-border">
                         <h3 class="box-title">Listing Details </h3>
                       </div>
-                      <ul class="list-group">
-                          <li class="list-group-item">{{@$business->business_name}}</li>
-                          <li class="list-group-item">{{@$business->address1}}</li>
-                          <li class="list-group-item">{{@$business->address2}}</li>
-                          <li class="list-group-item">{{@$business->landmark}}</li>
-                          <li class="list-group-item">{{@$business->area->pincode->zone->city->city_name}}</li>
-                          <li class="list-group-item">{{@$business->area->area_name}}</li>
-                          <li class="list-group-item">{{@$business->area->pincode->pincode}}</li>
-                          <li class="list-group-item">{{@$business->state_id}}</li>
-                          <li class="list-group-item">{{@$business->country_id}}</li>
-                        </ul>
+                      <div class="box-body">
+
+
+                        <div class="form-group">
+                            <label for="title" class="form-label">Business Name</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="form-label">Address</label>
+                            <div class="form-control">{{@$business->address1}}</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="form-label">Landmark</label>
+                            <div class="form-control">{{@$business->landmark}}</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="title" class="form-label">Phone</label>
+                            <div class="form-control">{{@$business->contact->phone}}</div>
+                        </div>
+                        <div class="row">
+                          <div class="form-group col-md-6">
+                            <label for="title" class="form-label">City</label>
+                            <div class="form-control">{{@$business->area->pincode->zone->city->city_name}}</div>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="title" class="form-label">State</label>
+                              <div class="form-control">{{@$business->area->pincode->zone->city->state->name}}</div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Area</label>
+                            <div class="form-control">{{@$business->area->area_name}}</div>
+                          </div>
+                          <div class="form-group col-md-6">
+                              <label for="title" class="form-label">Pincode</label>
+                              <div class="form-control">{{@$business->area->pincode->pincode}}</div>
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title" class="form-label">Country</label>
+                            <div class="form-control">{{@$business->country_id}}</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="title" class="form-label">Offer</label>
+                            <div class="form-control">{{@$business->offer}}</div>
+                        </div>
+
+
+
+                      </div>
+                     
                     </div>
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                   <!-- general form elements -->
                     <div class="box box-primary">
                        <div class="box-header with-border">
                         <h3 class="box-title">Contact Details </h3>
                       </div>
-                      <ul class="list-group">
-                          <li class="list-group-item">{{@$business->contact->p_name}}</li>
-                          <li class="list-group-item">{{@$business->contact->desidnation}}</li>
-                          <li class="list-group-item">{{@$business->contact->email}}</li>
-                          <li class="list-group-item">{{@$business->contact->phone}}</li>
-                          <li class="list-group-item">{{@$business->contact->landline}}</li>
-                          <li class="list-group-item">{{@$business->contact->fax}}</li>
-                        </ul>
+                      <div class="box-body">
+
+
+                        <div class="form-group">
+                            <label for="title" class="form-label">Title</label>
+                            <div class="form-control">{{@$business->contact->title}} {{@$business->contact->p_name}}</div>
+                        </div>
+                        <div class="row">
+                         <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Email 1</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Email 2</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Phone Number 1</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Phone Number 2</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+
+                         <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Landline Number 1</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Landline Number 2</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+
+                        <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Fax Number</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+                         <div class="form-group col-md-6">
+                            <label for="title" class="form-label">Website</label>
+                            <div class="form-control">{{@$business->business_name}}</div>
+                        </div>
+                        </div>
+
+                      </div>
+                      
                     </div>
                   </div>
+
+
+
+                   <div class="col-md-12">
+                  <!-- general form elements -->
+                    <div class="box box-primary">
+                       <div class="box-header with-border">
+                        <h3 class="box-title">Opening/Business Hour Information</h3>
+                      </div>
+                      <div class="box-body">
+
+                        <p>Is this listing open 24 hours 7 days a week? </p>
+                    
+                        <table class="table table-responsive">
+                          <thead>
+                            <tr>
+                              <th>Day</th>
+                              <th>Open</th>
+                              <th>Close</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach(@$business->opennings as $open)
+                            <tr>
+                              <td>{{@$open->day}}</td>
+                              <td>{{@$open->start}}</td>
+                              <td>{{@$open->close}}</td>
+                            </tr>
+                            @endforeach
+                          </tbody>
+                        </table>
+
+                      </div>
+                      
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-12">
+                  <!-- general form elements -->
+                    <div class="box box-primary">
+                       <div class="box-header with-border">
+                        <h3 class="box-title">Keyword Information</h3>
+                      </div>
+                      <div class="box-body">
+                        <div class="form-group">
+                            <label for="title" class="form-label">Business Category Name</label>
+                            <div class="form-control">{{@$business->getcategory(@$business->listingkeywords[0]->keyword)}}</div>
+                        </div>
+                    
+                        <table class="table table-responsive">
+                          <thead>
+                            <tr>
+                              <th>Keywords</th>
+                              
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach(@$business->listingkeywords as $key)
+                            <tr>
+                              <td>{{@$key->keyword}}</td>
+                            </tr>
+                            @endforeach
+                          </tbody>
+                        </table>
+
+                      </div>
+                      
+                    </div>
+                  </div>
+
+
                   <div class="col-lg-10 offset-lg-1 text-center">
                    
 

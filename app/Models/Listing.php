@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Keyword;
+use App\Models\Category;
 
 class Listing extends Model
 {
@@ -52,5 +54,10 @@ class Listing extends Model
     {
         return $this->hasMany(Opening::class);
     }
-   
+   public function getcategory($key){
+        $k=Keyword::where('keyword_name',$key)->first();
+        $c=Category::find($k->category_id);
+        return $c->category_name;
+        //dd($k->category_id);
+    }
 }
