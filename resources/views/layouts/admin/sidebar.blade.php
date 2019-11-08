@@ -44,9 +44,15 @@
           </a>
         </li>
 
+         <li>
+          <a href="{{route('admin.company')}}">
+            <i class="fa fa-th"></i> <span>Company Management</span>
+          </a>
+        </li>
+
         <li>
           <a href="{{route('admin.lead')}}">
-            <i class="fa fa-th"></i> <span>Lead Management</span>
+            <i class="fa fa-th"></i> <span>Bid Management</span>
           </a>
         </li>
 

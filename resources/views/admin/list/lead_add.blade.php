@@ -28,23 +28,37 @@
                 <!-- /.col -->
                 <div class="col">
                 <div class="row">
-                  <div class="col-md-6">
+                  <div class="col-md-12">
                   <!-- general form elements -->
                     <div class="box box-primary">
                       <div class="box-header with-border">
                         <h3 class="box-title">Listing Details </h3>
                       </div>
-                      <ul class="list-group">
-                          <li class="list-group-item"><b>Business Name : </b>{{@$business->business_name}}</li>
-                          <li class="list-group-item"><b>Address : </b>{{@$business->address1}}</li>
-                         
-                          <li class="list-group-item"><b>Landmark : </b>{{@$business->landmark}}</li>
-                          <li class="list-group-item"><b>City name : </b>{{@$business->area->pincode->zone->city->city_name}}</li>
-                          <li class="list-group-item"><b>Area name : </b>{{@$business->area->area_name}} </li>
-                          <li class="list-group-item"><b>Pincode : </b>{{@$business->area->pincode->pincode}}</li>
-                          <li class="list-group-item"><b>State : </b>{{@$business->state_id}}</li>
-                          <li class="list-group-item"><b>Country : </b>{{@$business->country_id}}</li>
-                        </ul>
+                       <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Business Id</th>
+                    <th>Business Name</th>
+                    <th>Contact No</th>
+                    <th>Email Id</th>
+                    <th>City</th>
+                    <th>Registration Date</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                 
+                  <tr>
+                    <td>{{base64_encode($business->id)}}</td>
+                   <td>{{$business->business_name}}</td>
+                   <td>{{$business->contact->phone}}</td>
+                   <td>{{$business->contact->email}}</td>
+                   <td>{{@$business->area->pincode->zone->city->city_name}}</td>
+                   <td>{{$business->created_at}}</td>
+                  
+                  </tr>
+                  
+                 </tbody>
+                </table>
                     </div>
                   </div>
 

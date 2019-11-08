@@ -125,6 +125,11 @@ Route::prefix('admin')->group(function() {
     //inquiry
     Route::get('/inquiry', 'Admin\ListController@inquiry')->name('admin.inquiry');
 
+    //company
+    Route::get('/company', 'Admin\CompanyController@company')->name('admin.company');
+    Route::get('/company/edit/{id?}', 'Admin\CompanyController@edit')->name('admin.company.edit');
+    Route::get('/company/delete/{id?}', 'Admin\CompanyController@delete')->name('admin.company.delete');
+
 
     //ajax
     Route::get('/ajax/delete/{id}/{type}', 'Admin\AjaxController@delete')->name('ajax.delete');
