@@ -10,7 +10,7 @@ class Listing extends Model
 {
    
     protected $fillable = [
-    	'business_name','description','address1','address2','landmark','city_id','area_id','pincode_id','state_id',	'country_id','contact_id','offer','lead','amount'
+    	'business_name','description','address1','address2','landmark','city_id','area_id','pincode_id','state_id',	'country_id','contact_id','offer','lead','amount','listinguuid'
     ];
     public function contacts()
     {
@@ -59,5 +59,24 @@ class Listing extends Model
         $c=Category::find($k->category_id);
         return $c->category_name;
         //dd($k->category_id);
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::creating(function ($model)
+        {
+            $model->generateConfirmationCode();
+        });
+    }
+ protected function generateConfirmationCode()
+    {
+        $this->attributes['listinguuid'] = Hash::make( $this->id );
+
+        if( is_null($this->attributes['listinguuid']) )
+            return false; // failed to create listinguuid
+        else 
+            return true;
     }
 }
