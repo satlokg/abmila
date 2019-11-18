@@ -46,8 +46,8 @@
                     <th>Name</th>
                     <th>Enquiry Date and Time</th>
                     <th>Business Name</th>
-                    <th>Business Email</th>
-                    <th>Business Number</th>
+                    <!-- <th>Business Email</th>
+                    <th>Business Number</th> -->
                   </tr>
                   </thead>
                   <tbody>
@@ -58,9 +58,13 @@
                   <td>{{$inquiry->phone}}</td>
                    <td>{{$inquiry->name}}</td>
                   <td>{{$inquiry->created_at}}</td>
-                  <td>{{@$inquiry->listing->business_name}}</td>
-                  <td>{{@$inquiry->contact->email}}</td>
-                  <td>{{@$inquiry->contact->phone}}</td>
+                  <td>
+                      @foreach(@$inquiry->iquiry as $key=>$iq)
+                      {{$key+1}}-{{@$iq->listing->business_name}}
+                      @endforeach
+                    </td>
+                 <!--  <td>{{@$inquiry->contact->email}}</td>
+                  <td>{{@$inquiry->contact->phone}}</td> -->
                   
                   </tr>
                    @endforeach

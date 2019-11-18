@@ -64,6 +64,11 @@
           </a>
         </li>
        
+       <li>
+          <a href="{{route('admin.users')}}">
+            <i class="fa fa-th"></i> <span>Users</span>
+          </a>
+        </li>
        
         
       </ul>

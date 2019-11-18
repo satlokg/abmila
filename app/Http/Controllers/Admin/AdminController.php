@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Service;
 use App\Models\Subcategory;
+use App\Models\Admin;
+use Auth;
+use Hash;
 
 
 class AdminController extends Controller
@@ -34,10 +37,60 @@ class AdminController extends Controller
         return view('admin.dashboard');
     }
 
-    public function vendors()
+    public function users()
     {
-        return view('admin.vendor');
+      $users=Admin::where('role','!=',1)->get();
+        return view('admin.users.user',compact('users'));
     }
+
+   public function usersForm()
+    {
+        return view('admin.users.userform');
+    }
+    public function usersEdit($id)
+    {
+        $user= Admin::where('id', $id)->first();
+        return view('admin.users.useredit',compact('user'));
+    }
+    public function usersdelete($id)
+    {
+        $user= Admin::where('id', $id)->delete();
+        $notification = array(
+                        'message' => 'User Deleted successfully', 
+                        'alert-type' => 'success'
+                    );
+         return redirect()->back()->with($notification);
+    }
+    public function usersPost(Request $r)
+    {
+       
+      
+        if($r->id){
+            $admin= Admin::find($r->id);
+        }else{
+            $admin= new Admin();
+        }
+      $admin->firstname=$r->firstname;
+      $admin->role=$r->role;
+      $admin->lastname=$r->lastname;
+      $admin->email=$r->email;
+      $admin->address=$r->address;
+      if($r->password){
+        $admin->password=Hash::make($r->password);
+      }
+      
+      $rslt=$admin->save();
+      if($rslt){
+         $notification = array(
+                        'message' => 'User added successfully', 
+                        'alert-type' => 'success'
+                    );
+         return redirect()->back()->with($notification);
+      }
+    }
+
+
+
 
     public function ajax($action=null,$id=null){ //dd($action);
         switch($action){

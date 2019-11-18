@@ -129,6 +129,12 @@ Route::prefix('admin')->group(function() {
     Route::get('/company/{status?}', 'Admin\CompanyController@company')->name('admin.company');
     Route::get('/company/edit/{id?}', 'Admin\CompanyController@edit')->name('admin.company.edit');
     Route::get('/company/delete/{id?}', 'Admin\CompanyController@delete')->name('admin.company.delete');
+    //user
+    Route::get('/users', 'Admin\AdminController@users')->name('admin.users');
+    Route::get('/users/add', 'Admin\AdminController@usersForm')->name('admin.users.add');
+    Route::post('/users/post', 'Admin\AdminController@usersPost')->name('admin.users.post');
+    Route::get('/users/edit/{id}', 'Admin\AdminController@usersEdit')->name('admin.users.edit');
+    Route::get('/users/delete/{id}', 'Admin\AdminController@usersdelete')->name('admin.users.delete');
 
 
     //ajax
