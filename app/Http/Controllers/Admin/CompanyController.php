@@ -19,10 +19,14 @@ class CompanyController extends Controller
        
     }
 
-    public function company()
+    public function company($status=null)
     {
-        $businesses =  Listing::where('status',1)->get();
-        return view('admin.company.company',compact('businesses'));
+        if($status==null || $status=="approved"){
+            $businesses =  Listing::where('status',1)->get();
+        }else{
+            $businesses =  Listing::where('status',0)->get();
+        }
+        return view('admin.company.company',compact('businesses','status'));
     }
     public function edit($id=null)
     {

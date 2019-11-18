@@ -15,6 +15,7 @@ use App\Models\Listingkeyword;
 use App\Models\Lead;
 use App\Models\State;
 use App\Models\Iquiry;
+use DB;
 
 class ListController extends Controller
 {
@@ -130,23 +131,4 @@ class ListController extends Controller
         Listing::where('id',$r->listing_id)->update([
                 'lead'=>$r->lead,
                 'amount'=>$r->amount
-            ]);
-        return redirect()->route('admin.lead');
-    }
-    public function businessListEdit($id)
-    {
-        $cats = Category::all();
-        $listing = Listing::find($id);
-        $cities=City::all();
-        $areas=Area::all();
-        $pincodes=Pincode::all();
-        $states=State::all(); 
-        return view('admin.list.businessListEdit',compact('cities','areas','pincodes','listing','contact','cats','states'));
-    }
-
-     public function inquiry()
-    {
-        $inquiries=Iquiry::orderBy('id','desc')->get();
-        return view('admin.list.inquiry',compact('inquiries'));
-    }
-}
+ 9i/

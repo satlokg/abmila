@@ -124,9 +124,9 @@ Route::prefix('admin')->group(function() {
     Route::get('/lead/edit/{id}', 'Admin\ListController@areaEdit')->name('admin.lead.edit');
     //inquiry
     Route::get('/inquiry', 'Admin\ListController@inquiry')->name('admin.inquiry');
-
+    Route::get('/leaddetail', 'Admin\ListController@leaddetail')->name('admin.leaddetail');
     //company
-    Route::get('/company', 'Admin\CompanyController@company')->name('admin.company');
+    Route::get('/company/{status?}', 'Admin\CompanyController@company')->name('admin.company');
     Route::get('/company/edit/{id?}', 'Admin\CompanyController@edit')->name('admin.company.edit');
     Route::get('/company/delete/{id?}', 'Admin\CompanyController@delete')->name('admin.company.delete');
 

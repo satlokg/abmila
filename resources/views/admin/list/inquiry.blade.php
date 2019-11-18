@@ -58,9 +58,9 @@
                   <td>{{$inquiry->phone}}</td>
                    <td>{{$inquiry->name}}</td>
                   <td>{{$inquiry->created_at}}</td>
-                  <td>{{$inquiry->listing->business_name}}</td>
-                  <td>{{$inquiry->contact->email}}</td>
-                  <td>{{$inquiry->contact->phone}}</td>
+                  <td>{{@$inquiry->listing->business_name}}</td>
+                  <td>{{@$inquiry->contact->email}}</td>
+                  <td>{{@$inquiry->contact->phone}}</td>
                   
                   </tr>
                    @endforeach

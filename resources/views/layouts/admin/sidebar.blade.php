@@ -56,9 +56,11 @@
           </a>
         </li>
 
+
+
         <li>
           <a href="{{route('admin.inquiry')}}">
-            <i class="fa fa-th"></i> <span>Inquiry Details</span>
+            <i class="fa fa-th"></i> <span>Lead Management</span>
           </a>
         </li>
        

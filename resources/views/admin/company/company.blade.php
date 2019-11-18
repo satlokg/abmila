@@ -22,7 +22,11 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Lead Detail</h3>
-              @include('admin.list.timeline')
+              <div class="pull-right">
+              <a href="{{route('admin.company',['status'=>'approved'])}}" class="btn btn-sm btn-info">Approved</a>
+              <a href="{{route('admin.company',['status'=>'rejected'])}}" class="btn btn-sm btn-info">Rejected</a>
+
+            </div>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -53,6 +57,7 @@
                   
                    
                      <td>
+                      @if($status==1)
                       <a href="{{route('admin.business',['id'=>$business->id])}}" class="btn btn-info btn-sm">View </a>
                       <a href="{{route('admin.company.edit',['id'=>$business->id])}}" class="btn btn-info btn-sm">Edit </a>
                       <a href="{{route('admin.company.delete',['id'=>$business->id])}}" class="btn btn-info btn-sm"
@@ -66,6 +71,7 @@
                            data-title="Are you sure you want to delete ?"
                            data-placement="left" data-singleton="true">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>Delete </a>
+                            @endif
                     </td>
                   </tr>
                    @endforeach

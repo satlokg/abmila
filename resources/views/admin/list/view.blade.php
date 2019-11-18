@@ -108,37 +108,37 @@
                         <div class="row">
                          <div class="form-group col-md-6">
                             <label for="title" class="form-label">Email 1</label>
-                            <div class="form-control">{{@$business->business_name}}</div>
+                            <div class="form-control">{{@$business->contact->email}}</div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="title" class="form-label">Email 2</label>
-                            <div class="form-control">{{@$business->business_name}}</div>
+                            <div class="form-control">{{@$business->contact->email2}}</div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="title" class="form-label">Phone Number 1</label>
-                            <div class="form-control">{{@$business->business_name}}</div>
+                            <div class="form-control">{{@$business->contact->phone}}</div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="title" class="form-label">Phone Number 2</label>
-                            <div class="form-control">{{@$business->business_name}}</div>
+                            <div class="form-control">{{@$business->contact->phone2}}</div>
                         </div>
 
                          <div class="form-group col-md-6">
                             <label for="title" class="form-label">Landline Number 1</label>
-                            <div class="form-control">{{@$business->business_name}}</div>
+                            <div class="form-control">{{@$business->contact->landline}}</div>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="title" class="form-label">Landline Number 2</label>
-                            <div class="form-control">{{@$business->business_name}}</div>
+                            <div class="form-control">{{@$business->contact->landline}}</div>
                         </div>
 
                         <div class="form-group col-md-6">
                             <label for="title" class="form-label">Fax Number</label>
-                            <div class="form-control">{{@$business->business_name}}</div>
+                            <div class="form-control">{{@$business->contact->fax}}</div>
                         </div>
                          <div class="form-group col-md-6">
                             <label for="title" class="form-label">Website</label>
-                            <div class="form-control">{{@$business->business_name}}</div>
+                            <div class="form-control">{{@$business->contact->website}}</div>
                         </div>
                         </div>
 

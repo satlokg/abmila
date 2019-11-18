@@ -20,7 +20,7 @@ use App\Notifications\ItemNotification;
 use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-
+use App\Models\Inquiry;
 use App\Models\State;
 use App\Models\Iquiry;
 use App\Models\Lead;
@@ -128,6 +128,12 @@ class ListController extends Controller
     public function leadUserPost(Request $request)
     {
         //dd($request->all());
+        $inq= new Inquiry();
+          $inq->name=$request->name;
+          $inq->email=$request->email;
+          $inq->phone=$request->phone;
+          $inq->keyword_name=$request->key;
+          $inq->save();
        $results = Listingkeyword::whereHas('listing', function ($query) {
                         $query->where('status', '=', 1);
                         $query->orderBy('amount','desc');
@@ -144,7 +150,8 @@ class ListController extends Controller
             'phone'=>$request->phone,
             'listing_id'=>$listings->listing->id,
             'contact_id'=>$listings->listing->contact->id,
-            'keyword_name'=>$request->key
+            'keyword_name'=>$request->key,
+            'inquiry_id'=>$inq->id
            ]);
             $data=collect([
             'name'=>$request->name,
@@ -189,6 +196,8 @@ public function businessdetail($key=null)
         //dd($listing); 
         return view('user.list.businessDetail',compact('listing'));
     }
+
+
 
 
     ///////ajax
