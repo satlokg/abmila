@@ -36,6 +36,22 @@ State
                       @csrf
                       <div class="box-body">
                        
+                       <div class="form-group">
+                          <label for="exampleInputEmail1">Select Country</label>
+                          <select class="form-control select2" name="country_id">
+                            @foreach($countries as $country)
+                              <option value="{{$country->id}}" >{{$country->name}}</option>
+                            @endforeach
+                            
+                          </select>
+                          @error('country_id')
+                              <span class="invalid-feedback text-danger" role="alert">
+                                  <strong>{{ $message }}</strong>
+                              </span>
+                          @enderror
+                        </div>
+
+
                         <div class="form-group">
                           <label for="exampleInputEmail1">Enter State Name</label>
                           <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter State Name" required="required" name="name">

@@ -5,11 +5,11 @@
  @section('bread')
  <section class="content-header">
       <h1>
-State      
+Country      
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">State</li>
+        <li class="active">Country</li>
       </ol>
 @endsection
 
@@ -19,8 +19,8 @@ State
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">State Detail</h3>
-              <a href="{{route('admin.state.add')}}" class="btn btn-sm btn-success">Add State</a>
+              <h3 class="box-title">Country Detail</h3>
+              <a href="{{route('admin.country.add')}}" class="btn btn-sm btn-success">Add Country</a>
                @include('admin.zone.timeline')
             </div>
             <!-- /.box-header -->
@@ -31,18 +31,16 @@ State
                 <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>State Name</th>
                   <th>Country Name</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($states as $state)
+                @foreach($countries as $country)
                 <tr>
-                  <td>{{$state->name}}</td>
-                  <td>{{$state->country->name}}</td>
+                  <td>{{$country->name}}</td>
                   <td>
-                    <a href="{{route('admin.state.edit',['id'=>$state->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a>
+                    <a href="{{route('admin.country.edit',['id'=>$country->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a>
                    
                   </td>
                 </tr>

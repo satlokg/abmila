@@ -9,6 +9,7 @@ use App\Models\City;
 use App\Models\Pincode;
 use App\Models\Area;
 use App\Models\State;
+use App\Models\Country;
 
 class CityController extends Controller
 {
@@ -204,18 +205,20 @@ class CityController extends Controller
     public function state()
     {
         $states = State::all();
+
         return view('admin.zone.state',compact('states'));
     }
 
     public function stateForm()
     {
-        
-        return view('admin.zone.stateform');
+        $countries  = Country::all();
+        return view('admin.zone.stateform',compact('countries'));
     }
     public function stateEdit($id)
-    {
+    {   
+        $countries  = Country::all();
         $state = State::where('id', $id)->first();
-        return view('admin.zone.stateedit',compact('state'));
+        return view('admin.zone.stateedit',compact('state','countries'));
     }
     public function statePost(Request $r)
     {
@@ -233,10 +236,53 @@ class CityController extends Controller
             $state= New State();
         }
         $state->name=$r->name;
+        $state->country=$r->country_id;
         $rslt=$state->save();
         if($rslt){
              $notification = array(
                         'message' => 'State name added successfully', 
+                        'alert-type' => 'success'
+                    );
+         return redirect()->back()->with($notification);
+        }
+    }
+
+    public function country()
+    {
+        $countries  = Country::all();
+        return view('admin.zone.country',compact('countries'));
+    }
+
+    public function countryForm()
+    {
+        
+        return view('admin.zone.countryform');
+    }
+    public function countryEdit($id)
+    {
+        $country = Country::where('id', $id)->first();
+        return view('admin.zone.countryedit',compact('country'));
+    }
+    public function countryPost(Request $r)
+    {
+        $rescountry = Country::where('name',$r->name)->first();
+        if($rescountry){
+            $notification = array(
+                        'message' => 'Country name already taken', 
+                        'alert-type' => 'error'
+                    );
+         return redirect()->back()->with($notification);
+        }
+        if($r->id){
+            $country= Country::find($r->id);
+        }else{
+            $country= New Country();
+        }
+        $country->name=$r->name;
+        $rslt=$country->save();
+        if($rslt){
+             $notification = array(
+                        'message' => 'Country name added successfully', 
                         'alert-type' => 'success'
                     );
          return redirect()->back()->with($notification);

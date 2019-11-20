@@ -6,11 +6,11 @@
  @section('bread')
  <section class="content-header">
       <h1>
-State      
+Country      
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">State</li>
+        <li class="active">Country</li>
         <li class="active">Add</li>
       </ol>
 @endsection
@@ -20,7 +20,7 @@ State
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Add New State </h3>
+              <h3 class="box-title">Add New Country </h3>
                @include('admin.zone.timeline')
             </div>
             <!-- /.box-header -->
@@ -32,35 +32,14 @@ State
                   <div class="box box-primary">
                     
                     <!-- form start -->
-                    <form role="form" action="{{route('admin.state.post')}}" method="post">
+                    <form role="form" action="{{route('admin.country.post')}}" method="post">
                       @csrf
                       <div class="box-body">
+                       
                         <div class="form-group">
-                          <label>State</label>
-                          <input type="hidden" name="id" value="{{$state->id}}">
-                          
-                        </div>
-
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Select Country</label>
-                          <select class="form-control select2" name="country_id">
-                            @foreach($countries as $country)
-                              <option value="{{$country->id}}" {{($country->id==$state->country_id)?'selected':''}}>{{$country->name}}</option>
-                            @endforeach
-                            
-                          </select>
-                          @error('country_id')
-                              <span class="invalid-feedback text-danger" role="alert">
-                                  <strong>{{ $message }}</strong>
-                              </span>
-                          @enderror
-                        </div>
-
-
-                        <div class="form-group">
-                          <label for="exampleInputEmail1">Enter State Name</label>
-                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter State Name" required="required" name="name" value="{{$state->name}}">
-                          @error('city_name')
+                          <label for="exampleInputEmail1">Enter Country Name</label>
+                          <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Country Name" required="required" name="name">
+                          @error('name')
                               <span class="invalid-feedback text-danger" role="alert">
                                   <strong>{{ $message }}</strong>
                               </span>

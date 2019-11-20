@@ -90,6 +90,12 @@ Route::prefix('admin')->group(function() {
     Route::post('/state/post', 'Admin\CityController@statePost')->name('admin.state.post');
     Route::get('/state/edit/{id}', 'Admin\CityController@stateEdit')->name('admin.state.edit');
 
+    //country
+    Route::get('/country', 'Admin\CityController@country')->name('admin.country');
+    Route::get('/country/add', 'Admin\CityController@countryForm')->name('admin.country.add');
+    Route::post('/country/post', 'Admin\CityController@countryPost')->name('admin.country.post');
+    Route::get('/country/edit/{id}', 'Admin\CityController@countryEdit')->name('admin.country.edit');
+
 
     //pincode
     Route::get('/pincode', 'Admin\CityController@pincode')->name('admin.pincode');
