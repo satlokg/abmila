@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Listing;
+use App\Models\Iquiry;
 
 class CompanyController extends Controller
 {
@@ -37,5 +38,11 @@ class CompanyController extends Controller
     {
         $businesses =  Listing::where('status',1)->get();
         return view('admin.company.company',compact('businesses'));
+    }
+
+    public function distribution($id=null)
+    {
+        $leads =  Iquiry::where('listing_id',$id)->get();
+        return view('admin.company.distribution',compact('leads'));
     }
 }

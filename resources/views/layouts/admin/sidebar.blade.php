@@ -67,6 +67,12 @@
             <i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>Lead Management</span>
           </a>
         </li>
+
+        <li>
+          <a href="{{route('admin.distribution')}}">
+            <i class="fa fa-thumbs-up" aria-hidden="true"></i> <span>Lead Distribution</span>
+          </a>
+        </li>
        
        <li>
           <a href="{{route('admin.users')}}">

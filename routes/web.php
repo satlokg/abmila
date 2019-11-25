@@ -135,6 +135,12 @@ Route::prefix('admin')->group(function() {
     Route::get('/company/{status?}', 'Admin\CompanyController@company')->name('admin.company');
     Route::get('/company/edit/{id?}', 'Admin\CompanyController@edit')->name('admin.company.edit');
     Route::get('/company/delete/{id?}', 'Admin\CompanyController@delete')->name('admin.company.delete');
+
+    //company
+    Route::get('/lead/distribution', 'Admin\CompanyController@distribution')->name('admin.distribution');
+    
+
+
     //user
     Route::get('/users', 'Admin\AdminController@users')->name('admin.users');
     Route::get('/users/add', 'Admin\AdminController@usersForm')->name('admin.users.add');
