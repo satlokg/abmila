@@ -137,7 +137,7 @@ Route::prefix('admin')->group(function() {
     Route::get('/company/delete/{id?}', 'Admin\CompanyController@delete')->name('admin.company.delete');
 
     //company
-    Route::get('/lead/distribution', 'Admin\CompanyController@distribution')->name('admin.distribution');
+    Route::get('/lead/distribution/{id?}', 'Admin\CompanyController@distribution')->name('admin.distribution');
     
 
 
