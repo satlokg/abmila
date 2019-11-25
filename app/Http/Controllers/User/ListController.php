@@ -151,7 +151,8 @@ class ListController extends Controller
             'listing_id'=>$listings->listing->id,
             'contact_id'=>$listings->listing->contact->id,
             'keyword_name'=>$request->key,
-            'inquiry_id'=>$inq->id
+            'inquiry_id'=>$inq->id,
+            'cost'=>$listings->listing->amount
            ]);
             $data=collect([
             'name'=>$request->name,

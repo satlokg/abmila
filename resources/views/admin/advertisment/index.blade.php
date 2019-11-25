@@ -5,12 +5,12 @@
  @section('bread')
  <section class="content-header">
       <h1>
-        Distribution MAnagement
+        Advertisments MAnagement
       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Distribution MAnagement</li>
+        <li class="active">Advertisments MAnagement</li>
       </ol>
     </section>
 @endsection
@@ -21,44 +21,14 @@
         <div class="col-md-12">
           <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Distribution Detail</h3>
-              <div class="pull-right">
-              <a href="{{route('admin.company',['status'=>'approved'])}}" class="btn btn-sm btn-info">Approved</a>
-              <a href="{{route('admin.company',['status'=>'rejected'])}}" class="btn btn-sm btn-info">Rejected</a>
-
-            </div>
+              <h3 class="box-title">Advertisments Detail</h3>
+             
             </div>
             <!-- /.box-header -->
             <div class="box-body">
                 <!-- /.col -->
                 <div class="col">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>S.No.</th>
-                    <th>Keyword</th>
-                    <th>Name</th>
-                    <th>Phone No</th>
-                    <th>User's Email Id</th>
-                    <th>Inquiry Date</th>
-                    <th>Lead Cost</th>
-
-                  </tr>
-                  </thead>
-                  <tbody>
-                  @foreach($leads as $key=>$lead)
-                  <tr>
-                    <td>{$key+1}}</td>
-                   <td>{{$lead->keyword_name}}</td>
-                   <td>{{$lead->name}}</td>
-                   <td>{{$lead->phone}}</td>
-                   <td>{{$lead->email}}</td>
-                   <td>{{$lead->created_at}}</td>
-                   <td>{{$lead->cost}}</td>
-                  </tr>
-                   @endforeach
-                 </tbody>
-                </table>
+               
                 <!-- /.col -->
               </div>
                 <!-- /.col -->

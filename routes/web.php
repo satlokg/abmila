@@ -138,7 +138,10 @@ Route::prefix('admin')->group(function() {
 
     //company
     Route::get('/lead/distribution/{id?}', 'Admin\CompanyController@distribution')->name('admin.distribution');
-    
+
+
+    //advertisments
+    Route::get('/advertisment', 'Admin\AdvertismentController@index')->name('admin.advertisment');
 
 
     //user

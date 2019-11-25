@@ -74,6 +74,12 @@
             <i class="fa fa-user" aria-hidden="true"></i> <span>Users</span>
           </a>
         </li>
+
+        <li>
+          <a href="{{route('admin.advertisments')}}">
+            <i class="fa fa-user" aria-hidden="true"></i> <span>Advertisments</span>
+          </a>
+        </li>
        
         
       </ul>
