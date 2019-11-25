@@ -41,7 +41,7 @@
                     <th>Email Id</th>
                     <th>City</th>
                     <th>Registration Date</th>
-                    <th>ss</th>
+                    <th></th>
 
                   </tr>
                   </thead>
@@ -57,7 +57,7 @@
                   
                    
                      <td>
-                    
+                      @if($status==1)
                       <a href="{{route('admin.business',['id'=>$business->id])}}" class="btn btn-info btn-sm">View </a>
                       <a href="{{route('admin.company.edit',['id'=>$business->id])}}" class="btn btn-info btn-sm">Edit </a>
                       <a href="{{route('admin.company.delete',['id'=>$business->id])}}" class="btn btn-info btn-sm"
@@ -72,7 +72,7 @@
                            data-placement="left" data-singleton="true">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>Delete </a>
                             <a href="{{route('admin.distribution',['id'=>$business->id])}}" class="btn btn-info btn-sm">View Lead</a>
-                           
+                            @endif
 
                     </td>
                   </tr>
