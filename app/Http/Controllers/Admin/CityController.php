@@ -236,7 +236,7 @@ class CityController extends Controller
             $state= New State();
         }
         $state->name=$r->name;
-        $state->country=$r->country_id;
+        $state->country_id=$r->country_id;
         $rslt=$state->save();
         if($rslt){
              $notification = array(
