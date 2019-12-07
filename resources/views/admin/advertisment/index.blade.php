@@ -28,7 +28,44 @@
             <div class="box-body">
                 <!-- /.col -->
                 <div class="col">
-               
+                <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Sr.</th>
+                    <th>Title</th>
+                    <th></th>
+
+                  </tr>
+                  </thead>
+                  <tbody>
+                  @foreach($banners as $k=>$banner)
+                  <tr>
+                    <td>{{$k+1}}</td>
+                   <td>{{$banner->title}}</td>
+                  
+                  
+                   
+                     <td>
+                      
+                      <a href="{{route('admin.advertisments.view',['id'=>$banner->id])}}" class="btn btn-info btn-sm">View </a>
+                    
+                      <a href="{{route('admin.advertisments.delete',['id'=>$banner->id])}}" class="btn btn-info btn-sm"
+                           data-tr="tr_{{$banner->id}}"
+                           data-toggle="confirmation"
+                           data-btn-ok-label="Delete" data-btn-ok-icon="fa fa-remove"
+                           data-btn-ok-class="btn btn-sm btn-danger"
+                           data-btn-cancel-label="Cancel"
+                           data-btn-cancel-icon="fa fa-chevron-circle-left"
+                           data-btn-cancel-class="btn btn-sm btn-default"
+                           data-title="Are you sure you want to delete ?"
+                           data-placement="left" data-singleton="true">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>Delete </a>
+                    </td>
+                  </tr>
+                   @endforeach
+                 </tbody>
+                </table>
+                <!-- /.col -->
                 <!-- /.col -->
               </div>
                 <!-- /.col -->

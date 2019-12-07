@@ -13,13 +13,15 @@ class AdvertismentController extends Controller
 {
     public function __construct()
     {
+    	
         $this->middleware('auth:admin');
     }
     
 
     public function index()
     {
-        return view('admin.advertisment.index');
+    	$banners = Banner::all();
+        return view('admin.advertisment.index', compact('banners'));
     }
     public function add()
     {
@@ -69,5 +71,32 @@ class AdvertismentController extends Controller
                     );
          }
          return back()->with($notification);
+    }
+
+    public function view($id=null)
+    {
+    	if($id){
+    		$categories=Category::all();
+    	    $zones=Zone::all();
+    		$banner = Banner::find($id);
+        return view('admin.advertisment.view', compact('banner','categories','zones'));
+    }else{
+    	$notification = array(
+                        'message' => 'Something went wrong', 
+                        'alert-type' => 'success'
+                    );
+        return back()->with($notification);
+    }
+    	
+    }
+
+    public function delete($id=null)
+    {
+    	$banners = Banner::find($id)->delete();
+    	$notification = array(
+                        'message' => 'Banner successfully Deleted', 
+                        'alert-type' => 'success'
+                    );
+        return back()->with($notification);
     }
 }
