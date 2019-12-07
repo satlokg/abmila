@@ -147,6 +147,8 @@ Route::prefix('admin')->group(function() {
     Route::get('/advertisment', 'Admin\AdvertismentController@index')->name('admin.advertisments');
     Route::get('/advertisment/add', 'Admin\AdvertismentController@add')->name('admin.advertisments.add');
     Route::post('/advertisment/post', 'Admin\AdvertismentController@post')->name('admin.advertisments.post');
+    Route::get('/advertisment/view/{id?}', 'Admin\AdvertismentController@view')->name('admin.advertisments.view');
+    Route::get('/advertisment/delete/{id?}', 'Admin\AdvertismentController@delete')->name('admin.advertisments.delete');
     
 
 
