@@ -145,7 +145,9 @@ Route::prefix('admin')->group(function() {
 
     //advertisments
     Route::get('/advertisment', 'Admin\AdvertismentController@index')->name('admin.advertisments');
-    Route::get('/advertisment/add', 'Admin\AdvertismentController@index')->name('admin.advertisments.add');
+    Route::get('/advertisment/add', 'Admin\AdvertismentController@add')->name('admin.advertisments.add');
+    Route::post('/advertisment/post', 'Admin\AdvertismentController@post')->name('admin.advertisments.post');
+    
 
 
     //user

@@ -1,5 +1,10 @@
 @extends('layouts.user1')
  @section('css')
+ 
+  <link rel="stylesheet" href="{{asset('public/responsiveslides.css')}}">
+  <style type="text/css">
+    
+  </style>
  @endsection
  @section('bread')
  
@@ -8,10 +13,21 @@
 
 @section('content')
 <div class="container">
-<div class="col-sm-12" >
-    <h1>Banner</h1>
+  <br>
+  @if($add)
+  <div id="wrapper">
+      <ul class="rslides" id="slider1">
+         @foreach($add->files as $k=>$f)
+        <li>
+          <img src="{{url('/public/upload_file/')}}/{{$f->filepath}}" alt="">
+        </li>
+        @endforeach
+      </ul>
+    </div>
+@endif
+
 </div>
-</div>
+<br>
 <div class="container">
 <!-- <div class="row">
     <div class="input-group mb-3">
@@ -135,6 +151,7 @@
 </div>
 @endsection
 @section('js')
+<script src="{{asset('public/responsiveslides.min.js')}}"></script>
 <script type="text/javascript">
     
    
@@ -152,5 +169,29 @@
   }
 }); 
 </script>
+ <script>
+    // You can also use "$(window).load(function() {"
+    $(function () {
 
+       $("#slider1").responsiveSlides({
+        maxwidth: 100%,
+        speed: 800
+      });
+      // Slideshow 4
+      $("#slider4").responsiveSlides({
+        auto: false,
+        pager: false,
+        nav: true,
+        speed: 500,
+        namespace: "callbacks",
+        before: function () {
+          $('.events').append("<li>before event fired.</li>");
+        },
+        after: function () {
+          $('.events').append("<li>after event fired.</li>");
+        }
+      });
+
+    });
+  </script>
 @endsection

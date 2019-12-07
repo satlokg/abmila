@@ -24,6 +24,7 @@ use App\Models\Inquiry;
 use App\Models\State;
 use App\Models\Iquiry;
 use App\Models\Lead;
+use App\Models\Banner;
 use Carbon\Carbon;
 
 
@@ -115,15 +116,23 @@ class ListController extends Controller
         $search = $request->get('term');
         $cats = Category::all();
         $key = $request->key;
+        $cat = Keyword::where('keyword_name',$key)->first();
+        if($cat){
+          $add = Banner::where('category_id',$cat->category_id)->first();
+        }else{
+          $add =null;
+        }
+        //dd($add);
           // $results = Listingkeyword::whereHas('listing', function ($query) {
           //               $query->where('status', '=', 1);
           //               $query->orderBy('amount','desc');
           //           })->where('keyword',$request->key)->get();
+        
           $results=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
           ->where('listingkeywords.keyword',$request->key)
           ->where('listings.status', '=', 1)->orderBy('listings.amount','desc')->get();
           //dd($results);
-        return view('user.list.search',compact('results','cats','key'));
+        return view('user.list.search',compact('results','cats','key','add'));
     }
     public function leadUserPost(Request $request)
     {
