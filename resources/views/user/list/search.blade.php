@@ -18,9 +18,9 @@
   <div id="wrapper">
       <ul class="rslides" id="slider1">
          @foreach($add->files as $k=>$f)
-        <a href="{{$add->url}}" target="_blank"><li>
-          <img src="{{url('/public/upload_file/')}}/{{$f->filepath}}" alt="">
-        </li></a>
+        <li>
+          <a href="{{$add->url}}" target="_blank"><img src="{{url('/public/upload_file/')}}/{{$f->filepath}}" alt=""></a>
+        </li>
         @endforeach
       </ul>
     </div>
