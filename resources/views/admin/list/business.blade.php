@@ -30,11 +30,11 @@
             <form action="{{route('admin.businessPost')}}" method="post">
                 @csrf
             <div class="row">
-                <div class="col-lg-12 offset-lg-1">
+                <div class="col-lg-10 offset-lg-1">
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-user"></span>General Information</h4>
+                                <h4>General Information</h4>
                             </div>
                         </div>
                         <div class="atbdb_content_module_contents">
@@ -44,10 +44,18 @@
                                     <input type="text" required="required" name="general[business_name]" class="form-control" id="title" placeholder="Enter Business Name"
                                            required>
                                 </div>
+                                 
                                 <div class="form-group">
-                                    <label for="phone_number" class="form-label">Email</label>
-                                    <input name="contactDetail[email]" required="required" type="text" placeholder="Email" id="phone_number" class="form-control" required>
-                                </div>
+                                    <label for="ad_categroy" class="form-label">Select City</label>
+                                    <div class="select-basic">
+                                        <select name="general[city_id]" required="required" class="form-control ad_search_category" id="ad_categroy">
+                                            <option>Select City</option>
+                                            @foreach($cities as $city)
+                                                <option value="{{$city->id}}">{{$city->city_name}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                </div><!-- ends: .form-group -->
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Phone Number</label>
                                     <input name="contactDetail[phone]" required="required" type="text" placeholder="Phone Number" id="phone_number" class="form-control" required>

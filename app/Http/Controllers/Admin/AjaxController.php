@@ -10,6 +10,8 @@ use App\Models\Pincode;
 use App\Models\Area;
 use App\Models\Category;
 use App\Models\Subcategory;
+use App\Models\State;
+use App\Models\Country;
 
 class AjaxController extends Controller
 {
@@ -39,6 +41,14 @@ class AjaxController extends Controller
     			$res=Subcategory::where('id',$id)->delete();
     			return $res;
     			break;
+            case 'state':
+                $res=State::where('id',$id)->delete();
+                return $res;
+                break;
+            case 'country':
+                $res=Country::where('id',$id)->delete();
+                return $res;
+                break;
 
     		default:
     			# code...

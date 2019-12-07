@@ -43,7 +43,7 @@ State
                   <td>{{$state->country->name}}</td>
                   <td>
                     <a href="{{route('admin.state.edit',['id'=>$state->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a>
-                   
+                   <a href="" onclick=archiveFunction({{$state->id}},'state')><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a>         
                   </td>
                 </tr>
                  @endforeach

@@ -38,7 +38,7 @@
                                         <ul class="d-flex list-unstyled align-items-center">
                                             <li>
                                                 <a href="{{route('businessList')}}" class="btn btn-xs btn-gradient btn-gradient-two">
-                                                    <span class="la la-plus"></span> Add Listing
+                                                    <span class="la la-plus"></span> Add Your Business
                                                 </a>
                                             </li>
                                             <li>

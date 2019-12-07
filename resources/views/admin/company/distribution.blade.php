@@ -48,7 +48,7 @@
                   <tbody>
                   @foreach($leads as $key=>$lead)
                   <tr>
-                    <td>{$key+1}}</td>
+                    <td>{{$key+1}}</td>
                    <td>{{$lead->keyword_name}}</td>
                    <td>{{$lead->name}}</td>
                    <td>{{$lead->phone}}</td>

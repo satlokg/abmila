@@ -61,7 +61,37 @@
                 </table>
                     </div>
                   </div>
+ <div class="col-md-6">
+                  <!-- general form elements -->
+                    <div class="box box-primary">
+                       <div class="box-header with-border">
+                        <h3 class="box-title">Payment Logs</h3>
+                        <h4>Total Remainning Amount - ({{@$business->leads->remainingamount}})</h4>
+                      </div>
+                           <div class="box-body">
+                             <table class="table table-striped" id="example2">
+                               <thead>
+                                <tr>
+                                 <th>Sr. No.</th>
+                                 <th>Amount</th>
+                                 <th>Date</th>
+                                 </tr>
+                               </thead>
+                               <tbody>
+                                @foreach($business->paymentlogs as $k=>$pay)
+                                 <tr>
+                                   <td>{{$k+1}}</td>
+                                   <td>{{$pay->amount}}</td>
+                                   <td>{{$pay->created_at->format('d-M-Y')}}</td>
+                                 </tr>
+                                 @endforeach
+                               </tbody>
+                             </table>
+                           </div>
 
+
+                    </div>
+                  </div>
                   <div class="col-md-6">
                   <!-- general form elements -->
                     <div class="box box-primary">
@@ -75,20 +105,20 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Enter lead per day</label>
-                                    <input name="lead" required="required" type="text" class="form-control" required value="{{@$business->lead->lead}}">
+                                    <input name="lead" required="required" type="text" class="form-control" required value="{{@$business->leads->lead}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Enter amount per lead</label>
-                                    <input name="amount" required="required" type="text" class="form-control" value="{{@$business->lead->amount}}">
+                                    <input name="amount" required="required" type="text" class="form-control" value="{{@$business->leads->amount}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Enter Deposit amount</label>
-                                    <input name="totalamount" required="required" type="text" class="form-control" value="{{@$business->lead->totalamount}}">
+                                    <input name="totalamount" required="required" type="text" class="form-control" value="{{@$business->leads->totalamount}}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Remaining amount</label>
-                                    <input name="remainingamount" readonly="readonly" type="text" class="form-control" value="{{@$business->lead->remainingamount}}">
+                                    <input name="remainingamount" readonly="readonly" type="text" class="form-control" value="{{@$business->leads->remainingamount}}">
                                 </div>
                                
                                 <div class="col-lg-10 offset-lg-1 text-center">
@@ -102,6 +132,9 @@
 
                     </div>
                   </div>
+
+
+
                   
                 </div>
                 <!-- /.col -->

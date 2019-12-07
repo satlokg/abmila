@@ -57,9 +57,9 @@
                   
                    
                      <td>
-                      @if($status==1)
+                      @if($business->status==1)
                       <a href="{{route('admin.business',['id'=>$business->id])}}" class="btn btn-info btn-sm">View </a>
-                      <a href="{{route('admin.company.edit',['id'=>$business->id])}}" class="btn btn-info btn-sm">Edit </a>
+                      <!-- <a href="{{route('admin.company.edit',['id'=>$business->id])}}" class="btn btn-info btn-sm">Edit </a> -->
                       <a href="{{route('admin.company.delete',['id'=>$business->id])}}" class="btn btn-info btn-sm"
                            data-tr="tr_{{$business->id}}"
                            data-toggle="confirmation"

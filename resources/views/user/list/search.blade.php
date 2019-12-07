@@ -8,7 +8,12 @@
 
 @section('content')
 <div class="container">
-<div class="row">
+<div class="col-sm-12" >
+    <h1>Banner</h1>
+</div>
+</div>
+<div class="container">
+<!-- <div class="row">
     <div class="input-group mb-3">
       <div class="input-group-prepend">
         <span class="input-group-text" id="basic-addon3">Sort By Location</span>
@@ -23,7 +28,7 @@
         <button class="btn btn-gradient btn-gradient-two" type="button" id="button-addon2">Go</button>
       </div>
     </div>
-</div>
+</div> -->
 <div class="row no-padding">
     <div class="col-lg-3" >
         <div class="card border border-red" >
@@ -132,8 +137,20 @@
 @section('js')
 <script type="text/javascript">
     
+   
+    $( document ).ready(function() {
+  if (document.cookie.indexOf('visited=true')){
+    // load the overlay
     setTimeout(function() {
     $('#myModal').modal('show');
-}, 10000);
+    }, 10000);
+    
+    var year = 1000*60*60*24*365;
+    var expires = new Date((new Date()).valueOf() + year);
+    document.cookie = "visited=true;expires=" + expires.toUTCString();
+
+  }
+}); 
 </script>
+
 @endsection

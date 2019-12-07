@@ -57,10 +57,10 @@
                   <td>{{$inquiry->email}}</td>
                   <td>{{$inquiry->phone}}</td>
                    <td>{{$inquiry->name}}</td>
-                  <td>{{$inquiry->created_at}}</td>
+                  <td>{{$inquiry->created_at->format('jS F Y')}}</td>
                   <td>
                       @foreach(@$inquiry->iquiry as $key=>$iq)
-                      {{$key+1}}-{{@$iq->listing->business_name}}
+                      {{$key+1}}-{{@$iq->listing->business_name}}<br>
                       @endforeach
                     </td>
                  <!--  <td>{{@$inquiry->contact->email}}</td>

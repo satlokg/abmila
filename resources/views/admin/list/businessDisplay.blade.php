@@ -30,9 +30,11 @@
                 <div class="col-lg-12 offset-lg-1">
                     <div class="atbd_content_module">
                         <div class="atbd_content_module__tittle_area">
+                            <div class="atbd_content_module__tittle_area">
                             <div class="atbd_area_title">
-                                <h4><span class="la la-user"></span>List of Your Listings</h4>
+                                <b>The Following Company already exist with us for the contact details entered by you. Click on the listing name you would like to edit or Click New Listing To register New Company with us.</b>
                             </div>
+                        </div>
                         </div>
                         <div class="atbdb_content_module_contents">
                             
@@ -71,7 +73,7 @@
                         <form action="{{route('admin.businessPost')}}" method="post">
                         @csrf
                         <input name="general[business_name]" value="{{$list['business_name']}}"  type="hidden">
-                        <input name="contactDetail[email]" type="hidden" value="{{$contactDetail['email']}}">
+                        <input name="general[city_id]" value="{{$list['city_id']}}"  type="hidden">
                         <input name="contactDetail[id]" type="hidden" value="{{$contact->id}}">
                         <input name="contactDetail[phone]" type="hidden" value="{{$contactDetail['phone']}}">
 

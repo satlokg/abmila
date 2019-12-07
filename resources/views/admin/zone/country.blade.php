@@ -41,7 +41,7 @@ Country
                   <td>{{$country->name}}</td>
                   <td>
                     <a href="{{route('admin.country.edit',['id'=>$country->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a>
-                   
+                    <a href="" onclick=archiveFunction({{$country->id}},'country')><i class="fa fa-trash-o text-danger" aria-hidden="true"></i></a>                   
                   </td>
                 </tr>
                  @endforeach

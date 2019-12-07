@@ -5,12 +5,12 @@
  @section('bread')
  <section class="content-header">
       <h1>
-        Advertisments MAnagement
+        Advertisments Management
       
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-        <li class="active">Advertisments MAnagement</li>
+        <li class="active">Advertisments Management</li>
       </ol>
     </section>
 @endsection
@@ -22,7 +22,7 @@
           <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title">Advertisments Detail</h3>
-             
+             @include('admin.advertisment.timeline')
             </div>
             <!-- /.box-header -->
             <div class="box-body">

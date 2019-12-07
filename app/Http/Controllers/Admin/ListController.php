@@ -16,6 +16,8 @@ use App\Models\Lead;
 use App\Models\State;
 use App\Models\Inquiry;
 use DB;
+use App\Models\Category;
+use App\models\Paymentlog;
 
 class ListController extends Controller
 {
@@ -23,10 +25,10 @@ class ListController extends Controller
     {
         $this->middleware('auth:admin');
     }
-	Public function index($id=null,$action=null){
-		
+	Public function index(Request $r, $id=null,$action=null){
+		//dd($r->all());
 		if($action=='Approve'){ //dd($action);
-			$business =  Listing::where('id',$id)->update(['status'=>1]); //dd($business);
+			$business =  Listing::where('id',$id)->update(['status'=>1,'reason'=>$r->reason]); //dd($business);
 			// return redirect()->back()->with('success', ['your message,here']);   
 		}
 		if($action=='Reject'){
@@ -57,19 +59,24 @@ class ListController extends Controller
         Contact::where('id',$r->contact_id)->update($r->contact);
         Listing::where('id',$r->listing_id)->update($r->general);
         Opening::where('listing_id',$r->listing_id)->delete();
+        if($r->enable247hour){
+            $value['listing_id']=$r->listing_id;
+            $value['day']=$r->enable247hour;
+            $res=Opening::Create($value);
+        }else{
             foreach ($r->opening as $key => $value) {
             $value['listing_id']=$r->listing_id; 
             $res=Opening::Create($value);
+            }
         }
-        $listing_id=$r->listing_id;
-        $keys = Keyword::where('category_id',$r->category_id)->get();
-        return view('admin.list.keyword',compact('listing_id','keys'));
+            return redirect()->route('admin.businessKey',['listing_id'=>$r->listing_id]);
+        
         }
         else{
             //dd($r->all());
             $list=$r->general;
             $contactDetail=$r->contactDetail; //dd($contactDetail);
-            $contact = Contact::where('email',$contactDetail['email'])->first(); //dd($contact);
+            $contact = Contact::where('phone',$contactDetail['phone'])->first(); //dd($contact);
             if($r->submit != 'new'){
                 if($contact!=null){ 
                     return view('admin.list.businessDisplay',compact('contact','contactDetail','list'));
@@ -78,11 +85,11 @@ class ListController extends Controller
                 }
             }
                 
-            $list['contact_id']=$contact->id;
+            $list['contact_id']=$contact->id; //dd($list);
             $listing= Listing::Create($list);
             $contact->listings()->sync($listing->id);
                 if($list){
-                    $cities=City::all();
+                     $cities=City::all();
                     $areas=Area::all();
                     $pincodes=Pincode::all();
                     $states=State::all(); 
@@ -91,6 +98,19 @@ class ListController extends Controller
                 }
         }
     }
+
+     public function businessKeyword(Request $r,$listing_id=null,$cat_id=null){
+        $listing_id=$listing_id;
+        $categories = Category::all();
+        if($cat_id){
+            $keys = Keyword::where('category_id',$cat_id)->get();
+        }else{
+            $keys=[];
+        }
+          //dd($keys);
+        return view('admin.list.keyword',compact('listing_id','keys','categories','cat_id'));
+    }
+
     public function finalPost(Request $r){
         foreach ($r->keys as $k => $v){ 
             $value['keyword']=$v;
@@ -106,7 +126,7 @@ class ListController extends Controller
     }
 
     Public function leadadd($id=null,$action=null){
-        $business =  Listing::where('id',$id)->first(); //dd($business);
+        $business =  Listing::where('id',$id)->first(); //dd($business->leads);
         return view('admin.list.lead_add',compact('business'));
     }
     Public function leadPost(Request $r){ 
@@ -120,14 +140,20 @@ class ListController extends Controller
                 'remainingamount'=>$r->totalamount,
             ]);
         }else{
+            $lp=Lead::where('listing_id',$r->listing_id)->first();
             $l=Lead::where('listing_id',$r->listing_id)->update([
                 'lead'=>$r->lead,
                 'amount'=>$r->amount,
-                'totalamount'=>$r->totalamount,
-                'remainingamount'=>$r->totalamount,
+                'totalamount'=>$lp->totalamount+$r->totalamount,
+                'remainingamount'=>$lp->remainingamount+$r->totalamount,
             ]);
         }
-
+        if($r->totalamount){
+            Paymentlog::Create([
+                'listing_id'=>$r->listing_id,
+                'amount'=>$r->totalamount,
+            ]);
+        }
         Listing::where('id',$r->listing_id)->update([
                 'lead'=>$r->lead,
                 'amount'=>$r->amount

@@ -1,4 +1,4 @@
-<div class="row" style="margin: 0">
+<div class="row" style="margin: 0; background-color: #f5f5f5;">
     <div class="col-sm-12" style="padding: 0">
         <a href="{{route('businessList')}}" class="btn btn-xs btn-gradient btn-gradient-two pull-right">
             <span class="la la-plus"></span> Add Your Business
@@ -6,7 +6,7 @@
     </div>
 <div class="col-sm-3">
     <div class="logo logo-top">
-       <h2> Delhi/NCR</h2>
+       <a href="{{url('/')}}"><img src="{{asset('public/img/logo.png')}}" height="50" alt="logo image"></a>
     </div>
 </div>
 <div class="col-sm-6">
@@ -32,7 +32,7 @@
     </div>
 </div>
 </div>
-<div class="col" style="padding: 0">
+<!-- <div class="col" style="padding: 0">
 <div class="menu-area menu1 menu--light">
  <div class="top-menu-area">
     <div class="menu-fullwidth">
@@ -45,7 +45,6 @@
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon icon-menu"><i class="la la-reorder"></i></span>
                 </button>
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="direo-navbar-collapse">
                     <ul class="navbar-nav">
                         <li>
@@ -79,17 +78,12 @@
                         </li>
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
+                
             </nav>
         </div>
     </div>
 </div>
 </div>
 </div>
-</div>
+</div> -->
 <!-- banner -->
-<div class="container">
-<div class="col-sm-12" style="padding: 0">
-    <h1>Banner</h1>
-</div>
-</div>

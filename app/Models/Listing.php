@@ -38,9 +38,13 @@ class Listing extends Model
     {
         return $this->hasOne(Rating::class);
     }
-    public function lead()
+    public function leads()
     {
         return $this->hasOne(Lead::class);
+    }
+    public function paymentlogs()
+    {
+        return $this->hasMany(Paymentlogs::class);
     }
     public function city()
     {

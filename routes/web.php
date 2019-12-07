@@ -118,10 +118,13 @@ Route::prefix('admin')->group(function() {
 
     //business
     Route::get('/business/{id?}/{action?}', 'Admin\ListController@index')->name('admin.business');
+    Route::post('/business/{id?}/{action?}', 'Admin\ListController@index')->name('admin.business.post');
     Route::get('/business-list', 'Admin\ListController@businessList')->name('admin.businessList');
     Route::get('/business-list/edit/{id}', 'Admin\ListController@businessListEdit')->name('admin.businessListEdit');
     Route::post('/business-list', 'Admin\ListController@businessPost')->name('admin.businessPost');
     Route::post('/final-list', 'Admin\ListController@finalPost')->name('admin.finalPost');
+
+    Route::get('/business-keyword/{listing_id?}/{cat_id?}', 'Admin\ListController@businessKeyword')->name('admin.businessKey');
 
     //Lead
     Route::get('/lead', 'Admin\ListController@lead')->name('admin.lead');
@@ -142,6 +145,7 @@ Route::prefix('admin')->group(function() {
 
     //advertisments
     Route::get('/advertisment', 'Admin\AdvertismentController@index')->name('admin.advertisments');
+    Route::get('/advertisment/add', 'Admin\AdvertismentController@index')->name('admin.advertisments.add');
 
 
     //user
