@@ -47,7 +47,7 @@
                    
                      <td>
                       
-                      <a href="{{route('admin.advertisments.view',['id'=>$banner->id])}}" class="btn btn-info btn-sm">View </a>
+                     <!--  <a href="{{route('admin.advertisments.view',['id'=>$banner->id])}}" class="btn btn-info btn-sm">View </a> -->
                     
                       <a href="{{route('admin.advertisments.delete',['id'=>$banner->id])}}" class="btn btn-info btn-sm"
                            data-tr="tr_{{$banner->id}}"
