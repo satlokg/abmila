@@ -1,5 +1,6 @@
 @extends('layouts.admin')
  @section('css')
+ <link rel="stylesheet" href="{{asset('public/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css')}}">
  @endsection
 @section('bread')
  <section class="content-header">
@@ -89,5 +90,19 @@
       </div>
 @endsection
 @section('js')
-
-@endsection
+      <script src="{{asset('public/bower_components/datatables.net/js/jquery.dataTables.min.js')}}"></script>
+      <script src="{{asset('public/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script>
+      <script>
+          $(function () {
+            $('#example1').DataTable()
+            $('#example2').DataTable({
+              'paging'      : true,
+              'lengthChange': false,
+              'searching'   : false,
+              'ordering'    : true,
+              'info'        : true,
+              'autoWidth'   : false
+            })
+          })
+        </script>
+      @endsection
