@@ -17,7 +17,7 @@ use App\Models\State;
 use App\Models\Inquiry;
 use DB;
 use App\Models\Category;
-use App\models\Paymentlog;
+use App\Models\Paymentlog;
 
 class ListController extends Controller
 {
