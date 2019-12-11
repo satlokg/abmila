@@ -116,7 +116,7 @@ class ListController extends Controller
     {
         $search = $request->get('term');
       
-          $result = City::where('city_name', 'LIKE', '%'. $search. '%')->get();
+          $result = Area::where('area_name', 'LIKE', '%'. $search. '%')->get();
  
           return response()->json($result);
     }
@@ -128,7 +128,7 @@ class ListController extends Controller
         $key = $request->key;
         $location = $request->location;
         if($location){
-          $city=City::where('city_name',$location)->first();
+          $area=Area::where('area_name',$location)->first();
         }
         $cat = Keyword::where('keyword_name',$key)->first();
         if($cat){
@@ -144,8 +144,8 @@ class ListController extends Controller
         
           $results=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
           ->where('listingkeywords.keyword',$request->key);
-          if(isset($city)){
-            $results->where('listings.city_id', '=', $city->id);
+          if(isset($area)){
+            $results->where('listings.area_id', '=', $area->id);
           }
           $results->where('listings.status', '=', 1)->orderBy('listings.amount','desc')->get();
           //dd($results);

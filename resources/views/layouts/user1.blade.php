@@ -110,7 +110,7 @@
             success: function(data){
                var resp = $.map(data,function(obj){
                     //console.log(obj.city_name);
-                    return obj.zone_name;
+                    return obj.area_name;
                }); 
  
                response(resp);
