@@ -46,7 +46,7 @@ Route::post('/rating', 'HomeController@rating')->name('rating');
 Route::prefix('admin')->group(function() {
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::get('/change-password', 'Admin\AdminController@cpass')->name('cpass');
-    Route::post('/change-password', 'Admin\AdminController@updatePassword')->name('change-password');
+    Route::post('/update-password', 'Admin\AdminController@updatePassword')->name('update-password');
 
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/home', 'Admin\AdminController@index')->name('admin.home');
