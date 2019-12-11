@@ -144,7 +144,7 @@ class ListController extends Controller
         
           $results=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
           ->where('listingkeywords.keyword',$request->key);
-          if($city){
+          if(isset($city)){
             $results->where('listings.city_id', '=', $city->id);
           }
           $results->where('listings.status', '=', 1)->orderBy('listings.amount','desc')->get();
