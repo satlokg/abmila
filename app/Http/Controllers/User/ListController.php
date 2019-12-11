@@ -136,7 +136,7 @@ class ListController extends Controller
         }else{
           $add =null;
         }
-        //dd($add);
+        dd($city);
           // $results = Listingkeyword::whereHas('listing', function ($query) {
           //               $query->where('status', '=', 1);
           //               $query->orderBy('amount','desc');
