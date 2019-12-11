@@ -25,6 +25,7 @@ use App\Models\State;
 use App\Models\Iquiry;
 use App\Models\Lead;
 use App\Models\Banner;
+use App\Models\Zone;
 use Carbon\Carbon;
 
 
@@ -107,6 +108,15 @@ class ListController extends Controller
         $search = $request->get('term');
       
           $result = Keyword::where('keyword_name', 'LIKE', '%'. $search. '%')->get();
+ 
+          return response()->json($result);
+    }
+
+    public function autolocation(Request $request)
+    {
+        $search = $request->get('term');
+      
+          $result = Zone::where('zone_name', 'LIKE', '%'. $search. '%')->get();
  
           return response()->json($result);
     }

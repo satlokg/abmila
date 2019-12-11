@@ -22,6 +22,7 @@ Route::get('/', function () {
 });
 Route::get('search', 'User\ListController@index')->name('search');
 Route::get('autocomplete', 'User\ListController@autocomplete')->name('autocomplete');
+Route::get('autolocation', 'User\ListController@autolocation')->name('autolocation');
 
 
 Route::get('markasread', function () {

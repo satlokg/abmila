@@ -16,7 +16,7 @@
             <div class="input-group mb-3">
           
           <input type="text" class="form-control" id="search"  placeholder="What are you looking for?" name="key">
-          <input type="text" class="form-control">
+          <input type="text" class="form-control" id="location"  placeholder="Location?" name="location">
           <div class="input-group-append">
             <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search btmmnsearc">Search</button>
           </div>

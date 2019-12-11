@@ -97,6 +97,28 @@
     },
     minLength: 1
  });
+
+    $( "#location" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({
+            url: "{{url('autolocation')}}",
+            data: {
+                    term : request.term
+             },
+            dataType: "json",
+            success: function(data){
+               var resp = $.map(data,function(obj){
+                    //console.log(obj.city_name);
+                    return obj.zone_name;
+               }); 
+ 
+               response(resp);
+            }
+        });
+    },
+    minLength: 1
+ });
 });
  
 </script> 
