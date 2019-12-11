@@ -18,7 +18,7 @@
     </script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.11/css/select2.min.css" rel="stylesheet" />
 
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/img/fevicon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/fevicon.png')}}">
     <style type="text/css">
         .row{
             margin: 0;

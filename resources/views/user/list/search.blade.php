@@ -108,7 +108,7 @@
               <div class="input-group-prepend">
                 <span class="input-group-text" style="background-color: red; color: white;" id="basic-addon3">Offer</span>
               </div>
-              <input class="form-control" id="basic-url" aria-describedby="basic-addon3" value="{{$r->listing->offer}}">
+              <marquee>{{$r->listing->offer}}</marquee>
             </div>
             </div>
         @endforeach 
