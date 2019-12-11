@@ -177,7 +177,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="phone_number" class="form-label">Landline Number</label>
-                                    <input name="contact[landline]" required="required" type="text" placeholder="Landline Number" id="phone_number" class="form-control" value="{{$contact->landline}}">
+                                    <input name="contact[landline]" required="required" type="text" placeholder="Landline Number" id="phone_number" class="form-control" value="{{$listing->contact->landline}}">
                                 </div>
 
                                 <div class="form-group">
