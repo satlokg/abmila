@@ -79,8 +79,10 @@
                     <p class="card-text">{{$r->listing->area->area_name}},{{$r->listing->area->pincode->zone->city->city_name}}</p>
                     <p>{{@$r->listing->contact->phone}}</p>
                     <p>
-                    @foreach($r->getallkey($r->listing->id) as $k) 
+                    @foreach($r->getallkey($r->listing->id) as $k=>$v) 
+                    <?php if($k == 4) break; ?>
                         {{$k->keyword}},
+                        <a href="{{route('businessdetail',['id'=>encrypt($r->listing->id, 'abmila')])}}">View more..</a>
                     @endforeach 
                     </p>
                   </div>

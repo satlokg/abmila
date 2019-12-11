@@ -211,7 +211,8 @@
                             @endforeach
                           </tbody>
                         </table>
-
+                        <h2>Reason</h2>
+                        <p>{{@$business->reason}}</p>
                       </div>
                       
                     </div>
@@ -225,7 +226,7 @@
                       @if($business->status==0)
                         <a href="#" class="btn btn-primary btn-lg listing_submit_btn"  data-toggle="modal" data-target="#myModal">Approve</a>
                         @else
-                         <a href="{{route('admin.business',['id'=>$business->id,'action'=>'Reject'])}}" class="btn btn-danger btn-lg listing_submit_btn">Reject</a>
+                         <a href="#" class="btn btn-danger btn-lg listing_submit_btn" data-toggle="modal" data-target="#myModal1">Reject</a>
                       @endif
                     </div>
                 </div><!-- ends: .col-lg-10 -->
@@ -258,6 +259,33 @@
           @csrf
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Approval Reason</label>
+            <textarea class="form-control" name="reason" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-info" >Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        <form action="{{route('admin.business',['id'=>$business->id,'action'=>'Reject'])}}" method="post">
+          @csrf
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Cancel Reason</label>
             <textarea class="form-control" name="reason" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <button type="submit" class="btn btn-info" >Submit</button>

@@ -32,7 +32,7 @@ class ListController extends Controller
 			// return redirect()->back()->with('success', ['your message,here']);   
 		}
 		if($action=='Reject'){
-			$business =  Listing::where('id',$id)->update(['status'=>0]); //dd($business);
+			$business =  Listing::where('id',$id)->update(['status'=>0,'reason'=>$r->reason]); //dd($business);
 			// return redirect()->back()->with('success', ['your message,here']);   
 		}
 		if($id!=null){
