@@ -128,7 +128,7 @@ class ListController extends Controller
         $key = $request->key;
         $location = $request->location;
         if($location){
-          $city=Zone::where('city_name',$location)->first();
+          $city=City::where('city_name',$location)->first();
         }
         $cat = Keyword::where('keyword_name',$key)->first();
         if($cat){
