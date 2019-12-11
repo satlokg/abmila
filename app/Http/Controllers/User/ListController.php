@@ -116,7 +116,7 @@ class ListController extends Controller
     {
         $search = $request->get('term');
       
-          $result = Zone::where('zone_name', 'LIKE', '%'. $search. '%')->get();
+          $result = City::where('city_name', 'LIKE', '%'. $search. '%')->get();
  
           return response()->json($result);
     }
@@ -126,6 +126,10 @@ class ListController extends Controller
         $search = $request->get('term');
         $cats = Category::all();
         $key = $request->key;
+        $location = $request->location;
+        if($location){
+          $city=Zone::where('city_name',$location)->first();
+        }
         $cat = Keyword::where('keyword_name',$key)->first();
         if($cat){
           $add = Banner::where('category_id',$cat->category_id)->first();
@@ -139,8 +143,11 @@ class ListController extends Controller
           //           })->where('keyword',$request->key)->get();
         
           $results=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
-          ->where('listingkeywords.keyword',$request->key)
-          ->where('listings.status', '=', 1)->orderBy('listings.amount','desc')->get();
+          ->where('listingkeywords.keyword',$request->key);
+          if($city){
+            $results->where('listings.city_id', '=', $city->id);
+          }
+          $results->where('listings.status', '=', 1)->orderBy('listings.amount','desc')->get();
           //dd($results);
         return view('user.list.search',compact('results','cats','key','add'));
     }
