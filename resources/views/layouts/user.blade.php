@@ -18,7 +18,7 @@
        var SITE_URL = {!! json_encode(url('/')) !!}      
     </script>
 
-    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/fevicon.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{asset('public/img/fevicon.png')}}">
 <style type="text/css">
     .menu-area{
         background-color: #f5f5f5;
