@@ -19,7 +19,7 @@
       <ul class="rslides" id="slider1">
          @foreach($add->files as $k=>$f)
         <li>
-          <a href="{{$add->url}}" target="_blank"><img src="{{url('/public/upload_file/')}}/{{$f->filepath}}" alt=""></a>
+          <a href="{{$add->url}}" target="_blank"><img src="{{url('/public/upload_file/')}}/{{$f->filepath}}" alt="" height="200"></a>
         </li>
         @endforeach
       </ul>
