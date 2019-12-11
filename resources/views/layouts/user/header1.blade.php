@@ -14,7 +14,9 @@
       @csrf
         <div class="atbd_seach_fields_wrapper">
             <div class="input-group mb-3">
-          <input class="form-control" id="search" type="text" placeholder="What are you looking for?" name="key">
+          
+          <input type="text" class="form-control" id="search"  placeholder="What are you looking for?" name="key">
+          <input type="text" class="form-control">
           <div class="input-group-append">
             <button type="submit" class="btn btn-block btn-gradient btn-gradient-one btn-md btn_search btmmnsearc">Search</button>
           </div>
