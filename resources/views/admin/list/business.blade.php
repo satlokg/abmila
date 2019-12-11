@@ -1,4 +1,15 @@
  @extends('layouts.admin')
+ @section('js')
+      <script src="{{asset('public/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+      <script src="{{ asset('public/js/fSelect.js') }}"></script>
+      <script>
+         $(function () {
+        //Initialize Select2 Elements
+          $('.select2').select2()
+         })
+      </script>
+     
+        @endsection
 @section('bread')
  <section class="content-header">
       <h1>
@@ -48,7 +59,7 @@
                                 <div class="form-group">
                                     <label for="ad_categroy" class="form-label">Select City</label>
                                     <div class="select-basic">
-                                        <select name="general[city_id]" required="required" class="form-control ad_search_category" id="ad_categroy">
+                                        <select name="general[city_id]" required="required" class="form-control ad_search_category select2" id="ad_categroy">
                                             <option>Select City</option>
                                             @foreach($cities as $city)
                                                 <option value="{{$city->id}}">{{$city->city_name}}</option>

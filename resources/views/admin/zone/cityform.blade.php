@@ -36,7 +36,7 @@ City
                       @csrf
                       <div class="box-body">
                         <div class="form-group">
-                          <label>Select Pincode</label>
+                          <label>Select State</label>
                           <select class="form-control select2" style="width: 100%;" name="state_id" required="required">
                             @foreach($states as $state)
                             <option value="{{$state->id}}">{{$state->name}}</option>
