@@ -19,6 +19,7 @@ class AjaxController extends Controller
     	switch ($type) {
     		case 'city':
     			$res=City::where('id',$id)->delete();
+                Listing::where('city_id',$id)->update(['status'=>0]);
     			return $res;
     			break;
     		case 'zone':
@@ -27,10 +28,12 @@ class AjaxController extends Controller
     			break;
     		case 'pincode':
     			$res=Pincode::where('id',$id)->delete();
+                 Listing::where('pincode_id',$id)->update(['status'=>0]);
     			return $res;
     			break;
     		case 'area':
     			$res=Area::where('id',$id)->delete();
+                 Listing::where('area_id',$id)->update(['status'=>0]);
     			return $res;
     			break;
     		case 'cat':
@@ -43,10 +46,12 @@ class AjaxController extends Controller
     			break;
             case 'state':
                 $res=State::where('id',$id)->delete();
+                 Listing::where('state_id',$id)->update(['status'=>0]);
                 return $res;
                 break;
             case 'country':
                 $res=Country::where('id',$id)->delete();
+                 Listing::where('country_id',$id)->update(['status'=>0]);
                 return $res;
                 break;
 
