@@ -42,11 +42,11 @@
                 <tbody>
                 @foreach($areas as $area)
                 <tr>
-                  <td>{{$area->area_name}}</td>
-                  <td>{{$area->pincode->pincode}}</td>
-                  <td>{{$area->pincode->zone->zone_name}}</td>
-                  <td>{{$area->pincode->zone->city->city_name}}</td>
-                  <td><a href="{{route('admin.area.edit',['id'=>$area->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a></td>
+                  <td>{{@$area->area_name}}</td>
+                  <td>{{@$area->pincode->pincode}}</td>
+                  <td>{{@$area->pincode->zone->zone_name}}</td>
+                  <td>{{@$area->pincode->zone->city->city_name}}</td>
+                  <td><a href="{{route('admin.area.edit',['id'=>@$area->id])}}"><i class="fa fa-pencil-square-o text-default" aria-hidden="true"></i></a></td>
                 </tr>
                  @endforeach
                </tbody>
