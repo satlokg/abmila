@@ -177,6 +177,7 @@
 
        $("#slider1").responsiveSlides({
         maxwidth: 1080,
+        maxhieght: 200,
         speed: 100
       });
      

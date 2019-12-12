@@ -142,13 +142,13 @@ class ListController extends Controller
           //               $query->orderBy('amount','desc');
           //           })->where('keyword',$request->key)->get();
         
-          $results=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
+          $result=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
           ->where('listingkeywords.keyword',$request->key);
           if(isset($area)){
-            $results->where('listings.area_id', '=', $area->id);
+            $result->where('listings.area_id', '=', $area->id);
           }
-          $results->where('listings.status', '=', 1)->orderBy('listings.amount','desc')->get();
-          //dd($results);
+          $result->where('listings.status', '=', 1)->orderBy('listings.amount','desc');
+          $results=$result->get();;
         return view('user.list.search',compact('results','cats','key','add'));
     }
     public function leadUserPost(Request $request)
