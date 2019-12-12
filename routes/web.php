@@ -163,6 +163,15 @@ Route::prefix('admin')->group(function() {
     Route::get('/users/edit/{id}', 'Admin\AdminController@usersEdit')->name('admin.users.edit');
     Route::get('/users/delete/{id}', 'Admin\AdminController@usersdelete')->name('admin.users.delete');
 
+    //Cms
+    Route::get('/page', 'Admin\PageController@index')->name('admin.page');
+    Route::get('/page/add', 'Admin\PageController@pageForm')->name('admin.page.add');
+    Route::post('/page/post', 'Admin\PageController@pagePost')->name('admin.page.post');
+
+    Route::get('/page-edit/{id?}', 'Admin\PageController@pageEdit')->name('admin.pageEdit');
+    Route::post('/page-update', 'Admin\PageController@pageUpdate')->name('admin.pageUpdate');
+    Route::post('/page-delete/', 'Admin\PageController@pageDelete')->name('admin.pageDelete');
+
 
     //ajax
     Route::get('/ajax/delete/{id}/{type}', 'Admin\AjaxController@delete')->name('ajax.delete');

@@ -80,6 +80,11 @@
             <i class="fa fa-user" aria-hidden="true"></i> <span>Advertisments</span>
           </a>
         </li>
+        <li>
+          <a href="{{route('admin.page')}}">
+            <i class="fa fa-product-hunt"></i> <span>CMS</span>
+          </a>
+        </li>
        
         
       </ul>
