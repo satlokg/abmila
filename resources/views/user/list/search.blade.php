@@ -81,7 +81,7 @@
                     <p>
                     @foreach($r->getallkey($r->listing->id) as $k=>$v) 
                     <?php if($k == 4) break; ?>
-                        {{$k->keyword}},
+                        {{$v->keyword}},
                         <a href="{{route('businessdetail',['id'=>encrypt($r->listing->id, 'abmila')])}}">View more..</a>
                     @endforeach 
                     </p>
