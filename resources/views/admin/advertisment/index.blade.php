@@ -32,7 +32,13 @@
                   <thead>
                   <tr>
                     <th>Sr.</th>
+                    <th>Category</th>
+                    <th>Sub Category</th>
+                    <th>Zone</th>
+                    <th>Url</th>
                     <th>Title</th>
+                    <th>Bussiness Name</th>
+                    <th>Image</th>
                     <th></th>
 
                   </tr>
@@ -41,10 +47,17 @@
                   @foreach($banners as $k=>$banner)
                   <tr>
                     <td>{{$k+1}}</td>
+                   <td>{{$banner->category->category_name}}</td>
+                   <td>{{$banner->subcategory->subcategory_name}}</td>
+                   <td>{{$banner->zone->zone_name}}</td>
+                   <td>{{$banner->url}}</td>
                    <td>{{$banner->title}}</td>
-                  
-                  
-                   
+                   <td>{{$banner->description}}</td>
+                   <td>
+                     @foreach($banner->files as $k=>$f)
+                        <img src="{{url('/public/upload_file/')}}/{{$f->filepath}}" alt="" height="50">
+                      @endforeach
+                   </td>
                      <td>
                       
                      <!--  <a href="{{route('admin.advertisments.view',['id'=>$banner->id])}}" class="btn btn-info btn-sm">View </a> -->

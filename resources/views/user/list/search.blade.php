@@ -107,11 +107,11 @@
                   
                 </div>
               </div>
-              <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" style="background-color: red; color: white;" id="basic-addon3">Offer</span>
+              <div class="input-group mb-3" style="width: 100%">
+              <div class="input-group-prepend" style="width: 100%">
+                <span class="input-group-text" style="background-color: red; color: white;" id="basic-addon3">Offer</span><span style="width: 100%"><marquee>{{$r->listing->offer}}</marquee></span>
               </div>
-              <marquee>{{$r->listing->offer}}</marquee>
+              
             </div>
             </div>
         @endforeach 
