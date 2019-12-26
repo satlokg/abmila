@@ -60,10 +60,9 @@
     </div>
 
     <div class="col-md-9">
-      @if(isset($results))
-        @foreach($results as $r) 
+        @foreach($listings as $listing) 
          @php
-         $a=$r->checkInquiry($r->listing->id);
+         $a=$listing->checkInquiry($listing->id);
          @endphp
           @if($a=='continue')
             @continue
@@ -76,11 +75,11 @@
                 </div>
                 <div class="col-md-6">
                   <div class="card-body">
-                    <h5 class="card-title"><a href="{{route('businessdetail',['id'=>encrypt($r->listing->id, 'abmila')])}}">{{$r->listing->business_name}}</a></h5>
-                    <p class="card-text">{{$r->listing->area->area_name}},{{$r->listing->area->pincode->zone->city->city_name}}</p>
-                    <p>{{@$r->listing->contact->phone}}</p>
+                    <h5 class="card-title"><a href="{{route('businessdetail',['id'=>encrypt($r->listing->id, 'abmila')])}}">{{$listing->business_name}}</a></h5>
+                    <p class="card-text">{{$listing->area->area_name}},{{$listing->area->pincode->zone->city->city_name}}</p>
+                    <p>{{@$listing->contact->phone}}</p>
                     <p>
-                    @foreach($r->getallkey($r->listing->id) as $k=>$v) 
+                    @foreach($listing->getallkey($listing->id) as $k=>$v) 
                     <?php if($k == 4) break; ?>
                         {{$v->keyword}},
                         
@@ -100,7 +99,7 @@
                   </div>
                  </div>
                  <div class="col-md-12 row">
-                     <p class="pull-right" style="color: green">{{$r->getday($r->listing->id)}}</p>
+                     <p class="pull-right" style="color: green">{{$listing->getday($listing->id)}}</p>
                   </div>
                   <div class="col-md-12 row">
                       <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Get Quotes</button>
@@ -110,13 +109,12 @@
               </div>
               <div class="input-group mb-3" style="width: 100%">
               <div class="input-group-prepend" style="width: 100%">
-                <span class="input-group-text" style="background-color: red; color: white;" id="basic-addon3">Offer</span><span style="width: 100%"><marquee>{{$r->listing->offer}}</marquee></span>
+                <span class="input-group-text" style="background-color: red; color: white;" id="basic-addon3">Offer</span><span style="width: 100%"><marquee>{{$listing->offer}}</marquee></span>
               </div>
               
             </div>
             </div>
         @endforeach 
-        @endif
     </div>
 </div>
 </div>

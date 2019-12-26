@@ -121,35 +121,68 @@ class ListController extends Controller
           return response()->json($result);
     }
 
-    public function list(Request $request)
+    public function list(Request $request, $cat=null)
     {
-        $search = $request->get('term');
-        $cats = Category::all();
-        $key = $request->key;
-        $location = $request->location;
-        if($location){
-          $area=Area::where('area_name',$location)->first();
-        }
-        $cat = Keyword::where('keyword_name',$key)->first();
-        if($cat){
-          $add = Banner::where('category_id',$cat->category_id)->first();
-        }else{
-          $add =null;
-        }
-        //dd($add);
-          // $results = Listingkeyword::whereHas('listing', function ($query) {
-          //               $query->where('status', '=', 1);
-          //               $query->orderBy('amount','desc');
-          //           })->where('keyword',$request->key)->get();
-        
-          $result=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
-          ->where('listingkeywords.keyword',$request->key);
-          if(isset($area)){
-            $result->where('listings.area_id', '=', $area->id);
+        if($cat != null){
+          $key = $request->get('term');
+          $cats = Category::all();
+         
+          $cat = Category::where('category_name',$cat)->first(); 
+          if($cat){
+            $add = Banner::where('category_id',$cat->category_id)->first();
+          }else{
+            $add =null;
           }
-          $result->where('listings.status', '=', 1)->orderBy('listings.amount','desc');
-          $results=$result->get();;
-        return view('user.list.search',compact('results','cats','key','add'));
+
+          foreach ($cat->keywords as $key => $value) {
+            $result=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
+            ->where('listingkeywords.keyword',$value->keyword_name);
+            $result->where('listings.status', '=', 1)->orderBy('listings.amount','desc');
+            if(isset($results)){
+              $results->push($result->first());
+            }else{
+              $results=$result->get();
+            }
+            
+          }
+          //$listings=Listing::where('category_id',$cat)->get();
+            
+          return view('user.list.search',compact('results','cats','key','add'));
+        }else{
+          $search = $request->get('term');
+          $cats = Category::all();
+          $key = $request->key;
+          $location = $request->location;
+          if($location){
+            $area=Area::where('area_name',$location)->first();
+          }
+          $cat = Keyword::where('keyword_name',$key)->first();
+          if($cat){
+            $add = Banner::where('category_id',$cat->category_id)->first();
+          }else{
+            $add =null;
+          }
+          //dd($add);
+            // $results = Listingkeyword::whereHas('listing', function ($query) {
+            //               $query->where('status', '=', 1);
+            //               $query->orderBy('amount','desc');
+            //           })->where('keyword',$request->key)->get();
+          
+            $result=Listingkeyword::leftjoin('listings','listingkeywords.listing_id','=','listings.id')
+            ->where('listingkeywords.keyword',$request->key);
+            if(isset($area)){
+              $result->where('listings.area_id', '=', $area->id);
+            }
+            $result->where('listings.status', '=', 1)->orderBy('listings.amount','desc');
+            $results=$result->get();
+          return view('user.list.search',compact('results','cats','key','add'));
+          }
+        
+    }
+
+     public function listSearch(Request $request)
+    {
+        
     }
     public function leadUserPost(Request $request)
     {

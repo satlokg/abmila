@@ -194,6 +194,7 @@ Route::post('/business-list', 'User\ListController@businessPost')->name('busines
 Route::get('/business-keyword/{listing_id?}/{cat_id?}', 'User\ListController@businessKeyword')->name('businessKey');
 Route::post('/final-list', 'User\ListController@finalPost')->name('finalPost');
 Route::post('/list-page', 'User\ListController@list')->name('user.list');
+Route::get('/list-page/{cat?}', 'User\ListController@list')->name('user.list');
 Route::post('/lead/user/post', 'User\ListController@leadUserPost')->name('lead.user.post');
 Route::get('user/ajax/{id}/{type}', 'User\ListController@ajax')->name('user.ajax');
 Route::get('/business-detail/{id?}', 'User\ListController@businessdetail')->name('businessdetail');
